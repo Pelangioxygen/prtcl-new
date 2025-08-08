@@ -2,7 +2,7 @@ import Button from "@/components/Button/Button";
 import { pages } from "@/content/pages";
 import Section from "@/components/Section/Section";
 
-export default function Home() {
+export default function Page() {
 
 	return (
 		<>

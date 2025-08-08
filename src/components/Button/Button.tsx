@@ -11,11 +11,11 @@ type CustomButtonProps = {
 type CustomLinkProps = {
 	component: 'a' | string;
 	href: string;
-} & Omit<MantineButtonProps, 'component' | 'href'> & LinkProps   & BaseProps;
+} & Omit<MantineButtonProps, 'component' | 'href'> & LinkProps & BaseProps;
 
 type BaseProps = {
 	children?: React.ReactNode  | string;
-	variant: 'primary' | 'default' | 'glass' | 'icon' | 'outline' | string | 'white';
+	variant?: 'primary' | 'default' | 'glass' | 'icon' | 'outline' | string | 'white';
 	size: 'sm' | 'xs' | 'md' | 'lg' | 'xl' | string;
 	component?: 'a' | 'button';
 	shadow?: boolean;
