@@ -1,2 +1,4 @@
-@import "tailwind-preset-mantine";
-@import "./theme.css";
+@import "tailwindcss";
+@import "./assets/styles/theme.css";
+@import "./assets/styles/base.css";
+@import "./assets/styles/layout.css";

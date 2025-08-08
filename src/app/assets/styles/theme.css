@@ -1,0 +1,42 @@
+
+@theme {
+	--font-sans: "Circular PRTCL", sans-serif;
+	--font-serif: "InterVariable", serif;
+	--text-base--line-height: calc(1.4 / 1);
+	/* spacing */
+	--spacing-xl: 7.5rem;
+	--spacing-lg: 3.75rem;
+	--spacing-md: 2.5rem;
+	--spacing-sm: 1.75rem;
+	--spacing-xs: 1rem;
+	--spacing-topmenu: 4rem;
+	/* breakpoints */
+
+	--breakpoint-sm: 769px;
+	--breakpoint-md: 1025px;
+	--breakpoint-lg: 1440px;
+
+	--base-font-size: 4.444vw;
+	--base-body-size: 0.875rem;
+	--base-line-height: 140%;
+
+	--base-font-size-1440: 1.111111111111111vw;
+	--base-body-size-1440: 1.125rem;
+	--base-line-height-1440: 140%;
+
+	/*colors*/
+	--color-glass: rgba(255, 255, 255, 0.1);
+	--color-block-bg: #F8F8F8;
+	--color-primary: #008ceb;
+	--color-blue-light: #DAF2FE;
+	--color-main-gray: #4d4d4d;
+	--color-page-bg: #eeeff5;
+	--color-ash: #eeeff5;
+    --color-yellow-light-custom: #FEF6D2;
+    --color-yellow-custom: #FCB927;
+    --color-salad-custom: #D8F6D2;
+    --color-green-custom: #34B935;
+    --color-red-custom: #E62D27;
+
+
+}

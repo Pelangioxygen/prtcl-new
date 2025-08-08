@@ -1,0 +1,16 @@
+.LinkTheme {
+	display: initial;
+	&:not([class]) {
+		color: var(--color-primary);
+		border-bottom: 1px solid var(--color-primary);
+		&:hover {
+			border-bottom: 1px solid transparent;
+		}
+	}
+
+}
+
+/* Пример модификаторов */
+.LinkTheme--primary {
+	display: initial;
+}

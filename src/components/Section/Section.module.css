@@ -1,0 +1,27 @@
+.Section {
+	display: initial;
+	position: relative;
+
+	&[data-type="hero"] {
+		aspect-ratio: 1340 / 674;
+		padding: 7.5rem 3rem 5rem;
+
+		hgroup {
+			color: white;
+			position: relative;
+			z-index: 10;
+			display: grid;
+			max-width: 50%;
+			flex: 0 1 50%;
+			margin-bottom: 2.5rem;
+		}
+	}
+}
+.links {
+	display: flex;
+	gap: 1rem;
+}
+/* Пример модификаторов */
+.Section--primary {
+	display: initial;
+}

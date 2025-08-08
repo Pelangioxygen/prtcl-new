@@ -1,0 +1,112 @@
+.Button {
+
+	--shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+	max-width: fit-content;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.625rem;
+	font-size: 1rem;
+	color: var(--color-main-gray);
+	line-height: 1;
+
+	border-radius: 50px;
+	font-weight: 600;
+	cursor: pointer;
+	padding: 0.625rem 1.75rem;
+	/*gradient*/
+	position: relative;
+	background: var(--color-ash); /* Цвет фона внутри рамки */
+	backdrop-filter: blur(1.25rem);
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		border-radius: 50px;
+		padding: .125rem;
+		background: linear-gradient(-45deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.005) 35%, rgba(255, 255, 255, 0.005) 77%, rgba(255, 255, 255, 0.8) 100%);
+		-webkit-mask: linear-gradient(#ffffff 0 0) content-box, linear-gradient(#fff 0 0);
+		-webkit-mask-composite: xor;
+		mask-composite: exclude;
+		pointer-events: none;
+	}
+	&:hover {
+		color:  var(--color-primary);
+	}
+	span {
+		display: contents;
+	}
+	&[data-size="sm"] {
+		padding: 1rem 1.75rem;
+	}
+	&[data-size="md"] {
+
+		padding: 1.25rem 1.75rem;
+	}
+	&[data-size="lg"] {
+		padding: 1.25rem 1.75rem;
+		gap: 1rem;
+		font-size: 1.75rem;
+		line-height: 1;
+
+		@media screen and (min-width: 1024px) {
+			font-size: 3rem;
+			line-height: 1;
+		}
+	}
+
+	&[data-variant="primary"] {
+		background: var(--color-primary);
+		color: #ffffff;
+		&:hover {
+			color:  var(--color-primary);
+			background: var(--color-ash);
+		}
+
+	}
+	&[data-variant="white"] {
+		background: white;
+		color: var(--color-main-gray);
+		&:hover {
+			color:  var(--color-primary);
+			background: white;
+		}
+
+	}
+
+	&[data-variant="glass"] {
+		padding: 1rem 1.75rem;
+		background: var(--color-glass);
+		color: #ffffff;
+		&:hover {
+			color:  var(--color-primary);
+			background: var(--color-ash);
+		}
+
+	}
+	&[data-variant="icon"] {
+		background: transparent;
+		color: var(--color-main-gray);
+		&:hover {
+			color:  var(--color-primary);
+			background: var(--color-ash);
+			box-shadow: var(--shadow);
+		}
+	}
+	&[data-variant="outline"] {
+		background: transparent; /* Цвет фона внутри рамки */
+		backdrop-filter: none;
+		outline: .0875rem solid var(--color-white);
+		color: var(--color-white);
+		&:before {
+			content: none;
+		}
+	}
+	&[data-shadow="true"] {
+		box-shadow: var(--shadow);
+
+	}
+}
