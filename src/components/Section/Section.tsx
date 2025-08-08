@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import styles from "./Section.module.css";
 import Button, { ButtonComponentProps } from "@/components/Button/Button";
 import { ScreenSection } from "@/content/pages";
@@ -11,7 +11,7 @@ type SectionProps = {
 	links?: ButtonComponentProps[];
 } & ScreenSection
 
- const Section = ({ children, className = "", links, leading, heading, background, type, ...props }:SectionProps) => {
+ const Section = ({ children, className = "", links, leading, heading, background, type}:SectionProps) => {
 	const TitleSection = () => type === 'hero' ? <h1>{heading}</h1> : <h2>{heading}</h2>;
 
 	return (
