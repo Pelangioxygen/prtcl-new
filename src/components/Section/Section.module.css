@@ -25,6 +25,9 @@
 	}
 
 }
+.children {
+	grid-column: 2/-2;
+}
 .links {
 	display: flex;
 	gap: 1rem;

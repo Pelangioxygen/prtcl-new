@@ -5,8 +5,6 @@ import { Inter } from 'next/font/google'
 import { NextFont } from "next/dist/compiled/@next/font";
 import { HeadlessMantineProvider } from "@mantine/core";
 
-
-
 export const metadata: Metadata = {
 	title: "Next App Mantine Tailwind Template",
 	description: "Next App Mantine Tailwind Template",

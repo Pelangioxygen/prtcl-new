@@ -60,6 +60,18 @@
 	p {
 		margin: 1rem 0;
 	}
+	ul, ol {
+		padding-left: 1.5rem;
+		list-style: initial;
+		li {
+
+		}
+	}
+	ol {
+		li {
+			list-style: decimal;
+		}
+	}
 	a:not([class]) {
 		color: var(--color-primary);
 		cursor: pointer;

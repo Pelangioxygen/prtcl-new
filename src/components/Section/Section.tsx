@@ -35,18 +35,20 @@ type SectionProps = {
 				<Image src={image.src} width={image.width} height={image.height} alt={''}/>
 			</div>: null}
 			{(links && links.length) ? <div className={styles.links} data-content={'section-links'}>
-				{links?.map((l) => (
-					<Button key={l.href} {...l}>{l.children}</Button>
+				{links?.map((l, index: number) => (
+					<Button key={l.href + index} {...l}>{l.children}</Button>
 				))}
 			</div> : null}
 
 			{(cards && cards.length) ? <div className={styles.cards} data-content={'section-cards'}>
 				{cards?.map((c) => (
-					<Card key={c.key} description={c.description}  leading={c.leading} subtitle={c.subtitle} className={c.className} heading={c.heading} image={c.image}>{c.children}</Card>
-						))}
+					<Card key={c.key} links={c.links} description={c.description}  leading={c.leading} subtitle={c.subtitle} className={c.className} heading={c.heading} image={c.image}>{c.children}</Card>
+				))}
 			</div> : null}
 			<CarouselTheme cards={slider}/>
-			{children}
+			{children ? <div className={styles.children}  data-content={'section-children'}>
+				{children}
+			</div> : null}
 
 			{link ? <div className={styles.link}  data-content={'section-link'}>
 				<Button {...link}>{link.children}</Button>

@@ -1,17 +1,8 @@
 import React from "react";
 import styles from "./SliderCard.module.css";
 import Image from "next/image";
-import { CardProps } from "@/components/Cards/Card/Card";
 import { StarIcon } from "@/components/Icons/Icons";
-
-export interface SliderCardProps extends CardProps{
-	children?: React.ReactNode;
-	className?: string;
-	subheading?: string;
-	label?: string,
-	color: 'blue' | 'yellow' | 'green' | string,
-	stars: number,
-}
+import { SliderCardProps } from "@/utils/types";
 
 const Stars = ({ stars }: { stars:number }) => {
 
@@ -19,7 +10,7 @@ const Stars = ({ stars }: { stars:number }) => {
 	const totalStars = 5;
 
 	for (let i = 0; i < totalStars; i++) {
-		result.push(<StarIcon key={i+'star'} width={20} fill={stars > i ? 'var(--color-primary)' : 'none'} height={20}/>);
+		result.push(<StarIcon key={i+'star'} width={"1.25rem"} fill={stars > i ? 'var(--color-primary)' : 'none'} height={"1.25rem"}/>);
 	}
 	return result;
 };

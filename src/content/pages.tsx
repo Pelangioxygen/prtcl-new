@@ -1,49 +1,9 @@
-import { ButtonComponentProps } from "@/components/Button/Button";
-import { ImageProps } from "next/image";
-import { SliderCardProps } from "@/components/Cards/SliderCard/SliderCard";
 import { FDAIcon } from "@/components/Icons/Icons";
 import React from "react";
 import AccorditionCustom from "@/components/AccorditionCustom/AccorditionCustom";
+import { faqDataAccordition, insuranceDataAccordition } from "@/content/accorditions";
+import { PageContent } from "@/utils/types";
 
-
-interface Button  extends ButtonComponentProps  {
-	children: string;
-	href: string;
-	variant?: string;
-	size?: string;
-	component: string;
-}
-export interface Card {
-	key: string;
-	className?: string;
-	heading?: string | React.ReactNode;
-	subtitle?: string | React.ReactNode;
-	leading?: string | React.ReactNode;
-	image?: ImageProps;
-	description?: string;
-	children?: string | React.ReactNode;
-}
-
-export interface ScreenSection {
-	type: 'hero' | string;
-	component?: 'gallery';
-	heading?: string | React.ReactNode;
-	background?: ImageProps;
-	image?: ImageProps;
-	leading?: string;
-	links?: Button[];
-	link?: Button;
-	cards?: Card[];
-	slider?: SliderCardProps[];
-}
-
-interface PageContent {
-	[keyof: string]: {
-		title: string;
-		description: string;
-		sections: ScreenSection[];
-	}
-}
 export const pages:PageContent = {
 	index: {
 		title: 'Every breath, clinically supported',
@@ -60,7 +20,7 @@ export const pages:PageContent = {
 				links: [
 					{
 						children: 'Refer a Patient',
-						href: '/refer-a-patient',
+						href: 'refer-a-patient',
 						variant: 'primary',
 						component: 'a'
 					},
@@ -390,6 +350,78 @@ export const pages:PageContent = {
 			}
 		]
 	},
+	contacts: {
+		title: 'Every breath, clinically supported',
+		description: 'Every breath, clinically supported',
+		sections: [
+			{
+				type: 'hero',
+				background: {
+					alt:'',
+					src: '/images/visitus.png'
+				}
+			},
+			{
+				type: 'visitus',
+				heading: 'Visit Us',
+				leading: 'Whether you’re ready to book, need more information, or just have a question — our team is here to help, both online and in person.',
+			},
+			{
+				type: 'location',
+				heading: 'Our Location'
+			}
+		]
+	},
+	'refer-a-patient': {
+		title: 'Every breath, clinically supported',
+		description: 'Every breath, clinically supported',
+		sections: [
+			{
+				type: 'hero',
+				background: {
+					alt:'',
+					src: '/images/refer.png'
+				}
+			},
+			{
+				type: 'visitus',
+				heading: 'Refer a Patient',
+				leading: 'Simplified access to FDA-cleared HBOT — trusted by physicians, designed for optimal patient recovery.',
+			}
+		]
+	},
+	'book-now': {
+		title: 'Book Your Session',
+		description: 'For patients without insurance, we offer clear and flexible payment options — no hidden fees, just transparent care.',
+		sections: [
+			{
+				type: 'hero',
+				heading: 'Book Your Session',
+				leading: 'Choose a convenient time for your session. You’re just a few clicks away from starting your HBOT treatment.'
+			},
+			{
+				type: 'treatment',
+				heading: 'Treatment Packages',
+				leading: 'Ongoing care at preferred rates — structured to support your recovery.'
+			}
+		]
+	},
+	prices: {
+		title: 'Pricing',
+		description: 'For patients without insurance, we offer clear and flexible payment options — no hidden fees, just transparent care.',
+		sections: [
+			{
+				type: 'hero',
+				heading: 'Pricing',
+				leading: 'For patients without insurance, we offer clear and flexible payment options — no hidden fees, just transparent care.'
+			},
+			{
+				type: 'treatment',
+				heading: 'Treatment Packages',
+				leading: 'Ongoing care at preferred rates — structured to support your recovery.'
+			}
+		]
+	},
 	'what-is-hbot': {
 		title: 'Every breath, clinically supported',
 		description: 'Hyperbaric oxygen therapy is a medical treatment that helps treat many different medical conditions. It involves breathing 100% oxygen while in a pressurized chamber.',
@@ -527,36 +559,40 @@ export const pages:PageContent = {
 				type: 'steps',
 				cards: [
 					{
-						heading: 'How does it affect healing?',
+						heading: 'Confirm Medical Eligibility',
 						description: 'We treat 14 FDA-cleared conditions with insurance coverage. See full list of approved diagnoses and referring specialties below.',
-						children: <AccorditionCustom/>,
+						children: <AccorditionCustom itemss={insuranceDataAccordition}/>,
 						key: '01'
 					},
 					{
-						heading: 'How should I prepare for HBO therapy?',
-						children: <ul>
-							<li>Eat a good meal prior to each session and take any prescribed medications.</li>
-							<li>Wear cotton socks and cotton underwear.</li>
-							<li>It is very important to maintain good hygiene and health during treatments.</li>
-						</ul>,
-						key: '02'
+						heading: 'Submit a Referral',
+						children: <p>Patients must be referred by a licensed physician. You may upload your own referral form or use our standard template.</p>,
+						key: '02',
+						links: [
+							{
+								component: 'a',
+								variant: "primary",
+								href: "refer-a-patient",
+								children: 'Refer a Patient',
+								shadow: true
+							},
+							{
+								component: 'a',
+								variant: "default",
+								href: "refer-a-patient",
+								children: 'Book Now',
+								shadow: true
+							}
+						]
 					},
 					{
-						heading: 'How should I prepare for HBO therapy?',
-						children: <ul>
-							<li>Eat a good meal prior to each session and take any prescribed medications.</li>
-							<li>Wear cotton socks and cotton underwear.</li>
-							<li>It is very important to maintain good hygiene and health during treatments.</li>
-						</ul>,
+						heading: 'We Handle Coverage Verification',
+						children: <p>After receiving a referral, our care team contacts the patient and their insurance provider to verify coverage and obtain any necessary pre-authorizations.</p>,
 						key: '03'
 					},
 					{
-						heading: 'How should I prepare for HBO therapy?',
-						children: <ul>
-							<li>Eat a good meal prior to each session and take any prescribed medications.</li>
-							<li>Wear cotton socks and cotton underwear.</li>
-							<li>It is very important to maintain good hygiene and health during treatments.</li>
-						</ul>,
+						heading: 'Begin Treatment',
+						children: <p>Once coverage is confirmed, we schedule the patient’s first session and manage all required documentation and waivers.</p>,
 						key: '04'
 					}
 				]
@@ -639,5 +675,21 @@ export const pages:PageContent = {
 				]
 			}
 		]
-	}
+	},
+	faq: {
+		title: 'Frequently Asked Questions',
+		description: 'Clear answers about treatments, insurance, and what to expect.',
+		sections: [
+			{
+				type: 'hero',
+				heading: 'Frequently Asked Questions',
+				leading: 'Clear answers about treatments, insurance, and what to expect.',
+			},
+			{
+				type: 'steps',
+				children: <AccorditionCustom itemss={faqDataAccordition}/>
+			}
+		]
+	},
+
 }

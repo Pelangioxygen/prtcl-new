@@ -32,8 +32,8 @@ const Header = () => {
 					</LinkTheme>
 				</div>
 				<div className={"flex items-center gap-x-4"}>
-					<Button component={"a"} href={"#"}>Refer a Patient</Button>
-					<Button component={'a'} variant={"outline"}  href={'#'}>Book Now</Button>
+					<Button component={"a"} href={"/refer-a-patient"}>Refer a Patient</Button>
+					<Button component={'a'} variant={"outline"}  href={'/book-now'}>Book Now</Button>
 				</div>
 			</div>
 			<div className={styles.bottombar}>

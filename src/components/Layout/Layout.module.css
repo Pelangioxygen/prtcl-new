@@ -14,12 +14,10 @@
 	/*top: 0;*/
 	/* Ellipse blur */
 	z-index: -1;
-	width: 1439px;
-	height: 341px;
-	left: calc(50% - 1439px/2 + 1px);
-	top: -170px;
-
+	width: 90rem;
+	height: 21.3125rem;
+	left: calc(50% - 90rem/2 + 1px);
+	top: -10.625rem;
 	background: #008CEB;
-	filter: blur(200px);
-
+	filter: blur(12.5rem);
 }

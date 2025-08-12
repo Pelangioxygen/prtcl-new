@@ -4,8 +4,7 @@ import Layout from "@/components/Layout/Layout";
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
 
-	const { slug } = await params
-	console.log(slug);
+	const { slug } = await params;
 	return (
 		<Layout className={`page-${slug}`}>
 			{pages[slug].sections.map((s) => <Section key={s.type}  {...s}/>)}

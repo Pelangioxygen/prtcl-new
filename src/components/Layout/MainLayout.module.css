@@ -165,6 +165,310 @@
 			}
 		}
 	}
+	&[class*="page-book-now"] {
+		section {
+			&[data-type="hero"] {
+				aspect-ratio: 1340 / 404;
+				padding: 7.5rem 3rem 0;
+				display: flex;
+
+				hgroup {
+					color: white;
+					position: relative;
+					text-align: center;
+					z-index: 10;
+					margin: auto;
+					max-width: 52rem;
+
+					display: block;
+					margin-bottom: 0;
+
+					h1 {
+						margin-bottom: 3rem;
+						color: var(--color-primary);
+					}
+					p {
+						font-size: 1.5rem;
+						line-height: 1.4;
+						color: #4D4D4D;
+					}
+				}
+			}
+			&[data-type="steps"] {
+				[data-content="section-cards"] {
+
+					flex-wrap: wrap;
+					/*justify-content: center;*/
+					grid-column: 3/-3;
+					display: flex;
+					gap: 4rem;
+					text-align: left;
+					counter-reset: h4-counter;
+
+					& > * {
+						display: block;
+						flex: 1 100%;
+					}
+
+					h4 {
+						color: var(--color-primary);
+						font-size: 1.75rem;
+						text-align: left;
+						align-items: center;
+						display: flex;
+						/*justify-content: center;*/
+						line-height: 1;
+						margin-bottom: 1.875rem;
+						&:before {
+							counter-increment: h4-counter; /* Увеличение счетчика на 1 для каждого h4 */
+							content: "Step 0" counter(h4-counter) "."; /* Отображение счетчика с точкой и пробелом */
+							/* Дополнительные стили (цвет, отступы и т. д.) */
+							margin-right: 1rem;
+							border: .125rem solid var(--color-primary);
+							color: var(--color-primary);
+							font-weight: 500;
+							margin-top: -.25rem;
+							font-size: 1rem;
+							display: inline-flex;
+							align-items: center;
+							padding: .75rem 1.25rem;
+							line-height: .75;
+							border-radius: 3rem;
+						}
+					}
+					p, ul {
+						text-align: left;
+					}
+					ul {
+						list-style: initial;
+						padding-left: 1rem;
+						li {
+							/*list-style: initial;*/
+						}
+					}
+					svg {
+						width: 5rem;
+						height: 5rem;
+					}
+					[data-card="accordition"] {
+						margin-top: 2.5rem;
+						counter-reset: details-counter;
+						details {
+							summary {
+								&:before {
+									counter-increment: details-counter; /* Увеличение счетчика на 1 для каждого h4 */
+									content: counter(details-counter) "."; /* Отображение счетчика с точкой и пробелом */
+									/* Дополнительные стили (цвет, отступы и т. д.) */
+									margin-right: .5rem;
+								}
+							}
+						}
+					}
+				}
+			}
+			&[data-type="treatment"] {
+				[data-content="section-cards"] {
+					flex-wrap: wrap;
+					display: flex;
+					justify-content: center;
+					grid-column: 2/-2;
+					& > * {
+						display: flex;
+						flex-direction: column;
+
+						h4 {
+							order: 1;
+							font-size: .875rem;
+						}
+						img {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+	&[class*="page-refer-a-patient"] {
+		section {
+			&[data-type="hero"] {
+				aspect-ratio: 1440 / 400;
+				padding: 7.5rem 3rem 5rem;
+
+				hgroup {
+					color: white;
+					position: relative;
+					z-index: 10;
+					display: grid;
+					max-width: 50%;
+					flex: 0 1 50%;
+					margin-bottom: 2.5rem;
+				}
+			}
+		}
+	}
+	&[class*="page-contacts"] {
+		section{
+			/* стили секций */
+			&[data-type="conditions"] {
+
+				[data-content="section-links"] {
+					flex-wrap: wrap;
+					justify-content: center;
+					grid-column: 3/-3;
+				}
+				[data-content="section-cards"] {
+					flex-wrap: wrap;
+					justify-content: center;
+					grid-column: 3/-3;
+					display: flex;
+					gap: 8rem;
+					h4 {
+						color: var(--color-primary);
+						font-size: 7.5rem;
+						text-align: center;
+						display: inline-flex;
+						justify-content: center;
+						line-height: 5rem;
+						margin-bottom: 1.875rem;
+					}
+					p {
+						margin: 0;
+						font-size: 1.5rem;
+					}
+					svg {
+						width: 5rem;
+						height: 5rem;
+					}
+					& > *:nth-child(2) {
+						position: relative;
+						&:before {
+							content: '';
+							position: absolute;
+							height: 4.5rem;
+							left: -4rem;
+							top: calc(50% - 3rem);
+							bottom: calc(50% - 1rem);
+							border-right: .125rem solid white;
+						}
+						&:after {
+							content: '';
+							position: absolute;
+							height: 4.5rem;
+							top: calc(50% - 3rem);
+							bottom: calc(50% - 1rem);
+							right: -4rem;
+							border-right: .125rem solid white;
+						}
+
+					}
+				}
+
+			}
+			&[data-type="hero"] {
+				aspect-ratio: 1340 / 674;
+				padding: 7.5rem 3rem 5rem;
+
+				hgroup {
+					color: white;
+					position: relative;
+					z-index: 10;
+					display: grid;
+					max-width: 50%;
+					flex: 0 1 50%;
+					margin-bottom: 2.5rem;
+				}
+			}
+
+			&[data-type="oxygen"] {
+				aspect-ratio: 1160 / 560;
+				padding: 7.5rem 0;
+
+				[data-content="section-links"] {
+					grid-column: 3/-3;
+				}
+				hgroup {
+
+					h2 {
+						color: white;
+						font-size: 2.5rem;
+						line-height: 1.1;
+						@media screen and (min-width: 1024px) {
+							font-size: 5.625rem;
+							line-height: 1.1;
+						}
+					}
+
+					p {
+						font-size: 1.5rem;
+						line-height: 1.4;
+					}
+					color: white;
+					position: relative;
+					z-index: 10;
+					display: grid;
+					grid-column: 3/-3;
+					flex: 0 1 50%;
+				}
+			}
+			&[data-type="heading_img"] {
+				hgroup {
+					grid-column: 1/-1;
+				}
+				h2 {
+					font-size: 7.5rem;
+				}
+				[data-bgimg="true"] {
+					background-image: url("/images/heading_img.png");
+					width: 12rem;
+					background-size: 100%;
+					background-repeat: no-repeat;
+					height: 7.5rem;
+					display: inline-block;
+				}
+			}
+			&[data-type="benefits"] {
+				[data-content="section-cards"] {
+					grid-column: 1/-1;
+					display: flex;
+					justify-content: center;
+					gap: 7.5rem;
+					& > * {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						img {
+							order: -1;
+							margin-bottom: 1.875rem;
+						}
+						h4 {
+							color: var(--color-primary);
+							font-size: 1.5rem;
+						}
+					}
+				}
+			}
+			&[data-type="real-stories"] {
+
+			}
+			&[data-type="insurance"] {
+				[data-content="section-cards"] {
+					flex-wrap: wrap;
+					display: flex;
+					justify-content: center;
+					grid-column: 1/-1;
+					& > * {
+						display: flex;
+						flex-direction: column;
+
+						h4 {
+							order: 1;
+							font-size: .875rem;
+						}
+					}
+				}
+			}
+		}
+	}
 
 	&[class*="page-insurance"] {
 		section {
@@ -224,7 +528,124 @@
 							counter-increment: h4-counter; /* Увеличение счетчика на 1 для каждого h4 */
 							content: "Step 0" counter(h4-counter) "."; /* Отображение счетчика с точкой и пробелом */
 							/* Дополнительные стили (цвет, отступы и т. д.) */
-							margin-right: .5rem;
+							margin-right: 1rem;
+							border: .125rem solid var(--color-primary);
+							color: var(--color-primary);
+							font-weight: 500;
+							margin-top: -.25rem;
+							font-size: 1rem;
+							display: inline-flex;
+							align-items: center;
+							padding: .75rem 1.25rem;
+							line-height: .75;
+							border-radius: 3rem;
+						}
+					}
+					p, ul {
+						text-align: left;
+					}
+
+					svg {
+						width: 5rem;
+						height: 5rem;
+					}
+					[data-card="accordition"] {
+						margin-top: 2.5rem;
+						counter-reset: details-counter;
+						details {
+							summary {
+								&:before {
+									counter-increment: details-counter; /* Увеличение счетчика на 1 для каждого h4 */
+									content: counter(details-counter) "."; /* Отображение счетчика с точкой и пробелом */
+									/* Дополнительные стили (цвет, отступы и т. д.) */
+									margin-right: .5rem;
+								}
+							}
+						}
+					}
+				}
+			}
+			&[data-type="insurance"] {
+				[data-content="section-cards"] {
+					flex-wrap: wrap;
+					display: flex;
+					justify-content: center;
+					grid-column: 2/-2;
+					& > * {
+						display: flex;
+						flex-direction: column;
+
+						h4 {
+							order: 1;
+							font-size: .875rem;
+						}
+						img {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+	&[class*="page-prices"] {
+		section {
+			&[data-type="hero"] {
+				aspect-ratio: 1340 / 404;
+				padding: 7.5rem 3rem 0;
+				display: flex;
+
+				hgroup {
+					color: white;
+					position: relative;
+					text-align: center;
+					z-index: 10;
+					margin: auto;
+					max-width: 52rem;
+
+					display: block;
+					margin-bottom: 0;
+
+					h1 {
+						margin-bottom: 3rem;
+						color: var(--color-primary);
+					}
+					p {
+						font-size: 1.5rem;
+						line-height: 1.4;
+						color: #4D4D4D;
+					}
+				}
+			}
+			&[data-type="steps"] {
+				[data-content="section-cards"] {
+
+					flex-wrap: wrap;
+					/*justify-content: center;*/
+					grid-column: 3/-3;
+					display: flex;
+					gap: 4rem;
+					text-align: left;
+					counter-reset: h4-counter;
+
+					& > * {
+						display: block;
+						flex: 1 100%;
+					}
+
+					h4 {
+						color: var(--color-primary);
+						font-size: 1.75rem;
+						text-align: left;
+						align-items: center;
+						display: flex;
+						/*justify-content: center;*/
+						line-height: 1;
+						margin-bottom: 1.875rem;
+						&:before {
+							counter-increment: h4-counter; /* Увеличение счетчика на 1 для каждого h4 */
+							content: "Step 0" counter(h4-counter) "."; /* Отображение счетчика с точкой и пробелом */
+							/* Дополнительные стили (цвет, отступы и т. д.) */
+							margin-right: 1rem;
 							border: .125rem solid var(--color-primary);
 							color: var(--color-primary);
 							font-weight: 500;
@@ -241,9 +662,133 @@
 						text-align: left;
 					}
 					ul {
+						list-style: initial;
 						padding-left: 1rem;
 						li {
-							list-style: initial;
+							/*list-style: initial;*/
+						}
+					}
+					svg {
+						width: 5rem;
+						height: 5rem;
+					}
+					[data-card="accordition"] {
+						margin-top: 2.5rem;
+						counter-reset: details-counter;
+						details {
+							summary {
+								&:before {
+									counter-increment: details-counter; /* Увеличение счетчика на 1 для каждого h4 */
+									content: counter(details-counter) "."; /* Отображение счетчика с точкой и пробелом */
+									/* Дополнительные стили (цвет, отступы и т. д.) */
+									margin-right: .5rem;
+								}
+							}
+						}
+					}
+				}
+			}
+			&[data-type="treatment"] {
+				[data-content="section-cards"] {
+					flex-wrap: wrap;
+					display: flex;
+					justify-content: center;
+					grid-column: 2/-2;
+					& > * {
+						display: flex;
+						flex-direction: column;
+
+						h4 {
+							order: 1;
+							font-size: .875rem;
+						}
+						img {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+	&[class*="page-faq"] {
+		section {
+			&[data-type="hero"] {
+				aspect-ratio: 1340 / 404;
+				padding: 7.5rem 3rem 0;
+				display: flex;
+
+				hgroup {
+					color: white;
+					position: relative;
+					text-align: center;
+					z-index: 10;
+					margin: auto;
+					max-width: 52rem;
+
+					display: block;
+					margin-bottom: 0;
+
+					h1 {
+						margin-bottom: 3rem;
+						color: var(--color-primary);
+					}
+					p {
+						font-size: 1.5rem;
+						line-height: 1.4;
+						color: #4D4D4D;
+					}
+				}
+			}
+			&[data-type="steps"] {
+				[data-content="section-cards"] {
+
+					flex-wrap: wrap;
+					/*justify-content: center;*/
+					grid-column: 3/-3;
+					display: flex;
+					gap: 4rem;
+					text-align: left;
+					counter-reset: h4-counter;
+
+					& > * {
+						display: block;
+						flex: 1 100%;
+					}
+
+					h4 {
+						color: var(--color-primary);
+						font-size: 1.75rem;
+						text-align: left;
+						align-items: center;
+						display: flex;
+						/*justify-content: center;*/
+						line-height: 1;
+						margin-bottom: 1.875rem;
+						&:before {
+							counter-increment: h4-counter; /* Увеличение счетчика на 1 для каждого h4 */
+							content: "Step 0" counter(h4-counter) "."; /* Отображение счетчика с точкой и пробелом */
+							/* Дополнительные стили (цвет, отступы и т. д.) */
+							margin-right: 1rem;
+							border: .125rem solid var(--color-primary);
+							color: var(--color-primary);
+							font-weight: 500;
+							margin-top: -.25rem;
+							font-size: 1rem;
+							display: inline-flex;
+							align-items: center;
+							padding: .75rem 1.25rem;
+							line-height: .75;
+							border-radius: 3rem;
+						}
+					}
+					p, ul {
+						text-align: left;
+					}
+					ul {
+						list-style: initial;
+						padding-left: 1rem;
+						li {
+							/*list-style: initial;*/
 						}
 					}
 					svg {
@@ -271,7 +816,7 @@
 					flex-wrap: wrap;
 					display: flex;
 					justify-content: center;
-					grid-column: 1/-1;
+					grid-column: 2/-2;
 					& > * {
 						display: flex;
 						flex-direction: column;
@@ -279,6 +824,9 @@
 						h4 {
 							order: 1;
 							font-size: .875rem;
+						}
+						img {
+							width: 100%;
 						}
 					}
 				}

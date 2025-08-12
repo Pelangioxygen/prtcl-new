@@ -13,12 +13,12 @@
 			/*transform: rotate(90deg); !* Поворачиваем стрелку при открытии *!*/
 		}
 		summary {
-			list-style: none; /* Убираем стандартный маркер */
-			padding-right: 25px; /* Оставляем место для кастомного маркера */
+			list-style: none;
+			padding-right: 2.75rem;
 			&:after {
 				content: '+';
 				position: absolute;
-				right: 10px;
+				right: 1.25rem;
 				transition: transform 0.2s;
 			}
 
