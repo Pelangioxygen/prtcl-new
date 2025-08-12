@@ -18,7 +18,7 @@ const Card = ({ children, leading, subtitle, className = "", heading, descriptio
 		<div className={`${styles.Card} ${className}`}>
 			{heading ? <h4>{heading}</h4> : null}
 			{subtitle ? <h6>{subtitle}</h6> : null}
-			{leading ? <p  data-card={'leading'}>{leading}</p> : null}
+			{leading ? <p data-card={'leading'}>{leading}</p> : null}
 			{description ? <p>{description}</p> : null}
 			{image ? <Image src={image.src} alt={''} width={image.width} height={image.height} /> : null}
 			{children}
