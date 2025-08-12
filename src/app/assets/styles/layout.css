@@ -4,11 +4,13 @@
 
         --grid-margin: 1rem;
         --grid-columns: var(--grid-margin) 1fr 1fr var(--grid-margin);
+        --grid-columns-inner: 1fr 1fr;
         --grid-gap: 1rem;
 
         @media screen and (min-width: 1024px) {
             --grid-margin: 1fr;
             --grid-columns: var(--grid-margin) repeat(10, 7.5rem) var(--grid-margin);
+            --grid-columns-inner: repeat(10, 7.5rem);
         }
         display: grid;
         grid-template-columns: var(--grid-columns);

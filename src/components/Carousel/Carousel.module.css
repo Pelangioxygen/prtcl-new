@@ -1,0 +1,19 @@
+.Carousel {
+	--mantine-scale: 1;
+	grid-column: 1/-1;
+
+}
+
+/* Пример модификаторов */
+.Carousel--primary {
+	display: initial;
+}
+.indicator {
+	width: .625rem;
+	height: .625rem;
+	border-radius: .625rem;
+	background-color: #aab5c3;
+	&[data-active="true"] {
+		background-color: var(--color-primary);
+	}
+}

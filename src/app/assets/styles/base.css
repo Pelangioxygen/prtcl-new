@@ -2,13 +2,14 @@
 	html {
 		font-size: var(--base-font-size);
 		@media screen and (min-width: 1024px) {
-			font-size: var(--base-font-size-1440);
+			font-size: clamp(12px, var(--base-font-size-1440), 24px);
 		}
 	}
 
 	body {
 		font-family: var(--font-serif), serif;
 		font-size: var(--base-body-size);
+		color: var(--color-main-gray);
 		/*line-height: var(--base-line-height);*/
 	}
 

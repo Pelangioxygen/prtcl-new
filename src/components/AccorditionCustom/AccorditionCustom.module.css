@@ -1,0 +1,38 @@
+.Accordition {
+	details {
+		background-color: rgba(255, 255, 255, 0.01);
+		border-radius: 1.25rem;
+		padding: 1.25rem;
+		border: .125rem solid rgba(255, 255, 255, 0.2);
+		box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.15), inset .375rem .625rem 1.25rem rgba(255, 255, 255, 0.3);
+		backdrop-filter: blur(1.25rem);
+		margin-bottom: .625rem;
+
+		&[open] summary::after {
+			content: '-';
+			/*transform: rotate(90deg); !* Поворачиваем стрелку при открытии *!*/
+		}
+		summary {
+			list-style: none; /* Убираем стандартный маркер */
+			padding-right: 25px; /* Оставляем место для кастомного маркера */
+			&:after {
+				content: '+';
+				position: absolute;
+				right: 10px;
+				transition: transform 0.2s;
+			}
+
+			font-size: 1.125rem;
+			color: var(--color-primary);
+			& + * {
+				margin-top: 1.875rem;
+			}
+		}
+
+	}
+}
+
+/* Пример модификаторов */
+.Accordition--primary {
+	display: initial;
+}

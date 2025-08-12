@@ -6,6 +6,8 @@ import { NextFont } from "next/dist/compiled/@next/font";
 import Layout from "@/components/Layout/Layout";
 import { HeadlessMantineProvider } from "@mantine/core";
 
+
+
 export const metadata: Metadata = {
 	title: "Next App Mantine Tailwind Template",
 	description: "Next App Mantine Tailwind Template",
@@ -30,7 +32,7 @@ export default function RootLayout({
 		<html lang="ru" className={circular_prtcl.className }>
 			<body className={inter.className + " " + "antialiased"}>
 				<HeadlessMantineProvider>
-					<Layout>{children}</Layout>
+					{children}
 				</HeadlessMantineProvider>
 			</body>
 		</html>

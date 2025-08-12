@@ -1,0 +1,48 @@
+.SliderCard {
+	display: grid;
+	max-width: 19rem;
+	padding:  3rem 1.875rem;
+	position: relative;
+	cursor: grab;
+	border-radius: 1.25rem;
+	* > {
+		user-select: none;
+	}
+	&[data-card-color="blue"] {
+		background-color: #DAF2FE;
+		--label-color: #008CEB;
+	}
+
+	&[data-card-color="yellow"] {
+		background-color: #FEF6D2;
+		--label-color: #FCB927;
+	}
+
+	&[data-card-color="green"] {
+		background-color: #D8F6D2;
+		--label-color: #34B935;
+	}
+}
+
+
+.stars {
+	display: flex;
+
+}
+/* Пример модификаторов */
+.SliderCard--primary {
+	display: initial;
+}
+
+.label {
+	position: absolute;
+	display: block;
+	background-color: var(--label-color);
+	top: 0;
+	left: 1.875rem;
+	border-radius: 0 0 .625rem .625rem;
+	padding: .75rem 1.25rem;
+	color: white;
+	font-size: 1rem;
+	line-height: 1;
+}

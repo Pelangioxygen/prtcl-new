@@ -2,7 +2,7 @@
     position: fixed;
     left: 0;
     right: 0;
-    z-index: 10;
+    z-index: 100;
     top: 0;
     overflow: hidden;
     grid-row-gap: 0;

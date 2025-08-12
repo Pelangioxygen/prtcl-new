@@ -1,27 +1,71 @@
 .Section {
-	display: initial;
 	position: relative;
-
-	&[data-type="hero"] {
-		aspect-ratio: 1340 / 674;
-		padding: 7.5rem 3rem 5rem;
+	&:not([data-type="hero"]) {
+		display: grid;
+		grid-template-columns: var(--grid-columns-inner);
+		grid-gap: 3.75rem var(--grid-gap);
+		justify-self: stretch;
 
 		hgroup {
-			color: white;
 			position: relative;
 			z-index: 10;
 			display: grid;
-			max-width: 50%;
+			gap: 2.5rem 0;
 			flex: 0 1 50%;
-			margin-bottom: 2.5rem;
+			grid-column: 3/-3;
+			justify-items: center;
+			text-align: center;
+			h2 {
+				color: var(--color-primary);
+			}
+			p {
+				margin: 0;
+			}
 		}
 	}
+
 }
 .links {
 	display: flex;
 	gap: 1rem;
+
+}
+.link {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+	justify-content: center;
+	grid-column: 1/-1;
+}
+
+.cards {
+	position: relative;
+	z-index: 10;
+	display: grid;
+	gap: 2.5rem 0;
+	flex: 0 1 50%;
+	grid-column: 3/-3;
+	justify-items: center;
+	text-align: center;
+}
+
+.slider {
+	position: relative;
+	z-index: 10;
+	display: grid;
+	gap: 2.5rem 0;
+	flex: 0 1 50%;
+	grid-column: 3/-3;
+	justify-items: center;
+	text-align: center;
 }
 /* Пример модификаторов */
 .Section--primary {
 	display: initial;
+}
+.image {
+	grid-column: 1/-1;
+	img {
+		width: 100%;
+	}
 }

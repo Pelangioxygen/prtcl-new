@@ -15,7 +15,7 @@ type CustomLinkProps = {
 
 type BaseProps = {
 	children?: React.ReactNode  | string;
-	variant?: 'primary' | 'default' | 'glass' | 'icon' | 'outline' | string | 'white';
+	variant?: 'primary' | 'default' | 'glass' | 'icon' | 'outline' | string | 'white' | 'link' | 'social';
 	size: 'sm' | 'xs' | 'md' | 'lg' | 'xl' | string;
 	component?: 'a' | 'button';
 	shadow?: boolean;
@@ -43,7 +43,13 @@ const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, ButtonComponent
 			'data-size': size,
 			'data-shadow': shadow.toString(),
 		};
+		const linkprops = {
+			...(className ? { className: className } : null)
+		}
 
+		if (variant === 'link' && href) {
+			return <Link href={href} {...linkprops}>{children}</Link>
+		}
 		if (component === 'a' && href) {
 			return (
 				<MantineButton

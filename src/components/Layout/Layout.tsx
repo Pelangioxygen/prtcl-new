@@ -14,8 +14,11 @@ interface LayoutProps {
 	return (
 		<>
 			<Header/>
-			<MainLayout className={'grid'}>{children}</MainLayout>
-			<Footer/>
+			<MainLayout className={'grid' + ` ${className}`}>
+				{children}
+				<Footer/>
+			</MainLayout>
+
 			<div className={styles.bgcircle}></div>
 		</>
 	);
