@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styles from "./Footer.module.css";
 import Socials from "@/components/Socials/Socials";
-import { Logo, PhoneIcon } from "@/components/Icons/Icons";
+import { Logo } from "@/components/Icons/Icons";
 import { config } from "@/content/config";
 import Link from "next/link";
 

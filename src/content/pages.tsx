@@ -5,8 +5,7 @@ import { FDAIcon } from "@/components/Icons/Icons";
 import React from "react";
 import AccorditionCustom from "@/components/AccorditionCustom/AccorditionCustom";
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
+
 interface Button  extends ButtonComponentProps  {
 	children: string;
 	href: string;
