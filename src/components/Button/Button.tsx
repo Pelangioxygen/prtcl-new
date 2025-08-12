@@ -6,18 +6,18 @@ import Link, { LinkProps } from "next/link";
 type CustomButtonProps = {
 	component: 'button' | string;
 	href?: never;
-} & Omit<MantineButtonProps, 'component' | 'href' | 'size' | 'variant'>   & BaseProps;
+}  & LinkProps & BaseProps & Omit<MantineButtonProps, 'component' | 'href' | 'size' | 'variant'>;
 
 type CustomLinkProps = {
 	component: 'a' | string;
 	href: string;
-} & Omit<MantineButtonProps, 'component' | 'href'> & LinkProps & BaseProps;
+}  & LinkProps & BaseProps & Omit<MantineButtonProps, 'component' | 'href'>;
 
 type BaseProps = {
 	children?: React.ReactNode  | string;
 	variant?: 'primary' | 'default' | 'glass' | 'icon' | 'outline' | string | 'white' | 'link' | 'social';
-	size: 'sm' | 'xs' | 'md' | 'lg' | 'xl' | string;
-	component?: 'a' | 'button';
+	size?: 'sm' | 'xs' | 'md' | 'lg' | 'xl' | string;
+	component: 'a' | 'button' | string;
 	shadow?: boolean;
 }
 
@@ -65,12 +65,13 @@ const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, ButtonComponent
 			);
 		}
 
-		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-		// @ts-expect-error
+
 		return (<MantineButton
 				{...rest}
 				{...dataAttributes}
 				className={classNames}
+				// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+				// @ts-expect-error
 				component={component}
 				ref={ref as React.ForwardedRef<HTMLButtonElement>}
 			>

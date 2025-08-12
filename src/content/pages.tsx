@@ -14,8 +14,9 @@ interface Button  extends ButtonComponentProps  {
 	size?: string;
 	component: string;
 }
-interface Card {
+export interface Card {
 	key: string;
+	className?: string;
 	heading?: string | React.ReactNode;
 	subtitle?: string | React.ReactNode;
 	leading?: string | React.ReactNode;

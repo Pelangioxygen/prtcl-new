@@ -12,7 +12,7 @@ type SectionProps = {
 	leading?: string;
 	image?: ImageProps;
 	cards?: CardProps[];
-	link: ButtonComponentProps;
+	link?: ButtonComponentProps;
 	links?: ButtonComponentProps[];
 } & ScreenSection
 

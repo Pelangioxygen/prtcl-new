@@ -1,17 +1,9 @@
 import React from "react";
 import styles from "./Card.module.css";
-import Image, { ImageProps } from "next/image";
+import Image from "next/image";
+import { Card as CardP } from "@/content/pages";
 
-export interface CardProps {
-	key: string;
-	children?: React.ReactNode;
-	className?: string;
-	subtitle?: string;
-	leading?: string;
-	heading?: string | React.ReactNode;
-	description?: string | React.ReactNode;
-	image?: ImageProps;
-}
+export type CardProps = CardP
 
 const Card = ({ children, leading, subtitle, className = "", heading, description, image }: CardProps) => {
 	return (

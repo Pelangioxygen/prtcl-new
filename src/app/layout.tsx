@@ -3,7 +3,6 @@ import "@/app/globals.css";
 import localFont from 'next/font/local'
 import { Inter } from 'next/font/google'
 import { NextFont } from "next/dist/compiled/@next/font";
-import Layout from "@/components/Layout/Layout";
 import { HeadlessMantineProvider } from "@mantine/core";
 
 
