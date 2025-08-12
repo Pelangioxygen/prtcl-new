@@ -398,11 +398,6 @@ export const pages:PageContent = {
 				type: 'hero',
 				heading: 'Book Your Session',
 				leading: 'Choose a convenient time for your session. You’re just a few clicks away from starting your HBOT treatment.'
-			},
-			{
-				type: 'treatment',
-				heading: 'Treatment Packages',
-				leading: 'Ongoing care at preferred rates — structured to support your recovery.'
 			}
 		]
 	},

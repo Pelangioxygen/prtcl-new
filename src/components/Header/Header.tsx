@@ -38,18 +38,18 @@ const Header = () => {
 			</div>
 			<div className={styles.bottombar}>
 				<div className={"flex-1 flex items-center gap-x-4  text-primary"}>
-					<span>{config.info.group}</span>
+					<span className={'text-sm'}>{config.info.group}</span>
 					<span className={styles.circle}></span>
-					<span>{config.info.slogan}</span>
+					<span className={'text-sm'}>{config.info.slogan}</span>
 				</div>
 				<div className={"flex-1 flex items-center justify-end gap-x-4"}>
 					<span className={"inline-flex gap-2 items-center text-base font-medium text-primary"}>
-						<WorkingTimeIcon className={"mr-2 h-3.5 w-3.5"} />
+						<WorkingTimeIcon className={"h-3.5 w-3.5"} />
 						{config.contacts.workingHours}
 					</span>
 					<span>
 						<a className={"inline-flex gap-2 items-center text-base font-bold text-primary"} href={`tel:${config.contacts.phone.raw}`}>
-							<PhoneIcon className={"mr-2 h-3.5 w-3.5"} />
+							<PhoneIcon className={"h-3.5 w-3.5"} />
 							{config.contacts.phone.text}
 						</a>
 					</span>
