@@ -1,8 +1,11 @@
 
 @theme {
+
 	--font-sans: "Circular PRTCL", sans-serif;
 	--font-serif: "InterVariable", serif;
 	--text-base--line-height: calc(1.4 / 1);
+	--mantine-font-family: var(--font-serif);
+	--input-font-family: var(--font-serif);
 	/* spacing */
 	--spacing-xl: 7.5rem;
 	--spacing-lg: 3.75rem;

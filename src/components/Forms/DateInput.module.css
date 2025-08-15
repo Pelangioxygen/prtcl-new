@@ -1,0 +1,152 @@
+.datePickerRoot {
+    background-color: red;
+}
+.calendarHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+     & + table {
+         display: grid;
+         gap: 1rem;
+         grid-template-columns: repeat(7, 1fr);
+         thead, tbody, tr {
+             display: contents;
+         }
+         td, th {
+             justify-content: center;
+             justify-items: center;
+             display: flex;
+             justify-self: center;
+         }
+     }
+}
+.calendarHeaderControl {
+    --shadow: 0 1.25rem 3rem rgba(0, 0, 0, 0.25);
+    max-width: fit-content;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 1rem;
+    color: var(--color-main-gray);
+    line-height: 1;
+    white-space: nowrap;
+    border-radius: 3rem;
+    font-weight: 600;
+    height: 3.5rem;
+    cursor: pointer;
+    padding: 0.75rem 1.75rem;
+    /*gradient*/
+    position: relative;
+    background: var(--color-ash); /* Цвет фона внутри рамки */
+    backdrop-filter: blur(1.25rem);
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 3rem;
+        padding: .125rem;
+        background: linear-gradient(-45deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.005) 35%, rgba(255, 255, 255, 0.005) 77%, rgba(255, 255, 255, 0.8) 100%);
+        -webkit-mask: linear-gradient(#ffffff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+    }
+    box-shadow: var(--shadow-lg);
+    &:hover {
+        color: var(--color-primary);
+    }
+    span {
+        display: contents;
+    }
+}
+.calendarHeaderControlIcon {
+
+}
+.root {
+
+}
+.calendarHeaderLevel {
+    font-size: 1.5rem;
+    color: var(--color-main-gray);
+
+}
+.monthThead {
+    font-size: 1rem;
+    color: var(--color-main-gray);
+    font-weight: 400;
+    th {
+        font-size: 1rem;
+        color: var(--color-main-gray);
+        font-weight: 400;
+    }
+}
+
+
+.monthCell {
+
+    max-width: fit-content;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 1rem;
+    color: var(--color-main-gray);
+    line-height: 1;
+    white-space: nowrap;
+    border-radius: 3.25rem;
+    aspect-ratio: 100/55;
+    font-weight: 600;
+    height: 3.75rem;
+    cursor: pointer;
+    padding: 0.75rem 2rem;
+    /*gradient*/
+    position: relative;
+    background: var(--color-white); /* Цвет фона внутри рамки */
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 3rem;
+        padding: .125rem;
+        background: linear-gradient(-45deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.005) 35%, rgba(255, 255, 255, 0.005) 77%, rgba(255, 255, 255, 0.8) 100%);
+        -webkit-mask: linear-gradient(#ffffff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+    }
+    &:hover {
+        color: var(--color-primary);
+    }
+    span {
+        display: contents;
+    }
+    button {
+        &[data-outside="true"] {
+           color: var(--color-gray-400);
+        }
+        font-weight: 600;
+        cursor: pointer;
+        flex: 1 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        &[data-selected="true"] {
+            background-color: var(--color-primary);
+            color: white;
+            &:hover {
+                color: white;
+            }
+        }
+    }
+}

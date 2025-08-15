@@ -22,15 +22,15 @@ const Header = () => {
 						</LinkTheme>
 					))}
 				</nav>
-				<div className={styles.langswitcher}>
-					<LinkTheme className={"text-white border-b border-b-transparent hover:border-b-white data-[active=true]:border-b-white"} href={"/"} locale={"en"}>
-						en
-					</LinkTheme>
-					<hr />
-					<LinkTheme className={"text-white border-b border-b-transparent  hover:border-b-white data-[active=true]:border-b-white"} href={"/es"} locale={"es"}>
-						es
-					</LinkTheme>
-				</div>
+				{/*<div className={styles.langswitcher}>*/}
+				{/*	<LinkTheme className={"text-white border-b border-b-transparent hover:border-b-white data-[active=true]:border-b-white"} href={"/"} locale={"en"}>*/}
+				{/*		en*/}
+				{/*	</LinkTheme>*/}
+				{/*	<hr />*/}
+				{/*	<LinkTheme className={"text-white border-b border-b-transparent  hover:border-b-white data-[active=true]:border-b-white"} href={"/es"} locale={"es"}>*/}
+				{/*		es*/}
+				{/*	</LinkTheme>*/}
+				{/*</div>*/}
 				<div className={"flex items-center gap-x-4"}>
 					<Button component={"a"} href={"/refer-a-patient"}>Refer a Patient</Button>
 					<Button component={'a'} variant={"outline"}  href={'/book-now'}>Book Now</Button>

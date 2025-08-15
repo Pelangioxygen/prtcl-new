@@ -1,3 +1,7 @@
+:root {
+	--mantine-font-family: "InterVariable", serif;
+	--input-font-family: "InterVariable", serif;
+}
 @layer base {
 	html {
 		font-size: var(--base-font-size);

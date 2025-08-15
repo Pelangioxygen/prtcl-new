@@ -105,6 +105,15 @@
 			box-shadow: var(--shadow);
 		}
 	}
+	&[data-variant="custom"] {
+		/*background: white;*/
+		/*color: var(--color-primary);*/
+		/*padding: .625rem;*/
+		/*&:hover {*/
+		/*	color: var(--color-main-gray);*/
+		/*	box-shadow: var(--shadow);*/
+		/*}*/
+	}
 
 	&[data-variant="outline"] {
 		background: transparent; /* Цвет фона внутри рамки */

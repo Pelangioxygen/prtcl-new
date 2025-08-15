@@ -1,15 +1,16 @@
 import React from "react";
 import styles from "./Section.module.css";
 import Button, { ButtonComponentProps } from "@/components/Button/Button";
-import { ScreenSection } from "@/content/pages";
+import { ScreenSection, CardProps } from "@/utils/types";
 import Image, { ImageProps } from "next/image";
-import Card, { CardProps } from "@/components/Cards/Card/Card";
+import Card from "@/components/Cards/Card/Card";
 import CarouselTheme from "@/components/Carousel/Carousel";
+
 
 type SectionProps = {
 	children?: React.ReactNode | string;
 	className?: string;
-	leading?: string;
+	leading?: string | React.ReactNode;
 	image?: ImageProps;
 	cards?: CardProps[];
 	link?: ButtonComponentProps;
@@ -27,16 +28,16 @@ type SectionProps = {
 				zIndex: 0
 			}} src={background.src} alt={''}/> : null}
 
-			<hgroup>
+			{(heading || leading) ?<hgroup>
 				<TitleSection/>
-				{leading ? <p>{ leading }</p> : null}
-			</hgroup>
+				{leading ? !(typeof leading === "string") ? leading : <p>{ leading }</p> : null}
+			</hgroup> : null}
 			{image ? <div className={styles.image} data-content={'section-image'}>
 				<Image src={image.src} width={image.width} height={image.height} alt={''}/>
 			</div>: null}
 			{(links && links.length) ? <div className={styles.links} data-content={'section-links'}>
 				{links?.map((l, index: number) => (
-					<Button key={l.href + index} {...l}>{l.children}</Button>
+					<Button key={l.href as string + index} {...l}>{l.children}</Button>
 				))}
 			</div> : null}
 

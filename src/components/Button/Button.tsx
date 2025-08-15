@@ -6,7 +6,7 @@ import Link, { LinkProps } from "next/link";
 type CustomButtonProps = {
 	component: 'button' | string;
 	href?: never;
-}  & LinkProps & BaseProps & Omit<MantineButtonProps, 'component' | 'href' | 'size' | 'variant'>;
+}  &  BaseProps & Omit<MantineButtonProps, 'component' | 'href' | 'size' | 'variant'>;
 
 type CustomLinkProps = {
 	component: 'a' | string;
@@ -15,7 +15,7 @@ type CustomLinkProps = {
 
 type BaseProps = {
 	children?: React.ReactNode  | string;
-	variant?: 'primary' | 'default' | 'glass' | 'icon' | 'outline' | string | 'white' | 'link' | 'social';
+	variant?: 'primary' | 'default' | 'glass' | 'icon' | 'outline' | string | 'white' | 'link' | 'social' | 'custom';
 	size?: 'sm' | 'xs' | 'md' | 'lg' | 'xl' | string;
 	component: 'a' | 'button' | string;
 	shadow?: boolean;

@@ -12,6 +12,9 @@
 			content: '-';
 			/*transform: rotate(90deg); !* Поворачиваем стрелку при открытии *!*/
 		}
+		&:hover, &[open] {
+			background-color: white;
+		}
 		summary {
 			list-style: none;
 			padding-right: 2.75rem;

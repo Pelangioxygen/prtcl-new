@@ -12,12 +12,15 @@ export interface SliderCardProps extends CardProps{
 	stars: number,
 }
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 export interface Button  extends ButtonComponentProps  {
 	children: string;
 	href: string;
 	variant?: string;
 	size?: string;
 	component: string;
+	shadow?: boolean;
 }
 export interface Card {
 	key: string;
@@ -38,7 +41,7 @@ export interface ScreenSection {
 	heading?: string | React.ReactNode;
 	background?: ImageProps;
 	image?: ImageProps;
-	leading?: string;
+	leading?: string  | React.ReactNode;
 	links?: Button[];
 	link?: Button;
 	cards?: Card[];
