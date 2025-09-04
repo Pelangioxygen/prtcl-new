@@ -1,0 +1,8 @@
+.TemplateName {
+	display: initial;
+}
+
+/* Пример модификаторов */
+.TemplateName--primary {
+	display: initial;
+}

@@ -1,25 +1,25 @@
 "use client";
 import { useForm } from "@mantine/form";
 import "@mantine/core/styles/Combobox.layer.css";
-import { DatePicker, getTimeRange, TimeGrid } from "@mantine/dates";
 import styles from "./FormBook.module.css";
-import styless from "./DateInput.module.css";
-import stylesss from "./TimeGridInput.module.css";
 import "@mantine/dates/styles.css";
-import { ArrowLeftIcon, ArrowRightIcon } from "@/components/Icons/Icons";
+
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import advancedFormat from "dayjs/plugin/advancedFormat";
+import  Button  from "@/components/Button/Button"
+import FieldComposer from "@/components/FieldComposer/FieldComposer";
 
 // Подключаем необходимые плагины
 dayjs.extend(customParseFormat);
 dayjs.extend(advancedFormat);
 
 const formInputs = {
-	book: {
-		heading: "Choose a day and time",
+	doctor_info: {
+		heading: "Doctor's Info (required)",
 		subheading: "Choose a day",
-		subheading2: "Choose a time",
+		subheading2: "Patient's Info",
+		subheading3: "Please enter patient details",
 		heading2: "Your Details",
 		heading3: "Review and Confirm Your Booking",
 		heading4: "Payment Confirmed",
@@ -28,73 +28,126 @@ const formInputs = {
 			{
 				label: "First Name",
 				type: "text",
-				name: "first_name",
+				name: "first_name_doctor",
 				required: true,
 				placeholder: "First Name",
 			},
 			{
 				label: "Last Name",
 				type: "text",
-				name: "last_name",
+				name: "last_name_doctor",
 				required: true,
 				placeholder: "Last Name",
 			},
 			{
+				label: "Doctor's License number",
+				type: "number",
+				name: "license",
+				required: true,
+				className: "col-span-full",
+				placeholder: "Doctor's License number",
+			},
+			{
 				label: "Email",
 				type: "email",
-				name: "email",
+				className: "col-span-full",
+				name: "email_doctor",
 				required: true,
 				placeholder: "Email",
 			},
-
-			{
-				label: "Appointment Reminder",
-				type: "select",
-				data: ["Yes", "No"],
-				name: "appointment_reminder",
-				required: true,
-			},
-
 			{
 				label: "Mobile Phone",
 				type: "text",
-				name: "phone",
+				className: "col-span-full",
+				name: "phone_doctor",
 				required: true,
 				placeholder: "Mobile Phone",
+			}
+		],
+	},
+	patient_info: {
+		heading: "Doctor's Info (required)",
+		subheading: "Choose a day",
+		subheading2: "Patient's Info",
+		subheading3: "Please enter patient details",
+		heading2: "Your Details",
+		heading3: "Review and Confirm Your Booking",
+		heading4: "Payment Confirmed",
+		className: "grid-cols-2",
+		inputs: [
+			{
+				label: "First Name",
+				type: "text",
+				name: "first_name_patient",
+				required: true,
+				placeholder: "First Name",
 			},
 			{
-				label: "Anything we should know?",
+				label: "Last Name",
+				type: "text",
+				name: "last_name_patient",
+				required: true,
+				placeholder: "Last Name",
+			},
+			{
+				label: "Patient's DOB",
+				type: "number",
+				name: "license",
+				required: true,
+				className: "col-span-full",
+				placeholder: "DD.MM.YYYY",
+			},
+			{
+				label: "Insurance Provider & Plan",
 				type: "textarea",
-				className: "col-span-2",
-				name: "anything-we",
+				name: "insurance_plan",
 				required: true,
 				minRows: 4,
-				placeholder: 'Ex. "I’m recovering from surgery” or “I’ll be 10 mins late”',
+				autosize: true,
+				className: "col-span-full",
+				placeholder: "Insurance Provider & Plan",
+			},
+			{
+				label: "Diagnosis",
+				type: "textarea",
+				name: "diagnosis",
+				required: true,
+				minRows: 4,
+				autosize: true,
+				className: "col-span-full",
+				placeholder: "Diagnosis",
+			},
+			{
+				type: "select",
+				label: "FDA Approved Condition",
+				name: "fda_approved",
+				required: true,
+				className: "col-span-full",
+				data: ["Crush Injury and Compartment Syndrome", "Crush Injury and Compartment Syndrome1"],
+				placeholder: "FDA Approved Condition"
+			},
+			{
+				type: "checkbox",
+				label: "I confirm that the above patient is medically cleared to undergo hyperbaric oxygen therapy (HBOT) in a pressurized chamber for sessions ranging from 60 to 120 minutes, as prescribed.",
+				name: "confirm_patient",
+				required: true,
+				placeholder: "I confirm that the above patient is medically cleared to undergo hyperbaric oxygen therapy (HBOT) in a pressurized chamber for sessions ranging from 60 to 120 minutes, as prescribed."
+			},
+			{
+				label: "Hyperbaric Protocol",
+				type: "textarea",
+				name: "protocol",
+				required: true,
+				minRows: 4,
+				autosize: true,
+				className: "col-span-full",
+				placeholder: "Please describe your treatment protocol (required)",
 			},
 		],
 	},
 };
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-const DateInputClassNames = {
-	calendarHeader: styless.calendarHeader,
-	monthTheadCell: styless.monthTheadCell,
-	calendarHeaderControl: styless.calendarHeaderControl,
-	calendarHeaderControlIcon: styless.calendarHeaderControlIcon,
-	root: styless.root,
-	calendarHeaderLevel: styless.calendarHeaderLevel,
-	monthThead: styless.monthThead,
-	monthCell: styless.monthCell,
-	datePickerRoot: styless.datePickerRoot,
-};
-const TimeInputClassNames = {
-	root: stylesss.root,
-	control: stylesss.control,
-	simpleGrid: stylesss.simpleGrid,
-};
-
-const FormBook = () => {
+const FormReferPatient = () => {
 
 	const form = useForm({
 		name: "BookNow",
@@ -113,45 +166,40 @@ const FormBook = () => {
 	});
 
 	// const values = form.getValues();
-	const inputs = formInputs["book"];
+	const inputs = formInputs["doctor_info"];
+	const inputs_patient = formInputs["patient_info"];
 	// const dateTime = dayjs(values.date_day + values.date_time, "YYYY-MM-DD HH:mm:ss");
 
 	return (
 		<div className={styles.formWrapper}>
 			<form style={{ display: "grid" }} className={inputs.className + " " + "gap-x-6 gap-y-2"}>
-				<h3 className={"col-span-2 mb-12 text-primary"}>{inputs.heading}</h3>
-				<div className={styles.confirmPanel}>
-					<h3>Selected Plan: Restore – 60 min HBOT </h3>
-					<h4> Number of Sessions: 20</h4>
-				</div>
-				<h3 className={"col-span-2  mt-16 col-span-full mb-12 text-primary"}>{inputs.subheading}</h3>
-				<DatePicker
-					nextIcon={<ArrowRightIcon width={"1.25rem"} height={"1rem"} />}
-					previousIcon={<ArrowLeftIcon width={"1.25rem"} height={"1rem"} />}
-					className={"col-span-full "}
-					allowDeselect
-					classNames={DateInputClassNames}
-					key={form.key("date_day")}
-					value={form.getValues().date_day}
-					{...form.getInputProps("date_day")}
-				/>
+				<hgroup className={'!block text-left mb-16'}>
+					<h3 className={"justify-self-start col-span-2 mb-2 text-primary"}>{inputs.heading}</h3>
+					<p className={'justify-self-start text-[1.125rem]'}>Please enter referring physician details</p>
+				</hgroup>
 
-				<h3 className={"col-span-2 mb-12 mt-16 text-primary"}>{inputs.subheading2}</h3>
-				<TimeGrid
-					classNames={TimeInputClassNames}
-					data={getTimeRange({ startTime: "10:00", endTime: "21:00", interval: "01:00" })}
-					simpleGridProps={{
-						type: "container",
-						cols: { base: 1, "180px": 2, "320px": 3 },
-						spacing: "xs",
-					}}
-					key={form.key("date_time")}
-					{...form.getInputProps("date_time")}
-					withSeconds={false}
-				/>
+				{inputs.inputs.map((i) => {
+					return <FieldComposer {...i} key={form.key(i.name)} {...form.getInputProps(i.name)} />;
+				})}
+
+				<hgroup className={'!block text-left mb-16'}>
+					<h3 className={"justify-self-start col-span-2  mb-2  mt-16 text-primary"}>{inputs.subheading2}</h3>
+					<p className={'justify-self-start text-[1.125rem]'}>{inputs.subheading3}</p>
+
+				</hgroup>
+				{inputs_patient.inputs.map((i) => {
+					return <FieldComposer {...i} key={form.key(i.name)} {...form.getInputProps(i.name)} />;
+				})}
+
+				<div className={"grid col-span-full gap-y-12 justify-between mt-4"}>
+					<Button shadow={true} component={"button"} variant={"primary"}>
+						Submit
+					</Button>
+					<p>Fax additional clinical notes to: 302-333-4778</p>
+				</div>
 			</form>
 		</div>
 	);
 };
 
-export default FormBook;
+export default FormReferPatient;

@@ -3,6 +3,7 @@ import styles from "./Section.module.css";
 import Button, { ButtonComponentProps } from "@/components/Button/Button";
 import { ScreenSection, CardProps } from "@/utils/types";
 import Image, { ImageProps } from "next/image";
+import ImageResp from "@/components/ImageResp/ImageResp";
 import Card from "@/components/Cards/Card/Card";
 import CarouselTheme from "@/components/Carousel/Carousel";
 
@@ -24,22 +25,25 @@ type SectionProps = {
 	return (
 		<section className={`${styles.Section} ${className}`} data-type={type}>
 
-			{background ? <Image fill style={{
+			{background ? <ImageResp image={{fill:true, style:{
 				zIndex: 0
-			}} src={background.src} alt={''}/> : null}
-
+			},  src:background.src, srcMobile: background.srcMobile, alt:''}}/> : null}
+			<div className={styles.contentWrapper}>
 			{(heading || leading) ?<hgroup>
 				<TitleSection/>
 				{leading ? !(typeof leading === "string") ? leading : <p>{ leading }</p> : null}
 			</hgroup> : null}
-			{image ? <div className={styles.image} data-content={'section-image'}>
-				<Image src={image.src} width={image.width} height={image.height} alt={''}/>
-			</div>: null}
+
 			{(links && links.length) ? <div className={styles.links} data-content={'section-links'}>
 				{links?.map((l, index: number) => (
 					<Button key={l.href as string + index} {...l}>{l.children}</Button>
 				))}
 			</div> : null}
+			</div>
+			{image ? <div className={styles.image} data-content={'section-image'}>
+
+			</div>: null}
+
 
 			{(cards && cards.length) ? <div className={styles.cards} data-content={'section-cards'}>
 				{cards?.map((c) => (

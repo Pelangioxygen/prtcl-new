@@ -1,10 +1,13 @@
-import { ClockIcon, FDAIcon, WaveIcon } from "@/components/Icons/Icons";
+import { ClockIcon,  WaveIcon } from "@/components/Icons/Icons";
 import React from "react";
 import AccorditionCustom from "@/components/AccorditionCustom/AccorditionCustom";
 import { faqDataAccordition, insuranceDataAccordition } from "@/content/accorditions";
 import { PageContent } from "@/utils/types";
 import Link from "next/link";
 import FormBook from "@/components/Forms/FormBook";
+import RadarMap from "@/components/Map/Map";
+import FormReferPatient from "@/components/Forms/FormReferPatient";
+import FormQuestions from "@/components/Forms/FormQuestions";
 
 const priceLabels = ['Single', '3 pack','5 pack','10 pack','20 pack'];
 const priceCards =	{
@@ -42,6 +45,7 @@ export const pages:PageContent = {
 				background: {
 					alt: "",
 					src: "/images/hero_index.jpg",
+					srcMobile: "/images/hero_index_mobile.jpg",
 				},
 				leading: "Hyperbaric oxygen therapy to help you recover faster, feel stronger, and heal better. FDA-cleared treatments, overseen by physicians, and covered by insurance.",
 				links: [
@@ -53,328 +57,328 @@ export const pages:PageContent = {
 					},
 					{
 						children: "Book Now",
-						href: "/book-now",
+						href: "book-now",
 						variant: "glass",
 						component: "a",
-					},
-				],
+					}
+				]
 			},
-			{
-				type: "conditions",
-				heading: "FDA-Approved Conditions for Hyperbaric Oxygen Therapy",
-				leading: "Full list of 14 approved uses and 23 additional off-label applications",
-				cards: [
-					{
-						heading: 14,
-						description: "On-Label",
-						key: "On-Label",
-					},
-					{
-						heading: 23,
-						description: "Off-Label",
-						key: "Off-Label",
-					},
-					{
-						heading: <FDAIcon />,
-						description: "Approved",
-						key: "approved",
-					},
-				],
-				links: [
-					{
-						children: "🧠 Neurology",
-						href: "/neurology",
-						component: "a",
-						variant: "icon",
-						size: "xs",
-					},
-					{
-						children: "🦠 Infection / Immunity",
-						href: "/infection",
-						variant: "icon",
-						size: "xs",
-						component: "a",
-					},
-					{
-						children: "🦴 Orthopedics / Trauma",
-						href: "/trauma",
-						variant: "icon",
-						size: "xs",
-						component: "a",
-					},
-					{
-						children: "❤ Recovery & Rehabilitation",
-						href: "/rehabilitation",
-						variant: "icon",
-						size: "xs",
-						component: "a",
-					},
-					{
-						children: "🔥 Burns & Emergency Conditions",
-						href: "/emergency-conditions",
-						variant: "icon",
-						size: "xs",
-						component: "a",
-					},
-					{
-						children: "🧬 Chronic Inflammatory Conditions",
-						href: "/chronic-inflammatory-conditions",
-						variant: "icon",
-						size: "xs",
-						component: "a",
-					},
-					{
-						children: "☢️ Oncology",
-						href: "/oncology",
-						variant: "icon",
-						size: "xs",
-						component: "a",
-					},
-				],
-				link: {
-					variant: "link",
-					children: "View All Diagnoses",
-					href: "#",
-					component: "a",
-				},
-			},
-			{
-				type: "oxygen",
-				heading: "What is Hyperbaric Oxygen Therapy?",
-				leading: "Hyperbaric oxygen therapy (HBOT) is a scientifically backed treatment that enhances healing by delivering 100% oxygen in a pressurized chamber. It’s used to support recovery from a wide range of medical conditions—from chronic wounds to surgical recovery and inflammation.",
-				background: {
-					alt: "",
-					src: "/images/oxy_index.png",
-				},
-				link: {
-					children: "Learn How HBOT Works",
-					href: "what-is-hbot",
-					component: "a",
-					variant: "primary",
-
-				},
-			},
-			{
-				type: "benefits",
-				heading: "Our Benefits",
-				leading: "Discover what makes our care unique — science-backed protocols, measurable outcomes, and physician-guided support every step of the way.",
-				cards: [
-					{
-						key: "fda",
-						heading: "FDA-cleared Treatments",
-						description: "Scientifically validated therapies for complex recovery cases",
-						image: {
-							width: 300,
-							height: 180,
-							alt: "",
-							src: "/images/benefits_index_1.png",
-						},
-					},
-					{
-						key: "accepted",
-						heading: "Insurance Accepted",
-						description: "Covered care for 14 approved conditions with physician referral",
-						image: {
-							width: 300,
-							height: 180,
-							alt: "",
-							src: "/images/benefits_index_2.png",
-						},
-					},
-					{
-						key: "doctor-led-care",
-						heading: "Doctor-Led Care",
-						description: "Every treatment is overseen by licensed medical professionals",
-						image: {
-							width: 300,
-							height: 180,
-							alt: "",
-							src: "/images/benefits_index_3.png",
-						},
-					},
-
-				],
-			},
-			{
-				type: "heading_img",
-				heading: <>{"Where advanced medicine"} <i data-bgimg /> {`delivers real results`}</>,
-			},
-			{
-				type: "real-stories",
-				component: "gallery",
-				heading: "Real Stories. Lasting Results",
-				leading: "Hear directly from patients and physicians about their healing journeys with physician-guided hyperbaric oxygen therapy.",
-				slider: [
-					{
-						key: "doctor",
-						label: "doctor",
-						color: "blue",
-						subheading: "Post-radiation recovery",
-						heading: "Dr. Laila Chen, DO",
-						stars: 3,
-						description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
-					},
-					{
-						key: "coordinator",
-						label: "Coordinator",
-						color: "yellow",
-						subheading: "Post-radiation recovery",
-						heading: "Dr. Laila Chen, DO",
-						stars: 3,
-						description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
-					},
-					{
-						key: "patient",
-						label: "Patient",
-						color: "green",
-						subheading: "Wound Care Specialist",
-						heading: "Dr. Laila Chen, DO",
-						stars: 3,
-						description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
-					},
-					{
-						key: "doctor2",
-						label: "doctor",
-						color: "blue",
-						subheading: "Wound Care Specialist",
-						heading: "Dr. Laila Chen, DO",
-						stars: 3,
-						description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
-					},
-					{
-						key: "doctor3",
-						label: "doctor",
-						color: "blue",
-						subheading: "Wound Care Specialist",
-						heading: "Dr. Laila Chen, DO",
-						stars: 3,
-						description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
-					},
-					{
-						key: "doctor123",
-						label: "doctor",
-						color: "blue",
-						subheading: "Post-radiation recovery",
-						heading: "Dr. Laila Chen, DO",
-						stars: 3,
-						description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
-					},
-					{
-						key: "coordinator4324",
-						label: "Coordinator",
-						color: "yellow",
-						subheading: "Post-radiation recovery",
-						heading: "Dr. Laila Chen, DO",
-						stars: 1,
-						description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
-					},
-					{
-						key: "patient5454",
-						label: "Patient",
-						color: "green",
-						subheading: "Wound Care Specialist",
-						heading: "Dr. Laila Chen, DO",
-						stars: 5,
-						description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
-					},
-					{
-						key: "doctor1235432",
-						label: "doctor",
-						color: "blue",
-						subheading: "Wound Care Specialist",
-						heading: "Dr. Laila Chen, DO",
-						stars: 4,
-						description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
-					},
-					{
-						key: "doctor123213123",
-						label: "doctor",
-						color: "blue",
-						subheading: "Wound Care Specialist",
-						heading: "Dr. Laila Chen, DO",
-						stars: 2,
-						description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
-					},
-				],
-			},
-
-			{
-				type: "insurance",
-				heading: "Insurance Plans We Accept",
-				leading: "Our clinic is in-network with leading providers to help you access covered care with confidence.",
-				cards: [
-					{
-						key: "Medicare-Medicaid",
-						heading: "Medicare / Medicaid",
-						image: {
-							width: 300,
-							height: 100,
-							alt: "",
-							src: "/images/insuranse/1.png",
-						},
-					},
-					{
-						key: "Blue-Cross-Blue-Shield",
-						heading: "Blue Cross Blue Shield (BCBS)",
-						image: {
-							width: 300,
-							height: 100,
-							alt: "",
-							src: "/images/insuranse/2.png",
-						},
-					},
-					{
-						key: "United-Healthcare",
-						heading: "United Healthcare",
-						image: {
-							width: 300,
-							height: 100,
-							alt: "",
-							src: "/images/insuranse/3.png",
-						},
-					},
-					{
-						key: "Cigna",
-						heading: "Cigna",
-						image: {
-							width: 300,
-							height: 100,
-							alt: "",
-							src: "/images/insuranse/4.png",
-						},
-					},
-					{
-						key: "Humana",
-						heading: "Humana",
-						image: {
-							width: 300,
-							height: 100,
-							alt: "",
-							src: "/images/insuranse/5.png",
-						},
-					},
-					{
-						key: "Aetna",
-						heading: "Aetna",
-						image: {
-							width: 300,
-							height: 100,
-							alt: "",
-							src: "/images/insuranse/6.png",
-						},
-					},
-					{
-						key: "Tricare",
-						heading: "Tricare",
-						image: {
-							width: 300,
-							height: 100,
-							alt: "",
-							src: "/images/insuranse/7.png",
-						},
-					},
-				],
-			},
+			// {
+			// 	type: "conditions",
+			// 	heading: "FDA-Approved Conditions for Hyperbaric Oxygen Therapy",
+			// 	leading: "Full list of 14 approved uses and 23 additional off-label applications",
+			// 	cards: [
+			// 		{
+			// 			heading: 23,
+			// 			description: "Off-Label",
+			// 			key: "Off-Label",
+			// 		},
+			// 		{
+			// 			heading: 14,
+			// 			description: "On-Label",
+			// 			key: "On-Label",
+			// 		},
+			//
+			// 		{
+			// 			heading: <FDAIcon />,
+			// 			description: "Approved",
+			// 			key: "approved",
+			// 		},
+			// 	],
+			// 	links: [
+			// 		{
+			// 			children: "🧠 Neurology",
+			// 			href: "/neurology",
+			// 			component: "a",
+			// 			variant: "icon",
+			// 			size: "xs",
+			// 		},
+			// 		{
+			// 			children: "🦠 Infection / Immunity",
+			// 			href: "/infection",
+			// 			variant: "icon",
+			// 			size: "xs",
+			// 			component: "a",
+			// 		},
+			// 		{
+			// 			children: "🦴 Orthopedics / Trauma",
+			// 			href: "/trauma",
+			// 			variant: "icon",
+			// 			size: "xs",
+			// 			component: "a",
+			// 		},
+			// 		{
+			// 			children: "❤ Recovery & Rehabilitation",
+			// 			href: "/rehabilitation",
+			// 			variant: "icon",
+			// 			size: "xs",
+			// 			component: "a",
+			// 		},
+			// 		{
+			// 			children: "🔥 Burns & Emergency Conditions",
+			// 			href: "/emergency-conditions",
+			// 			variant: "icon",
+			// 			size: "xs",
+			// 			component: "a",
+			// 		},
+			// 		{
+			// 			children: "🧬 Chronic Inflammatory Conditions",
+			// 			href: "/chronic-inflammatory-conditions",
+			// 			variant: "icon",
+			// 			size: "xs",
+			// 			component: "a",
+			// 		},
+			// 		{
+			// 			children: "☢️ Oncology",
+			// 			href: "/oncology",
+			// 			variant: "icon",
+			// 			size: "xs",
+			// 			component: "a",
+			// 		},
+			// 	],
+			// 	link: {
+			// 		variant: "link",
+			// 		children: "View All Diagnoses",
+			// 		href: "#",
+			// 		component: "a",
+			// 	},
+			// },
+			// {
+			// 	type: "oxygen",
+			// 	heading: "What is Hyperbaric Oxygen Therapy?",
+			// 	leading: "Hyperbaric oxygen therapy (HBOT) is a scientifically backed treatment that enhances healing by delivering 100% oxygen in a pressurized chamber. It’s used to support recovery from a wide range of medical conditions—from chronic wounds to surgical recovery and inflammation.",
+			// 	background: {
+			// 		alt: "",
+			// 		src: "/images/oxy_index.png",
+			// 	},
+			// 	link: {
+			// 		children: "Learn How HBOT Works",
+			// 		href: "what-is-hbot",
+			// 		component: "a",
+			// 		variant: "primary",
+			//
+			// 	},
+			// },
+			// {
+			// 	type: "benefits",
+			// 	heading: "Our Benefits",
+			// 	leading: "Discover what makes our care unique — science-backed protocols, measurable outcomes, and physician-guided support every step of the way.",
+			// 	cards: [
+			// 		{
+			// 			key: "fda",
+			// 			heading: "FDA-cleared Treatments",
+			// 			description: "Scientifically validated therapies for complex recovery cases",
+			// 			image: {
+			// 				width: 300,
+			// 				height: 180,
+			// 				alt: "",
+			// 				src: "/images/benefits_index_1.png",
+			// 			},
+			// 		},
+			// 		{
+			// 			key: "accepted",
+			// 			heading: "Insurance Accepted",
+			// 			description: "Covered care for 14 approved conditions with physician referral",
+			// 			image: {
+			// 				width: 300,
+			// 				height: 180,
+			// 				alt: "",
+			// 				src: "/images/benefits_index_2.png",
+			// 			},
+			// 		},
+			// 		{
+			// 			key: "doctor-led-care",
+			// 			heading: "Doctor-Led Care",
+			// 			description: "Every treatment is overseen by licensed medical professionals",
+			// 			image: {
+			// 				width: 300,
+			// 				height: 180,
+			// 				alt: "",
+			// 				src: "/images/benefits_index_3.png",
+			// 			},
+			// 		},
+			//
+			// 	],
+			// },
+			// {
+			// 	type: "heading_img",
+			// 	heading: <>{"Where advanced medicine"} <i data-bgimg /> {`delivers real results`}</>,
+			// },
+			// {
+			// 	type: "real-stories",
+			// 	component: "gallery",
+			// 	heading: "Real Stories. Lasting Results",
+			// 	leading: "Hear directly from patients and physicians about their healing journeys with physician-guided hyperbaric oxygen therapy.",
+			// 	slider: [
+			// 		{
+			// 			key: "doctor",
+			// 			label: "doctor",
+			// 			color: "blue",
+			// 			subheading: "Post-radiation recovery",
+			// 			heading: "Dr. Laila Chen, DO",
+			// 			stars: 3,
+			// 			description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
+			// 		},
+			// 		{
+			// 			key: "coordinator",
+			// 			label: "Coordinator",
+			// 			color: "yellow",
+			// 			subheading: "Post-radiation recovery",
+			// 			heading: "Dr. Laila Chen, DO",
+			// 			stars: 3,
+			// 			description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
+			// 		},
+			// 		{
+			// 			key: "patient",
+			// 			label: "Patient",
+			// 			color: "green",
+			// 			subheading: "Wound Care Specialist",
+			// 			heading: "Dr. Laila Chen, DO",
+			// 			stars: 3,
+			// 			description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
+			// 		},
+			// 		{
+			// 			key: "doctor2",
+			// 			label: "doctor",
+			// 			color: "blue",
+			// 			subheading: "Wound Care Specialist",
+			// 			heading: "Dr. Laila Chen, DO",
+			// 			stars: 3,
+			// 			description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
+			// 		},
+			// 		{
+			// 			key: "doctor3",
+			// 			label: "doctor",
+			// 			color: "blue",
+			// 			subheading: "Wound Care Specialist",
+			// 			heading: "Dr. Laila Chen, DO",
+			// 			stars: 3,
+			// 			description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
+			// 		},
+			// 		{
+			// 			key: "doctor123",
+			// 			label: "doctor",
+			// 			color: "blue",
+			// 			subheading: "Post-radiation recovery",
+			// 			heading: "Dr. Laila Chen, DO",
+			// 			stars: 3,
+			// 			description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
+			// 		},
+			// 		{
+			// 			key: "coordinator4324",
+			// 			label: "Coordinator",
+			// 			color: "yellow",
+			// 			subheading: "Post-radiation recovery",
+			// 			heading: "Dr. Laila Chen, DO",
+			// 			stars: 1,
+			// 			description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
+			// 		},
+			// 		{
+			// 			key: "patient5454",
+			// 			label: "Patient",
+			// 			color: "green",
+			// 			subheading: "Wound Care Specialist",
+			// 			heading: "Dr. Laila Chen, DO",
+			// 			stars: 5,
+			// 			description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
+			// 		},
+			// 		{
+			// 			key: "doctor1235432",
+			// 			label: "doctor",
+			// 			color: "blue",
+			// 			subheading: "Wound Care Specialist",
+			// 			heading: "Dr. Laila Chen, DO",
+			// 			stars: 4,
+			// 			description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
+			// 		},
+			// 		{
+			// 			key: "doctor123213123",
+			// 			label: "doctor",
+			// 			color: "blue",
+			// 			subheading: "Wound Care Specialist",
+			// 			heading: "Dr. Laila Chen, DO",
+			// 			stars: 2,
+			// 			description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
+			// 		},
+			// 	],
+			// },
+			// {
+			// 	type: "insurance",
+			// 	heading: "Insurance Plans We Accept",
+			// 	leading: "Our clinic is in-network with leading providers to help you access covered care with confidence.",
+			// 	cards: [
+			// 		{
+			// 			key: "Medicare-Medicaid",
+			// 			heading: "Medicare / Medicaid",
+			// 			image: {
+			// 				width: 300,
+			// 				height: 100,
+			// 				alt: "",
+			// 				src: "/images/insuranse/1.png",
+			// 			},
+			// 		},
+			// 		{
+			// 			key: "Blue-Cross-Blue-Shield",
+			// 			heading: "Blue Cross Blue Shield (BCBS)",
+			// 			image: {
+			// 				width: 300,
+			// 				height: 100,
+			// 				alt: "",
+			// 				src: "/images/insuranse/2.png",
+			// 			},
+			// 		},
+			// 		{
+			// 			key: "United-Healthcare",
+			// 			heading: "United Healthcare",
+			// 			image: {
+			// 				width: 300,
+			// 				height: 100,
+			// 				alt: "",
+			// 				src: "/images/insuranse/3.png",
+			// 			},
+			// 		},
+			// 		{
+			// 			key: "Cigna",
+			// 			heading: "Cigna",
+			// 			image: {
+			// 				width: 300,
+			// 				height: 100,
+			// 				alt: "",
+			// 				src: "/images/insuranse/4.png",
+			// 			},
+			// 		},
+			// 		{
+			// 			key: "Humana",
+			// 			heading: "Humana",
+			// 			image: {
+			// 				width: 300,
+			// 				height: 100,
+			// 				alt: "",
+			// 				src: "/images/insuranse/5.png",
+			// 			},
+			// 		},
+			// 		{
+			// 			key: "Aetna",
+			// 			heading: "Aetna",
+			// 			image: {
+			// 				width: 300,
+			// 				height: 100,
+			// 				alt: "",
+			// 				src: "/images/insuranse/6.png",
+			// 			},
+			// 		},
+			// 		{
+			// 			key: "Tricare",
+			// 			heading: "Tricare",
+			// 			image: {
+			// 				width: 300,
+			// 				height: 100,
+			// 				alt: "",
+			// 				src: "/images/insuranse/7.png",
+			// 			},
+			// 		},
+			// 	],
+			// },
 		],
 	},
 	contacts: {
@@ -396,6 +400,34 @@ export const pages:PageContent = {
 			{
 				type: "location",
 				heading: "Our Location",
+				children: <div className={"md:grid grid-cols-2 gap-14"}>
+					<div className={"md:pb-24"}>
+						<h3>Culver City</h3>
+						<ul>
+							<li>
+							<strong>Address:</strong><br/>
+							10375 Washington Blvd, Culver City, CA 90232</li>
+
+							<li><strong>Parking:</strong><br/>
+							Validated parking in underground garage (entrance on 13th Street)</li>
+
+							<li><strong>Transit:</strong><br/>
+							Accessible via Metro Bus Line 2 & 18</li>
+
+							<li><strong>Hours:</strong><br/>
+							Mon–Fri 8:00 AM – 6:00 PM</li>
+
+							<li><strong>Phone:</strong><br/>
+							302-333-4778</li>
+
+							<li><strong>Email:</strong><br/>
+							info@healthprtcl.com</li>
+						</ul>
+					</div>
+					<div className={'relative'}>
+						<RadarMap/>
+					</div>
+				</div>
 			},
 		],
 	},
@@ -414,6 +446,7 @@ export const pages:PageContent = {
 				type: "visitus",
 				heading: "Refer a Patient",
 				leading: "Simplified access to FDA-cleared HBOT — trusted by physicians, designed for optimal patient recovery.",
+				children: <FormReferPatient/>
 			},
 		],
 	},
@@ -620,16 +653,13 @@ export const pages:PageContent = {
 					},
 					{
 						key: "accepted",
-						heading: "Elena Torres, RN",
-						subtitle: "Registered Nurse",
+						heading: "Dr. Marcus Levin, MD",
+						subtitle: "Medical Director",
 						leading: "Leading clinical strategy with a human-first mindset",
-						children: <><p>With over 12 years in patient-focused nursing, Elena brings warmth, structure,
-							and deep clinical expertise to every recovery journey. After working in surgical and wound
-							care units across California, she joined PRTCL to focus on long-term healing through
-							HBOT.</p>
+						children: <>
+							<p>Dr. Levin is a board-certified internal medicine physician with 20+ years in hospital and outpatient care. He leads the medical team at PRTCL with a focus on safety, FDA-aligned protocols, and meaningful outcomes for every patient — from post-chemo to chronic wounds.</p>
 							<p><strong>Trust Note:</strong><br />
-								Board-certified RN with additional training in chronic wound management and
-								trauma-informed care.</p></>,
+								Fellow of the American College of Hyperbaric Medicine; Published in Journal of Wound Care and Recovery.</p></>,
 						image: {
 							width: 300,
 							height: 300,
@@ -639,16 +669,12 @@ export const pages:PageContent = {
 					},
 					{
 						key: "doctor-led-care",
-						heading: "Elena Torres, RN",
-						subtitle: "Registered Nurse",
-						leading: "Compassionate care meets clinical precision",
-						children: <><p>With over 12 years in patient-focused nursing, Elena brings warmth, structure,
-							and deep clinical expertise to every recovery journey. After working in surgical and wound
-							care units across California, she joined PRTCL to focus on long-term healing through
-							HBOT.</p>
+						heading: "Rachel Kim, CMA",
+						subtitle: "Certified Medical Assistant",
+						leading: "Small details. Big difference",
+						children: <><p>Rachel’s background in integrative care and administrative support makes her a crucial part of every patient’s first steps at PRTCL. From vitals to verifying paperwork, she ensures each visit starts with clarity and comfort.</p>
 							<p><strong>Trust Note:</strong><br />
-								Board-certified RN with additional training in chronic wound management and
-								trauma-informed care.</p></>,
+								AAMA-Certified CMA with HIPAA, CPR, and Patient Intake Specialist credentials.</p></>,
 						image: {
 							width: 300,
 							height: 300,
@@ -657,8 +683,13 @@ export const pages:PageContent = {
 						},
 					},
 
+
 				],
 			},
+			{
+				type: "form-questions",
+				children: <FormQuestions/>
+			}
 		],
 	},
 	insurance: {
@@ -905,6 +936,5 @@ export const pages:PageContent = {
 					</>
 			}
 		]
-	},
-
+	}
 };

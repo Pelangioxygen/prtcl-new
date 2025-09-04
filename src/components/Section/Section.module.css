@@ -6,7 +6,6 @@
 			margin-bottom: 0;
 		}
 	}
-
 	&:not([data-type="hero"]) {
 		display: grid;
 		grid-template-columns: var(--grid-columns-inner);
@@ -14,7 +13,6 @@
 		justify-self: stretch;
 
 		hgroup {
-			color: initial;
 			position: relative;
 			z-index: 10;
 			display: grid;
@@ -31,8 +29,8 @@
 			}
 		}
 	}
-
 }
+
 .children {
 	grid-column: 2/-2;
 }
@@ -78,5 +76,14 @@
 	grid-column: 1/-1;
 	img {
 		width: 100%;
+	}
+}
+.contentWrapper {
+	display: contents;
+	@media screen and (max-width: 1023px) {
+		display: block;
+		hgroup {
+			max-width: initial !important;
+		}
 	}
 }

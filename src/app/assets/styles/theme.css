@@ -1,6 +1,4 @@
-
 @theme {
-
 	--font-sans: "Circular PRTCL", sans-serif;
 	--font-serif: "InterVariable", serif;
 	--text-base--line-height: calc(1.4 / 1);
@@ -23,7 +21,8 @@
 	--base-body-size: 1.125rem;
 	--base-line-height: 140%;
 	/*fonts*/
-	--base-font-size-1440: 1vw;
+	--base-font-size-1440: 1.111vw;
+	--base-font-size-1024: 1.564027370478983vw;
 	--base-body-size-1440: 1.125rem;
 	--base-line-height-1440: 140%;
 

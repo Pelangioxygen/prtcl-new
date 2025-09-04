@@ -12,6 +12,7 @@ const baseStyles = {
 	label: styles.label,
 	root: styles.root,
 	input: styles.input,
+	controls: "absolute"
 };
 const FieldComposer = (props: FieldComposerProps) => {
 

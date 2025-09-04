@@ -4,8 +4,9 @@ import '@mantine/carousel/styles.css';
 import styles from "./Carousel.module.css";
 
 import { Carousel } from '@mantine/carousel';
-import SliderCard, { SliderCardProps } from "@/components/Cards/SliderCard/SliderCard";
+import SliderCard from "@/components/Cards/SliderCard/SliderCard";
 import { MantineProvider } from "@mantine/core";
+import { SliderCardProps } from "@/utils/types";
 
  const CarouselTheme = ({cards}:{cards: SliderCardProps[] | undefined}) => {
 	 if (!(!!cards)) return null;
@@ -19,7 +20,7 @@ import { MantineProvider } from "@mantine/core";
 						controlsOffset="md"
 						controlSize={26}
 						classNames={{
-							indicators: 'mt-8',
+							indicators: styles.indicators,
 							indicator: styles.indicator
 						}}
 						withIndicators height={"auto"}>

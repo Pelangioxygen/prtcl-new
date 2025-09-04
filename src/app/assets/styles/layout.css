@@ -9,12 +9,12 @@
 
         @media screen and (min-width: 1024px) {
             --grid-margin: 1fr;
-            --grid-columns: var(--grid-margin) repeat(10, 7.5rem) var(--grid-margin);
-            --grid-columns-inner: repeat(10, 7.5rem);
+            --grid-columns: var(--grid-margin) repeat(10, 8.375rem) var(--grid-margin);
+            --grid-columns-inner: repeat(10, 8.375rem);
         }
         display: grid;
         grid-template-columns: var(--grid-columns);
-        grid-gap: var(--grid-gap);
+        grid-gap: 0;
 
         & > * {
             grid-column: 2 / -2;

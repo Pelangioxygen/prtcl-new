@@ -1,5 +1,17 @@
 .Card {
 	display: grid;
+	h4 {
+		font-size: 1.5rem;
+		font-weight: normal;
+	}
+	[data-card='leading'] {
+		font-size: 1rem;
+		font-weight: 600;
+	}
+		h6 {
+			font-size: .75rem;
+			font-weight: 400;
+		}
 }
 .links {
 	display: flex;

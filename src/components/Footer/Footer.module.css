@@ -12,6 +12,9 @@
 	backdrop-filter: blur(1.25rem);
 	/* Note: backdrop-filter has minimal browser support */
 	border-radius: 1.25rem;
+	@media screen and (max-width: 1023px){
+		padding: 2.5rem 1rem;
+	}
 }
 .logobox {
 	color: var(--color-primary);
@@ -26,14 +29,29 @@
 	h4 {
 		line-height: 1;
 		font-size: 1.5rem;
+		font-family: inherit;
 	}
+	@media screen and (max-width: 1023px) {
 
+		h3 {
+			line-height: 1;
+			font-size: 1.125rem;
+			margin-bottom: 1rem;
+		}
+		h4 {
+			line-height: 1;
+			font-size: .875rem;
+		}
+	}
 	svg {
 		max-width: 22.5rem;
 		path {
 			fill: var(--color-primary);
 		}
 		margin-bottom: 1.875rem;
+		@media screen and (max-width: 1023px) {
+			max-width: 10rem;
+		}
 	}
 }
 .contacts {
@@ -45,10 +63,26 @@
 		font-size: 1.125rem;
 		margin: 0;
 	}
+	@media screen and (max-width: 1023px) {
+		p {
+			font-size: .875rem;
+			margin: 0;
+			text-align: center;
+		}
+	}
 }
 .line {
 	display: flex;
 
 	justify-content: space-between;
 	padding: 1.125rem 0;
+	@media screen  and (max-width: 1023px){
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		justify-items:  center;
+		gap: 1.5rem 2rem;
+		& > div {
+			grid-column: 1/-1;
+		}
+	}
 }

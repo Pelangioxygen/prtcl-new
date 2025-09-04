@@ -1,6 +1,7 @@
 import { ButtonComponentProps } from "@/components/Button/Button";
 import React from "react";
 import { ImageProps } from "next/image";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 export type CardProps = Card
 export interface SliderCardProps extends CardProps{
@@ -39,7 +40,9 @@ export interface ScreenSection {
 	component?: 'gallery';
 	children?: React.ReactNode | string;
 	heading?: string | React.ReactNode;
-	background?: ImageProps;
+	background?: ImageProps & {
+		srcMobile?: string | StaticImport;
+	};
 	image?: ImageProps;
 	leading?: string  | React.ReactNode;
 	links?: Button[];
