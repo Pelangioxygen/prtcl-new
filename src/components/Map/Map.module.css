@@ -1,0 +1,8 @@
+.Map {
+	display: initial;
+}
+
+/* Пример модификаторов */
+.Map--primary {
+	display: initial;
+}

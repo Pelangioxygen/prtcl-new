@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "@/app/globals.css";
 import localFont from 'next/font/local'
-import { Inter } from 'next/font/google'
 import { NextFont } from "next/dist/compiled/@next/font";
 import { HeadlessMantineProvider } from "@mantine/core";
 
@@ -9,9 +8,10 @@ export const metadata: Metadata = {
 	title: "Next App Mantine Tailwind Template",
 	description: "Next App Mantine Tailwind Template",
 };
-const inter:NextFont = Inter({
-	subsets: ['latin'],
+const inter:NextFont = localFont({
+	src: './assets/styles/Inter/InterVariable.woff2',
 	display: 'swap',
+	variable: '--inter-display',
 })
 const circular_prtcl = localFont({
 	src: './assets/styles/CircularPRTCL-Book/CircularPRTCL-Book.woff2',

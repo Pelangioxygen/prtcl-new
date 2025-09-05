@@ -25,7 +25,7 @@ const axiosClientAnon = axios.create({
 	baseURL: `https://intakeq.com/api/`,
 });
 
-const  API_ROOT_ANON = "https://intakeq.com/api/"
+// const  API_ROOT_ANON = "https://intakeq.com/api/"
 const  API_ROOT = "https://intakeq.com/api/v1/"
 
 export const requestsAxios = {

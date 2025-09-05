@@ -42,6 +42,7 @@ export interface ScreenSection {
 	heading?: string | React.ReactNode;
 	background?: ImageProps & {
 		srcMobile?: string | StaticImport;
+		srcTablet?: string | StaticImport;
 	};
 	image?: ImageProps;
 	leading?: string  | React.ReactNode;

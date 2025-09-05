@@ -1,0 +1,53 @@
+.diagnosis {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    display: flex;
+    gap: 1rem;
+}
+
+.wrapper {
+    grid-column: 1/-1;
+    display: block;
+    gap: 3.75rem;
+    & > * {
+        margin: 4rem 0;
+        &:first-of-type {
+            margin-top: 0;
+        }
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
+.description {
+    grid-column: 2/-2;
+    display: grid;
+    gap: 2rem;
+    @media screen and (min-width: 1024px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    h3 {
+        margin-bottom: 1.75rem;
+        color: var(--color-primary);
+    }
+    ul {
+        @media screen and (min-width: 1024px) {
+            column-count: 2;
+            li {
+                margin-right: 2rem;
+            }
+        }
+
+
+    }
+}
+.result {
+
+}
+.all {
+    grid-column: 2/-2;
+    text-align: center;
+    font-size: 1.5rem;
+}

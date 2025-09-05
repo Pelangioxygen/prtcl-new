@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Section.module.css";
 import Button, { ButtonComponentProps } from "@/components/Button/Button";
 import { ScreenSection, CardProps } from "@/utils/types";
-import Image, { ImageProps } from "next/image";
+import  { ImageProps } from "next/image";
 import ImageResp from "@/components/ImageResp/ImageResp";
 import Card from "@/components/Cards/Card/Card";
 import CarouselTheme from "@/components/Carousel/Carousel";
@@ -27,7 +27,7 @@ type SectionProps = {
 
 			{background ? <ImageResp image={{fill:true, style:{
 				zIndex: 0
-			},  src:background.src, srcMobile: background.srcMobile, alt:''}}/> : null}
+			},  src:background.src, srcMobile: background.srcMobile, srcTablet: background.srcTablet, alt:''}}/> : null}
 			<div className={styles.contentWrapper}>
 			{(heading || leading) ?<hgroup>
 				<TitleSection/>

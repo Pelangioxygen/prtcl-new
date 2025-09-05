@@ -1,6 +1,4 @@
-import React, { useMemo } from "react";
-import { useViewportSize } from "@mantine/hooks";
-import HeaderDesktop from "@/components/Header/HeaderDesktop";
+import React from "react";
 import HeaderMobile from "@/components/Header/HeaderMobile";
 import styles from "@/components/Header/HeaderMobile.module.css";
 

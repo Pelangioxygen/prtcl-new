@@ -6,19 +6,23 @@ import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 const ImageResp = ({ image }: { image: ImageProps & {
 		srcMobile?: string | StaticImport;
+		srcTablet?: string | StaticImport;
 	}}) => {
 
 	const { width } = useViewportSize();
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	const {srcMobile, ...rest} = image;
+	const {srcMobile, srcTablet, ...rest} = image;
 	const _image = useMemo(() => {
-		if (width < 1024) {
+		if (width < 1024 && width > 767) {
+			return image.srcTablet ||  image.src
+		}
+		if (width < 768) {
 			return image.srcMobile ||  image.src
 		}
+
 		return image.src;
 	}, [width, image]);
 
-	console.log(width, _image);
 	return <Image {...rest} src={_image} alt={''}/>
 };
 // @ts-ignore

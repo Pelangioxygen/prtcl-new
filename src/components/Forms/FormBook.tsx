@@ -152,18 +152,13 @@ const FormBook = () => {
 	const values = form.getValues();
 
 	const handleFetch = useCallback(async () => {
-		const res1 = query.getIntake();
-		const res2 = query.sendRequestAnon();
-		const res22 = query.getSettings();
-		const res3 = query.getQuestionary();
-		const send = query.sendRequestForm();
-		console.log(send);
-		console.log(res3);
-		console.log(res2);
-		console.log(res22);
-		console.log(res1);
-		console.log(dates);
-	}, []);
+		// const res1 = query.getIntake();
+		// const res2 = query.sendRequestAnon();
+		// const res22 = query.getSettings();
+		// const res3 = query.getQuestionary();
+		// const send = query.sendRequestForm();
+
+	}, [dates]);
 
 	const inputs = formInputs["book"];
 	const dateTime = dayjs(values.date_day + values.date_time, "YYYY-MM-DD HH:mm:ss");

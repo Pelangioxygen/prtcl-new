@@ -8,7 +8,7 @@ import { CardProps } from "@/utils/types";
 
 const Card = ({ children, links, leading, subtitle, className = "", heading, description, image }: CardProps) => {
 	return (
-		<div className={`${styles.Card} ${className}`}>
+		<div className={`${styles.Card} ${className}`} data-content={"card"} >
 			{heading ? <h4>{heading}</h4> : null}
 			{subtitle ? <h6>{subtitle}</h6> : null}
 			{leading ? <p data-card={'leading'}>{leading}</p> : null}

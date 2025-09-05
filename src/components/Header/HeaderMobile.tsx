@@ -1,7 +1,7 @@
 'use client'
 import styles from "@/components/Header/HeaderMobile.module.css";
 import Link from "next/link";
-import { Logo, PhoneBurgerIcon, PhoneIcon, WorkingTimeIcon } from "@/components/Icons/Icons";
+import { Logo, PhoneBurgerIcon } from "@/components/Icons/Icons";
 import { config } from "@/content/config";
 import LinkTheme from "@/components/LinkTheme/LinkTheme";
 import React, { useMemo } from "react";
@@ -15,7 +15,8 @@ const HeaderMobile = () => {
 	const { width } = useViewportSize();
 	const headers = useMemo(() => {
 		if (width < 1024) {
-			return <div className={styles.topbar} data-state={state}>
+			return <>
+				<div className={styles.topbar} data-state={state}>
 				<div className={styles.burger} onClick={() => setState(prevState => !prevState)}>
 					<BurgerIcon state={state} />
 				</div>
@@ -23,6 +24,12 @@ const HeaderMobile = () => {
 					<Link href={"/"}>
 						<Logo />
 					</Link>
+				</div>
+				<div className={"row-start-2 relative z-10 col-span-full "} data-content={"slogan"}>
+
+						<h3 className={"text-sm block text-white"}>{config.info.group}</h3>
+						<h4 className={"text-sm block text-white"}>{config.info.slogan}</h4>
+
 				</div>
 				<nav className={styles.menu}  data-state={state}>
 					{config.menu.map((l) => (
@@ -46,7 +53,7 @@ const HeaderMobile = () => {
 					</a>
 				</div>
 				<div className={styles.btns}   data-state={state}>
-					<div className={"flex items-center gap-x-4"}>
+					<div className={"flex items-center justify-center gap-x-4"}>
 						<Link href={"/refer-a-patient"}>Refer a Patient</Link>
 						<Link href={'/book-now'}>Book Now</Link>
 					</div>
@@ -59,6 +66,9 @@ const HeaderMobile = () => {
 					</div>
 				</div>
 			</div>
+
+
+			</>
 		}
 		return <HeaderDesktop />
 	}, [state, width]);

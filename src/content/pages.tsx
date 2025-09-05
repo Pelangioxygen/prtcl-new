@@ -1,4 +1,4 @@
-import { ClockIcon,  WaveIcon } from "@/components/Icons/Icons";
+import { ClockIcon, FDAIcon, WaveIcon } from "@/components/Icons/Icons";
 import React from "react";
 import AccorditionCustom from "@/components/AccorditionCustom/AccorditionCustom";
 import { faqDataAccordition, insuranceDataAccordition } from "@/content/accorditions";
@@ -8,6 +8,7 @@ import FormBook from "@/components/Forms/FormBook";
 import RadarMap from "@/components/Map/Map";
 import FormReferPatient from "@/components/Forms/FormReferPatient";
 import FormQuestions from "@/components/Forms/FormQuestions";
+import SectionDiagnosis from "@/components/Sections/SectionDiagnosis";
 
 const priceLabels = ['Single', '3 pack','5 pack','10 pack','20 pack'];
 const priceCards =	{
@@ -46,6 +47,7 @@ export const pages:PageContent = {
 					alt: "",
 					src: "/images/hero_index.jpg",
 					srcMobile: "/images/hero_index_mobile.jpg",
+					srcTablet: "/images/hero_index_tablet.jpg",
 				},
 				leading: "Hyperbaric oxygen therapy to help you recover faster, feel stronger, and heal better. FDA-cleared treatments, overseen by physicians, and covered by insurance.",
 				links: [
@@ -63,102 +65,45 @@ export const pages:PageContent = {
 					}
 				]
 			},
-			// {
-			// 	type: "conditions",
-			// 	heading: "FDA-Approved Conditions for Hyperbaric Oxygen Therapy",
-			// 	leading: "Full list of 14 approved uses and 23 additional off-label applications",
-			// 	cards: [
-			// 		{
-			// 			heading: 23,
-			// 			description: "Off-Label",
-			// 			key: "Off-Label",
-			// 		},
-			// 		{
-			// 			heading: 14,
-			// 			description: "On-Label",
-			// 			key: "On-Label",
-			// 		},
-			//
-			// 		{
-			// 			heading: <FDAIcon />,
-			// 			description: "Approved",
-			// 			key: "approved",
-			// 		},
-			// 	],
-			// 	links: [
-			// 		{
-			// 			children: "🧠 Neurology",
-			// 			href: "/neurology",
-			// 			component: "a",
-			// 			variant: "icon",
-			// 			size: "xs",
-			// 		},
-			// 		{
-			// 			children: "🦠 Infection / Immunity",
-			// 			href: "/infection",
-			// 			variant: "icon",
-			// 			size: "xs",
-			// 			component: "a",
-			// 		},
-			// 		{
-			// 			children: "🦴 Orthopedics / Trauma",
-			// 			href: "/trauma",
-			// 			variant: "icon",
-			// 			size: "xs",
-			// 			component: "a",
-			// 		},
-			// 		{
-			// 			children: "❤ Recovery & Rehabilitation",
-			// 			href: "/rehabilitation",
-			// 			variant: "icon",
-			// 			size: "xs",
-			// 			component: "a",
-			// 		},
-			// 		{
-			// 			children: "🔥 Burns & Emergency Conditions",
-			// 			href: "/emergency-conditions",
-			// 			variant: "icon",
-			// 			size: "xs",
-			// 			component: "a",
-			// 		},
-			// 		{
-			// 			children: "🧬 Chronic Inflammatory Conditions",
-			// 			href: "/chronic-inflammatory-conditions",
-			// 			variant: "icon",
-			// 			size: "xs",
-			// 			component: "a",
-			// 		},
-			// 		{
-			// 			children: "☢️ Oncology",
-			// 			href: "/oncology",
-			// 			variant: "icon",
-			// 			size: "xs",
-			// 			component: "a",
-			// 		},
-			// 	],
-			// 	link: {
-			// 		variant: "link",
-			// 		children: "View All Diagnoses",
-			// 		href: "#",
-			// 		component: "a",
-			// 	},
-			// },
-			// {
-			// 	type: "oxygen",
-			// 	heading: "What is Hyperbaric Oxygen Therapy?",
-			// 	leading: "Hyperbaric oxygen therapy (HBOT) is a scientifically backed treatment that enhances healing by delivering 100% oxygen in a pressurized chamber. It’s used to support recovery from a wide range of medical conditions—from chronic wounds to surgical recovery and inflammation.",
-			// 	background: {
-			// 		alt: "",
-			// 		src: "/images/oxy_index.png",
-			// 	},
-			// 	link: {
-			// 		children: "Learn How HBOT Works",
-			// 		href: "what-is-hbot",
-			// 		component: "a",
-			// 		variant: "primary",
-			//
-			// 	},
-			// },
+			{
+				type: "conditions",
+				heading: "FDA-Approved Conditions for Hyperbaric Oxygen Therapy",
+				leading: "Full list of 14 approved uses and 23 additional off-label applications",
+				cards: [
+					{
+						heading: 14,
+						description: "On-Label",
+						key: "On-Label",
+					},
+					{
+						heading: 23,
+						description: "Off-Label",
+						key: "Off-Label",
+					},
+					{
+						heading: <FDAIcon />,
+						description: "Approved",
+						key: "approved",
+					},
+				],
+				children: <SectionDiagnosis/>
+			},
+			{
+				type: "oxygen",
+				heading: "What is Hyperbaric Oxygen Therapy?",
+				leading: "Hyperbaric oxygen therapy (HBOT) is a scientifically backed treatment that enhances healing by delivering 100% oxygen in a pressurized chamber. It’s used to support recovery from a wide range of medical conditions—from chronic wounds to surgical recovery and inflammation.",
+				background: {
+					alt: "",
+					src: "/images/oxy_index.png",
+				},
+				link: {
+					children: "Learn How HBOT Works",
+					href: "what-is-hbot",
+					component: "a",
+					variant: "primary",
+
+				},
+			},
 			// {
 			// 	type: "benefits",
 			// 	heading: "Our Benefits",
