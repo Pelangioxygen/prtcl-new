@@ -20,6 +20,7 @@
         }
     }
 }
+
 .description {
     grid-column: 2/-2;
     display: grid;
@@ -39,13 +40,13 @@
                 margin-right: 2rem;
             }
         }
-
-
     }
 }
+
 .result {
 
 }
+
 .all {
     grid-column: 2/-2;
     text-align: center;
