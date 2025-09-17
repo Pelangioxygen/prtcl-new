@@ -165,9 +165,9 @@ const FormBook = () => {
 
 	return (
 		<div className={styles.formWrapper}>
-			<Button component={"a"} onClick={handleFetch}>
-				Test
-			</Button>
+			{/*<Button component={"a"} onClick={handleFetch}>*/}
+			{/*	Test*/}
+			{/*</Button>*/}
 			<Stepper active={active} onStepClick={setActive}>
 				<Stepper.Step step={0} label={inputs.heading}>
 					<form style={{ display: "grid" }} className={inputs.className + " " + "gap-x-6 gap-y-2"}>

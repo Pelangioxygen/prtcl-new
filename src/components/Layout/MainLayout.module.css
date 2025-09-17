@@ -11,7 +11,9 @@
 			&[data-type="hero"] {
 				aspect-ratio: 1340 / 674;
 				padding: 7.5rem 3rem 5rem;
-
+                h1 {
+                    color: white;
+                }
 				hgroup {
 					color: white;
 					position: relative;
@@ -27,21 +29,27 @@
 				@media screen and (max-width: 767px){
 					padding: 0;
 					grid-column: 1/-1;
-					margin-top: 0;
+					margin-top: 0 !important;
 					max-height: 100vh;
 					height: 100vh;
 					aspect-ratio: revert;
 					display: grid;
-					grid-template-columns: var(--grid-columns);
+					grid-template-columns: var(--grid-columns) !important;
+                    [data-content="section_wrapper"] {
+                        grid-column: 2/-2 !important;
+                        margin-bottom: 0 !important;
+                    }
 					hgroup {
 						max-width: initial;
 					}
+
 					& > div {
 						padding: 1.5rem 1.25rem;
-						margin: auto 0 1.5rem;
-						grid-column: 2/-2;
+						margin: auto 0 0 !important;
+						grid-column: 2/-2 !important;
 						h1 {
 							font-size: 1.75rem;
+                            color: white;
 						}
 						p {
 							font-size: .75rem;
@@ -194,6 +202,7 @@
 				}
 				img {
 					object-fit: cover;
+                    border-radius: 0 !important;
 					height: auto !important;
 					width: auto;
 					@media screen and (max-width: 1023px) {
