@@ -25,7 +25,7 @@ const HeaderMobile = () => {
 						<Logo />
 					</Link>
 				</div>
-				<div className={"row-start-2 relative z-10 col-span-full "} data-content={"slogan"}>
+				<div className={"row-start-2 relative z-10 col-span-full hidden lg:block"} data-content={"slogan"}>
 
 						<h3 className={"text-sm block text-white"}>{config.info.group}</h3>
 						<h4 className={"text-sm block text-white"}>{config.info.slogan}</h4>

@@ -40,6 +40,7 @@ export interface ScreenSection {
 	component?: 'gallery';
 	children?: React.ReactNode | string;
 	heading?: string | React.ReactNode;
+	headingOrder?: number;
 	background?: ImageProps & {
 		srcMobile?: string | StaticImport;
 		srcTablet?: string | StaticImport;

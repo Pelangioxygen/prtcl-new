@@ -18,11 +18,16 @@
 		summary {
 			list-style: none;
 			padding-right: 2.75rem;
+            position: relative;
 			&:after {
 				content: '+';
 				position: absolute;
-				right: 1.25rem;
+				right: 0;
 				transition: transform 0.2s;
+                top: 0;
+                bottom: 0;
+                display: flex;
+                align-items: center;
 			}
 
 			font-size: 1.125rem;
@@ -30,6 +35,9 @@
 			& + * {
 				margin-top: 1.875rem;
 			}
+            @media screen and (max-width: 767px){
+                font-size: 1rem;
+            }
 		}
 
 	}

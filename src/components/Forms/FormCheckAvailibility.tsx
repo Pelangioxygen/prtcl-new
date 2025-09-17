@@ -15,7 +15,7 @@ dayjs.extend(advancedFormat);
 
 const formInputs = {
 	questions: {
-		heading: "Have Questions?",
+		heading: "Check Availability or Refer a Patient",
 		subheading: "Choose a day",
 		subheading2: "Patient's Info",
 		subheading3: "Please enter patient details",
@@ -60,10 +60,10 @@ const formInputs = {
 	},
 };
 
-const FormQuestions = () => {
+const FormCheckAvailibility = () => {
 
 	const form = useForm({
-		name: "Questions",
+		name: "CheckAvailibility",
 		mode: "controlled",
 		validateInputOnBlur: true,
 		initialValues: {
@@ -87,8 +87,7 @@ const FormQuestions = () => {
 			<form style={{ display: "grid" }} className={inputs.className + " " + "gap-x-6 gap-y-2"}>
 				<hgroup className={'!block text-left mb-16 !col-span-full'}>
 					<h3 className={"justify-self-start col-span-2 mb-2 text-primary"}>{inputs.heading}</h3>
-					<p className={' text-left justify-self-start text-[1.125rem]'}>Our intake team is here to assist referring physicians directly.<br/>
-						Please fill out the secure form below or email us anytime at info@healthprtcl.com</p>
+					<p className={' text-left justify-self-start text-[1.125rem]'}>Our intake team is here to assist referring physicians directly. Please fill out the secure form below or email us anytime at referrals@healthprtcl.com</p>
 				</hgroup>
 
 				{inputs.inputs.map((i) => {
@@ -105,4 +104,4 @@ const FormQuestions = () => {
 	);
 };
 
-export default FormQuestions;
+export default FormCheckAvailibility;

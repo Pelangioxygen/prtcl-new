@@ -6,7 +6,7 @@
 
 .control {
 
-    max-width: fit-content;
+    /*max-width: fit-content;*/
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -16,9 +16,8 @@
     line-height: 1;
     white-space: nowrap;
     border-radius: 3.25rem;
-    aspect-ratio: 100/55;
     font-weight: 600;
-    height: 3.75rem;
+    /*height: 3.75rem;*/
     cursor: pointer;
     padding: 0.75rem 2rem;
     /*gradient*/
@@ -74,9 +73,18 @@
             }
         }
     }
+    @media screen and (min-width: 1440px){
+        height: 3.75rem;
+    }
+
+    @media screen and (max-width: 1023px){
+
+        height: 2.25rem;
+    }
 }
 .simpleGrid {
     display: grid;
     gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(6rem, 6rem));
+    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+    justify-items: stretch;
 }

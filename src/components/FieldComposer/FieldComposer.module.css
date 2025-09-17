@@ -18,6 +18,9 @@
         flex: 1 100%;
 
     }
+    @media screen and (max-width: 767px){
+        margin-bottom: 1rem;
+    }
 }
 
 .section {
@@ -124,9 +127,10 @@
     /*height: 2.5rem;*/
 
     &::placeholder {
-        font-family: var(--font-sans);
-        line-height: 1;
-        font-weight: 500;
+        font-family: var(--font-serif);
+        line-height: normal;
+        font-size: .875rem;
+        font-weight: 400;
         color: var(--color-gray-400);
     }
 }

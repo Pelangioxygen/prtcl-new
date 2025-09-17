@@ -171,12 +171,12 @@ const FormBook = () => {
 			<Stepper active={active} onStepClick={setActive}>
 				<Stepper.Step step={0} label={inputs.heading}>
 					<form style={{ display: "grid" }} className={inputs.className + " " + "gap-x-6 gap-y-2"}>
-						<h3 className={"col-span-2 mb-12 text-primary"}>{inputs.heading}</h3>
+						<h3 className={"col-span-2 mb-4  text-[1.5rem] mt-8 text-primary "}>{inputs.heading}</h3>
 						<div className={styles.confirmPanel}>
 							<h3>Selected Plan: Restore – 60 min HBOT </h3>
 							<h4> Number of Sessions: 20</h4>
 						</div>
-						<h3 className={"col-span-2  mt-16 col-span-full mb-12 text-primary"}>{inputs.subheading}</h3>
+						<h3 className={"col-span-2 mb-4  text-[1.5rem] mt-8 text-primary "}>{inputs.subheading}</h3>
 						<DatePicker
 							nextIcon={<ArrowRightIcon width={"1.25rem"} height={"1rem"} />}
 							previousIcon={<ArrowLeftIcon width={"1.25rem"} height={"1rem"} />}
@@ -188,7 +188,7 @@ const FormBook = () => {
 							{...form.getInputProps("date_day")}
 						/>
 
-						<h3 className={"col-span-2 mb-12 mt-16 text-primary"}>{inputs.subheading2}</h3>
+						<h3 className={"col-span-2 mb-4  text-[1.5rem] mt-8 text-primary "}>{inputs.subheading2}</h3>
 						<TimeGrid
 							classNames={TimeInputClassNames}
 							data={getTimeRange({ startTime: "10:00", endTime: "21:00", interval: "01:00" })}
@@ -204,10 +204,10 @@ const FormBook = () => {
 					</form>
 				</Stepper.Step>
 				<Stepper.Step step={1} title={"asd"} label={inputs.heading2}>
-					<form style={{ display: "grid" }} className={inputs.className + " " + "gap-x-6 gap-y-2"}>
-						<h3 className={"col-span-2 mb-12 text-primary"}>{inputs.heading2}</h3>
+					<form style={{ display: "grid" }} className={inputs.className + " " + "gap-x-6 gap-y-2 max-sm:grid-cols-2"}>
+						<h3 className={"col-span-2 mb-4  text-[1.5rem] mt-8 text-primary "}>{inputs.heading2}</h3>
 						{inputs.inputs.map((i) => {
-							return <FieldComposer {...i} key={form.key(i.name)} {...form.getInputProps(i.name)} />;
+							return <FieldComposer {...i} key={form.key(i.name)} className={"max-sm:col-span-full"} {...form.getInputProps(i.name)} />;
 						})}
 					</form>
 				</Stepper.Step>
@@ -245,12 +245,15 @@ const FormBook = () => {
 					</p>
 				</Stepper.Completed>
 			</Stepper>
+			<div className={'mt-8'}>
+				*All times are shown in Pacific Time
+			</div>
+			<div className={"flex justify-between mt-6 gap-2"}>
 
-			<div className={"flex justify-between mt-16"}>
-				<Button shadow={true} variant="default" onClick={prevStep} component={"button"}>
+				<Button shadow={true} variant="default" onClick={prevStep} component={"button"} className={"flex-1 max-sm:!max-w-full"}>
 					← Back
 				</Button>
-				<Button shadow={true} component={"button"} variant={"primary"} onClick={nextStep}>
+				<Button shadow={true} component={"button"} variant={"primary"} className={"flex-1 max-sm:!max-w-full"} onClick={nextStep}>
 					Continue →
 				</Button>
 			</div>

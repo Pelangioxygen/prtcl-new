@@ -177,11 +177,11 @@
         display: grid;
         grid-template-columns: 2.875rem repeat(2, 1fr) 2.875rem;
         gap: 1rem;
-        padding-top: 1rem;
+        padding: 1rem 0;
         align-items: center;
         height: auto;
         [data-content="slogan"] {
-            padding-top: 0.5rem;
+            padding: 1rem 0;
             text-align: center;
             h3 {
                 font-size: 1.125rem;

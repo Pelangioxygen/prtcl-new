@@ -27,7 +27,19 @@
 			p {
 				margin: 0;
 			}
+
 		}
+        @media screen and (max-width: 768px){
+            margin-bottom: 1.875rem;
+
+            display: block;
+            hgroup {
+                margin-bottom: 4rem;
+            }
+            [data-content="section-wrapper"] {
+                grid-column: 1/-1;
+            }
+        }
 	}
 }
 

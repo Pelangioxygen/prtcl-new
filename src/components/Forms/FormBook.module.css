@@ -6,6 +6,12 @@
 	[data-icon-position="left"] {
 		display: none;
 	}
+    @media screen and (max-width: 767px){
+        padding: 1.5rem 1.25rem;
+        h3 {
+            text-align: left;
+        }
+    }
 }
 .confirmPanel {
 	grid-column: 1/-1;

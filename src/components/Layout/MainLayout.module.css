@@ -3,9 +3,8 @@
 		margin-top: var(--spacing-topmenu);
 	}
 	grid-row-gap: 7.5rem;
-	@media screen and (max-width: 767px) {
-		grid-row-gap: 3.75rem;
-	}
+
+
 	&[class*="page-index"] {
 		section{
 			/* стили секций */
@@ -263,9 +262,15 @@
 					}
 				}
 				@media screen and (max-width: 767px) {
+                    grid-template-columns: 1fr;
 					& > * {
 						grid-column: 1/-1;
 					}
+                    hgroup {
+                        p {
+                            margin: 1rem 0;
+                        }
+                    }
 				}
 				@media screen and (max-width: 1023px){
 					& > * {
@@ -312,6 +317,9 @@
 				[data-content="section-links"] {
 					grid-column: 3/-3;
 				}
+                img {
+                    border-radius: 1.25rem;
+                }
 
 				hgroup {
 					h2 {
@@ -334,6 +342,22 @@
 					grid-column: 3/-3;
 					flex: 0 1 50%;
 				}
+
+                @media screen and (max-width: 767px){
+                    aspect-ratio: 328 / 450;
+                    padding: 1.5rem 1.25rem;
+                    grid-template-columns: 1fr;
+
+                    img {
+                        object-fit: cover;
+                    }
+                    hgroup {
+                        p {
+                            font-size: .875rem;
+                            line-height: 140%;
+                        }
+                    }
+                }
 			}
 			&[data-type="heading_img"] {
 				hgroup {
@@ -350,6 +374,23 @@
 					height: 7.5rem;
 					display: inline-block;
 				}
+                @media screen and (max-width: 767px){
+                    aspect-ratio: 328 / 450;
+                    grid-template-columns: 1fr;
+
+                    img {
+                        object-fit: cover;
+                    }
+                    hgroup {
+                        h2 {
+                            font-size: 3.75rem;
+                        }
+                        p {
+                            font-size: .875rem;
+                            line-height: 140%;
+                        }
+                    }
+                }
 			}
 			&[data-type="benefits"] {
 				[data-content="section-cards"] {
@@ -371,8 +412,39 @@
 						}
 					}
 				}
+                @media screen and (max-width: 767px){
+
+                    grid-template-columns: 1fr;
+
+                    img {
+                        object-fit: cover;
+                    }
+                    hgroup {
+                        p {
+                            font-size: .875rem;
+                            line-height: 140%;
+                        }
+                    }
+                    [data-content="section-cards"] {
+                        display: grid;
+                        gap: 2rem;
+                    }
+                }
 			}
 			&[data-type="real-stories"] {
+                @media screen and (max-width: 767px){
+                    grid-template-columns: 1fr;
+                    [class*="mantine-Carousel-controls"] {
+                        display: none;
+                    }
+                    [data-content="section-wrapper"] {
+                        max-width: 90vw;
+                        overflow: hidden;
+                    }
+                    [data-content="section-carousel"] {
+                        overflow: clip;
+                    }
+                }
 
 			}
 			&[data-type="insurance"] {
@@ -391,6 +463,9 @@
 						}
 					}
 				}
+                @media screen and (max-width: 767px){
+                    grid-template-columns: 1fr;
+                }
 			}
 		}
 	}
@@ -532,11 +607,18 @@
 					flex: 0 1 50%;
 					margin-bottom: 2.5rem;
 				}
+                @media screen and (max-width: 767px) {
+                    aspect-ratio: 1340 / 674 !important;
+                    padding: 0 !important;
+                }
 			}
 		}
 	}
 	&[class*="page-contacts"] {
 		section{
+            h1 {
+                color: var(--color-primary);
+            }
 			/* стили секций */
 			&[data-type="location"] {
 				padding-bottom: 7.5rem;
@@ -568,7 +650,7 @@
 			}
 			&[data-type="hero"] {
 				aspect-ratio: 1340 / 674;
-				padding: 7.5rem 3rem 5rem;
+				/*padding: 7.5rem 3rem 5rem;*/
 
 				hgroup {
 
@@ -579,6 +661,10 @@
 					flex: 0 1 50%;
 					margin-bottom: 2.5rem;
 				}
+                @media screen and (max-width: 767px) {
+                    aspect-ratio: 1340 / 674 !important;
+                    padding: 0 !important;
+                }
 			}
 
 			&[data-type="oxygen"] {
@@ -698,6 +784,9 @@
 						color: #4D4D4D;
 					}
 				}
+                @media screen and (max-width: 767px){
+                    padding-top: 4rem !important;
+                }
 			}
 			&[data-type="steps"] {
 				[data-content="section-cards"] {
@@ -740,6 +829,7 @@
 							line-height: .75;
 							border-radius: 3rem;
 						}
+
 					}
 					p, ul {
 						text-align: left;
@@ -764,6 +854,24 @@
 						}
 					}
 				}
+                @media screen and (max-width: 767px){
+                    [data-content="section-cards"] {
+                        h4 {
+                            color: var(--color-primary);
+                            font-size: 1.75rem;
+                            text-align: center;
+                            align-items: center;
+                            justify-items: center;
+                            align-content: center;
+                            display: grid;
+                            gap: 1.25rem;
+                            /*justify-content: center;*/
+                            line-height: 1;
+                            margin-bottom: 1.875rem;
+
+                        }
+                    }
+                }
 			}
 			&[data-type="insurance"] {
 				[data-content="section-cards"] {
@@ -815,6 +923,14 @@
 						color: #4D4D4D;
 					}
 				}
+                @media screen and (max-width: 767px){
+                    padding-top: 4rem !important;
+                    hgroup {
+                        h1 {
+                            margin-bottom: 2rem;
+                        }
+                    }
+                }
 			}
 			&[data-type="steps"] {
 				[data-content="section-cards"] {
@@ -1037,7 +1153,18 @@
 							width: 100%;
 						}
 					}
+                    @media screen and (max-width: 767px){
+                        grid-template-columns: 1fr;
+                        & > * {
+                            border-radius: 1rem;
+                            &  > h4, &  > h6, &  > p {
+                                margin-left: auto;
+                                margin-right: auto;
+                                justify-items: center;
+                            }
 
+                        }
+                    }
 				}
 
 
@@ -1092,6 +1219,24 @@
 						color: var(--color-primary);
 					}
 				}
+                @media screen and (max-width: 767px){
+                    grid-template-columns: 1fr;
+                    hgroup {
+                        margin-bottom: 0;
+                        h2 {
+                            text-align: center;
+                        }
+                    }
+                    /*& > * {*/
+                    /*    border-radius: 1rem;*/
+                    /*    &  > h4, &  > h6, &  > p {*/
+                    /*        margin-left: auto;*/
+                    /*        margin-right: auto;*/
+                    /*        justify-items: center;*/
+                    /*    }*/
+
+                    /*}*/
+                }
 			}
 		}
 	}
@@ -1123,6 +1268,9 @@
 						color: #4D4D4D;
 					}
 				}
+                @media screen and (max-width: 767px){
+                    padding-top: 4rem !important;
+                }
 			}
 			&[data-type="steps"] {
 				[data-content="section-cards"] {
@@ -1220,7 +1368,11 @@
 	}
 	&[class*="page-what-is-hbot"] {
 		section {
+            @media screen and (max-width: 767px){
+                grid-template-columns: 1fr;
+            }
 			&[data-type="hero"] {
+
 				aspect-ratio: 1340 / 674;
 				padding: 7.5rem 3rem 5rem;
 				display: flex;
@@ -1243,6 +1395,29 @@
 						line-height: 1.4;
 					}
 				}
+                @media screen and (max-width: 767px){
+                    aspect-ratio: initial;
+                    margin-top: 5rem;
+                    padding: 1.5rem 1.25rem;
+                    grid-template-columns: 1fr;
+                    & * {
+                        grid-column: 1/-1 !important;
+                    }
+
+                    img {
+                        object-fit: cover;
+                    }
+                    hgroup {
+                        p {
+                            font-size: .875rem;
+                            line-height: 140%;
+                        }
+                    }
+                    img {
+                        object-fit: cover;
+                        border-radius: 1.25rem;
+                    }
+                }
 			}
 			&[data-type="what-therapy"] {
 				[data-content="section-links"] {
@@ -1304,6 +1479,45 @@
 						height: 5rem;
 					}
 				}
+                @media screen and (max-width: 767px){
+                    aspect-ratio: initial;
+                    margin-top: 0;
+                    padding: 1.5rem 1.25rem 1.5rem;
+                    grid-template-columns: 1fr;
+                    & * {
+                        grid-column: 1/-1 !important;
+                    }
+
+                    img {
+                        object-fit: cover;
+                    }
+                    hgroup {
+                        p {
+                            font-size: .875rem;
+                            line-height: 140%;
+                        }
+                    }
+                    [data-content="section-cards"] {
+                        h4 {
+                            color: var(--color-primary);
+                            font-size: 1.75rem;
+                            text-align: center;
+                            align-items: center;
+                            justify-items: center;
+                            align-content: center;
+                            display: grid;
+                            gap: 1.25rem;
+                            /*justify-content: center;*/
+                            line-height: 1;
+                            margin-bottom: 1.875rem;
+
+                        }
+                    }
+                    img {
+                        object-fit: cover;
+                        border-radius: 1.25rem;
+                    }
+                }
 
 			}
 			&[data-type="why"] {
@@ -1343,9 +1557,30 @@
 						}
 					}
 				}
+                @media screen and (max-width: 767px){
+
+                    [data-content="section-cards"] {
+                        grid-column: 1/-1;
+                        display: grid;
+                        grid-template-columns: repeat(1, 1fr);
+                        justify-content: space-between;
+
+                        & > * {
+
+                        }
+                        h4, h6, p {
+                            margin: 0 0 1rem;
+                        }
+                        p {
+                            font-weight: 400;
+                        }
+                    }
+                }
 			}
 			&[data-type="form-questions"] {
+                @media screen and (max-width: 767px){
 
+                }
 			}
 		}
 	}
@@ -1397,5 +1632,47 @@
 			}
 		}
 	}
+    @media screen and (max-width: 767px) {
+        &[class] {
+            grid-row-gap: 3.75rem;
 
+            section {
+                h1, h2 {
+                    margin-bottom: 2rem;
+                }
+                grid-template-columns: 1fr;
+                hgroup {
+                    grid-column: 1/-1;
+                    display: block;
+                }
+                &[data-type="hero"] {
+                    aspect-ratio: initial;
+                    margin-top: 5rem;
+                    padding: 1.5rem 0;
+                    grid-template-columns: 1fr;
+
+                    & * {
+                        grid-column: 1/-1 !important;
+                    }
+
+                    img {
+                        object-fit: cover;
+                    }
+
+                    hgroup {
+                        p {
+                            font-size: 1rem;
+                            line-height: 140%;
+                        }
+                    }
+
+                    img {
+                        object-fit: cover;
+                        border-radius: 1.25rem;
+                    }
+
+                }
+            }
+        }
+    }
 }

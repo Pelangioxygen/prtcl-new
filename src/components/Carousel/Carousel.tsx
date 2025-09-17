@@ -12,7 +12,7 @@ import { SliderCardProps } from "@/utils/types";
 	 if (!(!!cards)) return null;
 	 return (
 		 <MantineProvider>
-			<div className={`${styles.Carousel} `}>
+			<div className={`${styles.Carousel} `} data-content={"section-carousel"}>
 					<Carousel
 						slideSize="25%"
 						slideGap="sm"

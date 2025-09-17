@@ -23,7 +23,7 @@ const formInputs = {
 		heading2: "Your Details",
 		heading3: "Review and Confirm Your Booking",
 		heading4: "Payment Confirmed",
-		className: "grid-cols-2",
+		className: "grid-cols-1 lg:grid-cols-2",
 		inputs: [
 			{
 				label: "First Name",
@@ -173,18 +173,18 @@ const FormReferPatient = () => {
 	return (
 		<div className={styles.formWrapper}>
 			<form style={{ display: "grid" }} className={inputs.className + " " + "gap-x-6 gap-y-2"}>
-				<hgroup className={'!block text-left mb-16'}>
+				<hgroup className={'!block text-left  lg:mb-16 mb-8'}>
 					<h3 className={"justify-self-start col-span-2 mb-2 text-primary"}>{inputs.heading}</h3>
-					<p className={'justify-self-start text-[1.125rem]'}>Please enter referring physician details</p>
+					<p className={'justify-self-start text-[.825rem] lg:text-[1.125rem] text-left'}>Please enter referring physician details</p>
 				</hgroup>
 
 				{inputs.inputs.map((i) => {
 					return <FieldComposer {...i} key={form.key(i.name)} {...form.getInputProps(i.name)} />;
 				})}
 
-				<hgroup className={'!block text-left mb-16'}>
-					<h3 className={"justify-self-start col-span-2  mb-2  mt-16 text-primary"}>{inputs.subheading2}</h3>
-					<p className={'justify-self-start text-[1.125rem]'}>{inputs.subheading3}</p>
+				<hgroup className={'!block text-left lg:mb-16 mb-8'}>
+					<h3 className={"justify-self-start col-span-2  mb-2  lg:mt-16 mt-8 text-primary"}>{inputs.subheading2}</h3>
+					<p className={'justify-self-start  text-[.825rem] lg:text-[1.125rem]'}>{inputs.subheading3}</p>
 
 				</hgroup>
 				{inputs_patient.inputs.map((i) => {
@@ -192,7 +192,7 @@ const FormReferPatient = () => {
 				})}
 
 				<div className={"grid col-span-full gap-y-12 justify-between mt-4"}>
-					<Button shadow={true} component={"button"} variant={"primary"}>
+					<Button shadow={true} component={"button"} variant={"primary"} className={" max-sm:w-full max-sm:!max-w-full"}>
 						Submit
 					</Button>
 					<p>Fax additional clinical notes to: 302-333-4778</p>

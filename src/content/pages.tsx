@@ -9,6 +9,7 @@ import RadarMap from "@/components/Map/Map";
 import FormReferPatient from "@/components/Forms/FormReferPatient";
 import FormQuestions from "@/components/Forms/FormQuestions";
 import SectionDiagnosis from "@/components/Sections/SectionDiagnosis";
+import FormCheckAvailibility from "@/components/Forms/FormCheckAvailibility";
 
 const priceLabels = ['Single', '3 pack','5 pack','10 pack','20 pack'];
 const priceCards =	{
@@ -104,226 +105,226 @@ export const pages:PageContent = {
 
 				},
 			},
-			// {
-			// 	type: "benefits",
-			// 	heading: "Our Benefits",
-			// 	leading: "Discover what makes our care unique — science-backed protocols, measurable outcomes, and physician-guided support every step of the way.",
-			// 	cards: [
-			// 		{
-			// 			key: "fda",
-			// 			heading: "FDA-cleared Treatments",
-			// 			description: "Scientifically validated therapies for complex recovery cases",
-			// 			image: {
-			// 				width: 300,
-			// 				height: 180,
-			// 				alt: "",
-			// 				src: "/images/benefits_index_1.png",
-			// 			},
-			// 		},
-			// 		{
-			// 			key: "accepted",
-			// 			heading: "Insurance Accepted",
-			// 			description: "Covered care for 14 approved conditions with physician referral",
-			// 			image: {
-			// 				width: 300,
-			// 				height: 180,
-			// 				alt: "",
-			// 				src: "/images/benefits_index_2.png",
-			// 			},
-			// 		},
-			// 		{
-			// 			key: "doctor-led-care",
-			// 			heading: "Doctor-Led Care",
-			// 			description: "Every treatment is overseen by licensed medical professionals",
-			// 			image: {
-			// 				width: 300,
-			// 				height: 180,
-			// 				alt: "",
-			// 				src: "/images/benefits_index_3.png",
-			// 			},
-			// 		},
-			//
-			// 	],
-			// },
-			// {
-			// 	type: "heading_img",
-			// 	heading: <>{"Where advanced medicine"} <i data-bgimg /> {`delivers real results`}</>,
-			// },
-			// {
-			// 	type: "real-stories",
-			// 	component: "gallery",
-			// 	heading: "Real Stories. Lasting Results",
-			// 	leading: "Hear directly from patients and physicians about their healing journeys with physician-guided hyperbaric oxygen therapy.",
-			// 	slider: [
-			// 		{
-			// 			key: "doctor",
-			// 			label: "doctor",
-			// 			color: "blue",
-			// 			subheading: "Post-radiation recovery",
-			// 			heading: "Dr. Laila Chen, DO",
-			// 			stars: 3,
-			// 			description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
-			// 		},
-			// 		{
-			// 			key: "coordinator",
-			// 			label: "Coordinator",
-			// 			color: "yellow",
-			// 			subheading: "Post-radiation recovery",
-			// 			heading: "Dr. Laila Chen, DO",
-			// 			stars: 3,
-			// 			description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
-			// 		},
-			// 		{
-			// 			key: "patient",
-			// 			label: "Patient",
-			// 			color: "green",
-			// 			subheading: "Wound Care Specialist",
-			// 			heading: "Dr. Laila Chen, DO",
-			// 			stars: 3,
-			// 			description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
-			// 		},
-			// 		{
-			// 			key: "doctor2",
-			// 			label: "doctor",
-			// 			color: "blue",
-			// 			subheading: "Wound Care Specialist",
-			// 			heading: "Dr. Laila Chen, DO",
-			// 			stars: 3,
-			// 			description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
-			// 		},
-			// 		{
-			// 			key: "doctor3",
-			// 			label: "doctor",
-			// 			color: "blue",
-			// 			subheading: "Wound Care Specialist",
-			// 			heading: "Dr. Laila Chen, DO",
-			// 			stars: 3,
-			// 			description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
-			// 		},
-			// 		{
-			// 			key: "doctor123",
-			// 			label: "doctor",
-			// 			color: "blue",
-			// 			subheading: "Post-radiation recovery",
-			// 			heading: "Dr. Laila Chen, DO",
-			// 			stars: 3,
-			// 			description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
-			// 		},
-			// 		{
-			// 			key: "coordinator4324",
-			// 			label: "Coordinator",
-			// 			color: "yellow",
-			// 			subheading: "Post-radiation recovery",
-			// 			heading: "Dr. Laila Chen, DO",
-			// 			stars: 1,
-			// 			description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
-			// 		},
-			// 		{
-			// 			key: "patient5454",
-			// 			label: "Patient",
-			// 			color: "green",
-			// 			subheading: "Wound Care Specialist",
-			// 			heading: "Dr. Laila Chen, DO",
-			// 			stars: 5,
-			// 			description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
-			// 		},
-			// 		{
-			// 			key: "doctor1235432",
-			// 			label: "doctor",
-			// 			color: "blue",
-			// 			subheading: "Wound Care Specialist",
-			// 			heading: "Dr. Laila Chen, DO",
-			// 			stars: 4,
-			// 			description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
-			// 		},
-			// 		{
-			// 			key: "doctor123213123",
-			// 			label: "doctor",
-			// 			color: "blue",
-			// 			subheading: "Wound Care Specialist",
-			// 			heading: "Dr. Laila Chen, DO",
-			// 			stars: 2,
-			// 			description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
-			// 		},
-			// 	],
-			// },
-			// {
-			// 	type: "insurance",
-			// 	heading: "Insurance Plans We Accept",
-			// 	leading: "Our clinic is in-network with leading providers to help you access covered care with confidence.",
-			// 	cards: [
-			// 		{
-			// 			key: "Medicare-Medicaid",
-			// 			heading: "Medicare / Medicaid",
-			// 			image: {
-			// 				width: 300,
-			// 				height: 100,
-			// 				alt: "",
-			// 				src: "/images/insuranse/1.png",
-			// 			},
-			// 		},
-			// 		{
-			// 			key: "Blue-Cross-Blue-Shield",
-			// 			heading: "Blue Cross Blue Shield (BCBS)",
-			// 			image: {
-			// 				width: 300,
-			// 				height: 100,
-			// 				alt: "",
-			// 				src: "/images/insuranse/2.png",
-			// 			},
-			// 		},
-			// 		{
-			// 			key: "United-Healthcare",
-			// 			heading: "United Healthcare",
-			// 			image: {
-			// 				width: 300,
-			// 				height: 100,
-			// 				alt: "",
-			// 				src: "/images/insuranse/3.png",
-			// 			},
-			// 		},
-			// 		{
-			// 			key: "Cigna",
-			// 			heading: "Cigna",
-			// 			image: {
-			// 				width: 300,
-			// 				height: 100,
-			// 				alt: "",
-			// 				src: "/images/insuranse/4.png",
-			// 			},
-			// 		},
-			// 		{
-			// 			key: "Humana",
-			// 			heading: "Humana",
-			// 			image: {
-			// 				width: 300,
-			// 				height: 100,
-			// 				alt: "",
-			// 				src: "/images/insuranse/5.png",
-			// 			},
-			// 		},
-			// 		{
-			// 			key: "Aetna",
-			// 			heading: "Aetna",
-			// 			image: {
-			// 				width: 300,
-			// 				height: 100,
-			// 				alt: "",
-			// 				src: "/images/insuranse/6.png",
-			// 			},
-			// 		},
-			// 		{
-			// 			key: "Tricare",
-			// 			heading: "Tricare",
-			// 			image: {
-			// 				width: 300,
-			// 				height: 100,
-			// 				alt: "",
-			// 				src: "/images/insuranse/7.png",
-			// 			},
-			// 		},
-			// 	],
-			// },
+			{
+				type: "benefits",
+				heading: "Our Benefits",
+				leading: "Discover what makes our care unique — science-backed protocols, measurable outcomes, and physician-guided support every step of the way.",
+				cards: [
+					{
+						key: "fda",
+						heading: "FDA-cleared Treatments",
+						description: "Scientifically validated therapies for complex recovery cases",
+						image: {
+							width: 300,
+							height: 180,
+							alt: "",
+							src: "/images/benefits_index_1.png",
+						},
+					},
+					{
+						key: "accepted",
+						heading: "Insurance Accepted",
+						description: "Covered care for 14 approved conditions with physician referral",
+						image: {
+							width: 300,
+							height: 180,
+							alt: "",
+							src: "/images/benefits_index_2.png",
+						},
+					},
+					{
+						key: "doctor-led-care",
+						heading: "Doctor-Led Care",
+						description: "Every treatment is overseen by licensed medical professionals",
+						image: {
+							width: 300,
+							height: 180,
+							alt: "",
+							src: "/images/benefits_index_3.png",
+						},
+					},
+
+				],
+			},
+			{
+				type: "heading_img",
+				heading: <>{"Where advanced medicine"} <i data-bgimg /> {`delivers real results`}</>,
+			},
+			{
+				type: "real-stories",
+				component: "gallery",
+				heading: "Real Stories. Lasting Results",
+				leading: "Hear directly from patients and physicians about their healing journeys with physician-guided hyperbaric oxygen therapy.",
+				slider: [
+					{
+						key: "doctor",
+						label: "doctor",
+						color: "blue",
+						subheading: "Post-radiation recovery",
+						heading: "Dr. Laila Chen, DO",
+						stars: 3,
+						description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
+					},
+					{
+						key: "coordinator",
+						label: "Coordinator",
+						color: "yellow",
+						subheading: "Post-radiation recovery",
+						heading: "Dr. Laila Chen, DO",
+						stars: 3,
+						description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
+					},
+					{
+						key: "patient",
+						label: "Patient",
+						color: "green",
+						subheading: "Wound Care Specialist",
+						heading: "Dr. Laila Chen, DO",
+						stars: 3,
+						description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
+					},
+					{
+						key: "doctor2",
+						label: "doctor",
+						color: "blue",
+						subheading: "Wound Care Specialist",
+						heading: "Dr. Laila Chen, DO",
+						stars: 3,
+						description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
+					},
+					{
+						key: "doctor3",
+						label: "doctor",
+						color: "blue",
+						subheading: "Wound Care Specialist",
+						heading: "Dr. Laila Chen, DO",
+						stars: 3,
+						description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
+					},
+					{
+						key: "doctor123",
+						label: "doctor",
+						color: "blue",
+						subheading: "Post-radiation recovery",
+						heading: "Dr. Laila Chen, DO",
+						stars: 3,
+						description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
+					},
+					{
+						key: "coordinator4324",
+						label: "Coordinator",
+						color: "yellow",
+						subheading: "Post-radiation recovery",
+						heading: "Dr. Laila Chen, DO",
+						stars: 1,
+						description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
+					},
+					{
+						key: "patient5454",
+						label: "Patient",
+						color: "green",
+						subheading: "Wound Care Specialist",
+						heading: "Dr. Laila Chen, DO",
+						stars: 5,
+						description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
+					},
+					{
+						key: "doctor1235432",
+						label: "doctor",
+						color: "blue",
+						subheading: "Wound Care Specialist",
+						heading: "Dr. Laila Chen, DO",
+						stars: 4,
+						description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
+					},
+					{
+						key: "doctor123213123",
+						label: "doctor",
+						color: "blue",
+						subheading: "Wound Care Specialist",
+						heading: "Dr. Laila Chen, DO",
+						stars: 2,
+						description: "I refer my patients to PRTCL when we need medically supervised tissue recovery that actually moves the needle. Their adherence to FDA protocols and clinical transparency gives me full confidence in their team.",
+					},
+				],
+			},
+			{
+				type: "insurance",
+				heading: "Insurance Plans We Accept",
+				leading: "Our clinic is in-network with leading providers to help you access covered care with confidence.",
+				cards: [
+					{
+						key: "Medicare-Medicaid",
+						heading: "Medicare / Medicaid",
+						image: {
+							width: 300,
+							height: 100,
+							alt: "",
+							src: "/images/insuranse/1.png",
+						},
+					},
+					{
+						key: "Blue-Cross-Blue-Shield",
+						heading: "Blue Cross Blue Shield (BCBS)",
+						image: {
+							width: 300,
+							height: 100,
+							alt: "",
+							src: "/images/insuranse/2.png",
+						},
+					},
+					{
+						key: "United-Healthcare",
+						heading: "United Healthcare",
+						image: {
+							width: 300,
+							height: 100,
+							alt: "",
+							src: "/images/insuranse/3.png",
+						},
+					},
+					{
+						key: "Cigna",
+						heading: "Cigna",
+						image: {
+							width: 300,
+							height: 100,
+							alt: "",
+							src: "/images/insuranse/4.png",
+						},
+					},
+					{
+						key: "Humana",
+						heading: "Humana",
+						image: {
+							width: 300,
+							height: 100,
+							alt: "",
+							src: "/images/insuranse/5.png",
+						},
+					},
+					{
+						key: "Aetna",
+						heading: "Aetna",
+						image: {
+							width: 300,
+							height: 100,
+							alt: "",
+							src: "/images/insuranse/6.png",
+						},
+					},
+					{
+						key: "Tricare",
+						heading: "Tricare",
+						image: {
+							width: 300,
+							height: 100,
+							alt: "",
+							src: "/images/insuranse/7.png",
+						},
+					},
+				],
+			},
 		],
 	},
 	contacts: {
@@ -340,6 +341,7 @@ export const pages:PageContent = {
 			{
 				type: "visitus",
 				heading: "Visit Us",
+				headingOrder: 1,
 				leading: "Whether you’re ready to book, need more information, or just have a question — our team is here to help, both online and in person.",
 			},
 			{
@@ -374,6 +376,11 @@ export const pages:PageContent = {
 					</div>
 				</div>
 			},
+
+			{
+				type: "form-questions",
+				children: <FormQuestions/>
+			}
 		],
 	},
 	"refer-a-patient": {
@@ -390,6 +397,7 @@ export const pages:PageContent = {
 			{
 				type: "visitus",
 				heading: "Refer a Patient",
+				headingOrder: 1,
 				leading: "Simplified access to FDA-cleared HBOT — trusted by physicians, designed for optimal patient recovery.",
 				children: <FormReferPatient/>
 			},
@@ -491,7 +499,8 @@ export const pages:PageContent = {
 			},
 			{
 				type: 'transparent-pricing-for-personalized-care',
-				leading: <h3 className={'text-left'}>Transparent Pricing for Personalized Care</h3>,
+				heading: "Transparent Pricing for Personalized Care",
+				// leading: <h2 className={'text-left'}>Transparent Pricing for Personalized Care</h2>,
 				children: <div>
 					<p>At PRTCL, we believe advanced care should be accessible, straightforward, and free of hidden fees. While many of our treatments are covered by insurance, we also offer membership plans designed for those seeking proactive wellness, recovery support, or long-term performance optimization — even without a medical diagnosis.</p>
 					<p>Note: Our <strong>membership</strong> plans are not covered by insurance. These self-pay programs are ideal for individuals looking to incorporate Hyperbaric Oxygen Therapy (HBOT) into their wellness strategy. Each plan includes a set number of sessions, flexible scheduling, and access to our experienced care team.</p>
@@ -768,6 +777,10 @@ export const pages:PageContent = {
 					},
 				],
 			},
+			{
+				type: "form-questions",
+				children: <FormCheckAvailibility/>
+			}
 		],
 	},
 	faq: {
@@ -783,6 +796,11 @@ export const pages:PageContent = {
 				type: "steps",
 				children: <AccorditionCustom itemss={faqDataAccordition} />,
 			},
+
+			{
+				type: "form-questions",
+				children: <FormQuestions/>
+			}
 		],
 	},
 	privacy: {
