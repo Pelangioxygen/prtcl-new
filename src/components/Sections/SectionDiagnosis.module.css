@@ -4,12 +4,14 @@
 
     display: flex;
     gap: 1rem;
+
 }
 
 .wrapper {
     grid-column: 1/-1;
     display: block;
     gap: 3.75rem;
+    position: relative;
     & > * {
         margin: 4rem 0;
         &:first-of-type {
@@ -46,9 +48,47 @@
 .result {
 
 }
+.btn {
+    @media screen and (min-width: 1440px) {
+        &:before {
+            content: none;
+        }
+        backdrop-filter: none;
+        &:hover {
+            background-color: transparent !important;
+            color: var(--mantine-color-text) !important;
 
+            &:before {
+                content: '';
+            }
+        }
+    }
+    @media screen and (max-width: 1023px){
+        color: var(--color-primary);
+        background: var(--color-ash);
+        box-shadow: var(--shadow);
+    }
+}
 .all {
     grid-column: 2/-2;
     text-align: center;
     font-size: 1.5rem;
+}
+.bgcircle {
+    position: absolute;
+    /* Ellipse 7 */
+
+    aspect-ratio: 1289 / 189;
+    /*left: 1px;*/
+    right: 1px;
+    /*top: 0;*/
+    /* Ellipse blur */
+    z-index: -1;
+    width: 90rem;
+    height: 12rem;
+    left: calc(50% - 1289px/2 + 1px);
+    top: calc(50% - 177px/2);
+    background: #008CEB;
+    filter: blur(18rem);
+
 }

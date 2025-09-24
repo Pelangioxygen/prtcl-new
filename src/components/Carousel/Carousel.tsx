@@ -11,17 +11,19 @@ import { SliderCardProps } from "@/utils/types";
  const CarouselTheme = ({cards}:{cards: SliderCardProps[] | undefined}) => {
 	 if (!(!!cards)) return null;
 	 return (
-		 <MantineProvider>
+		 <MantineProvider deduplicateCssVariables={true}>
 			<div className={`${styles.Carousel} `} data-content={"section-carousel"}>
 					<Carousel
-						slideSize="25%"
-						slideGap="sm"
+						slideSize={{ base: '100%', sm: '50%', md: '33.333333%', xl: '25%' }}
+						slideGap={{ base: "md", sm: 'lg' }}
 						emblaOptions={{ dragFree: true, align: 'start' }}
 						controlsOffset="md"
-						controlSize={26}
+						controlSize={32}
 						classNames={{
 							indicators: styles.indicators,
-							indicator: styles.indicator
+							indicator: styles.indicator,
+							controls: styles.controls,
+							control: styles.control
 						}}
 						withIndicators height={"auto"}>
 						{cards?.map((c) => (

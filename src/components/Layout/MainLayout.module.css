@@ -3,8 +3,6 @@
 		margin-top: var(--spacing-topmenu);
 	}
 	grid-row-gap: 7.5rem;
-
-
 	&[class*="page-index"] {
 		section{
 			/* стили секций */
@@ -98,7 +96,8 @@
 						margin: auto 0 1.5rem;
 						grid-column: 2/-2;
 						h1 {
-							font-size: 1.75rem;
+							font-size: 1.875rem;
+                            margin-bottom: .5rem;
 						}
 						p {
 							font-size: .75rem;
@@ -270,33 +269,23 @@
 
 					}
 				}
-				@media screen and (max-width: 767px) {
-                    grid-template-columns: 1fr;
+
+				@media screen and (max-width: 1023px){
 					& > * {
 						grid-column: 1/-1;
 					}
-                    hgroup {
-                        p {
-                            margin: 1rem 0;
-                        }
-                    }
-				}
-				@media screen and (max-width: 1023px){
-					& > * {
-						grid-column: 2/-2;
-					}
 					[data-content="card"] {
 						h4 {
-							font-size: 3rem;
-							line-height: 3rem;
+							font-size: 5rem;
+							line-height: 5rem;
 							margin-bottom: 1.25rem;
 						}
 						p {
-							font-size: .875rem;
+							font-size: 1.125rem;
 						}
 						svg {
-							width: 2rem;
-							height: 3rem;
+							width: 4rem;
+							height: 5rem;
 						}
 					}
 					[data-content="section-cards"] {
@@ -318,6 +307,31 @@
 						}
 					}
 				}
+                @media screen and (max-width: 767px) {
+                    grid-template-columns: 1fr;
+                    & > * {
+                        grid-column: 1/-1;
+                    }
+                    hgroup {
+                        p {
+                            margin: 1rem 0;
+                        }
+                    }
+                    [data-content="card"] {
+                        h4 {
+                            font-size: 3rem;
+                            line-height: 3rem;
+                            margin-bottom: 1.25rem;
+                        }
+                        p {
+                            font-size: .875rem;
+                        }
+                        svg {
+                            width: 2rem;
+                            height: 3rem;
+                        }
+                    }
+                }
 			}
 			&[data-type="oxygen"] {
 				aspect-ratio: 1160 / 560;
@@ -391,8 +405,10 @@
                         object-fit: cover;
                     }
                     hgroup {
+                        margin-bottom: 0;
                         h2 {
                             font-size: 3.75rem;
+                            margin-bottom: 0;
                         }
                         p {
                             font-size: .875rem;
@@ -466,7 +482,7 @@
 						display: flex;
 						flex-direction: column;
 
-						h4 {
+						p:not([class]) {
 							order: 1;
 							font-size: .875rem;
 						}
@@ -602,7 +618,9 @@
 		}
 	}
 	&[class*="page-refer-a-patient"] {
+
 		section {
+
 			&[data-type="hero"] {
 				aspect-ratio: 1440 / 400;
 				padding: 7.5rem 3rem 5rem;
@@ -621,16 +639,32 @@
                     padding: 0 !important;
                 }
 			}
+            @media screen and (max-width: 767px){
+                & > * {
+                    grid-column: 1/-1;
+                }
+            }
+            @media screen and (max-width: 1023px){
+                & > *, 		[data-content="section-cards"] {
+                    grid-column: 2/-2;
+                }
+            }
 		}
 	}
 	&[class*="page-contacts"] {
 		section{
+
             h1 {
                 color: var(--color-primary);
             }
 			/* стили секций */
+			&[data-type="visitus"] {
+                margin-bottom: 0;
+                hgroup {
+                    margin-bottom: 0;
+                }
+            }
 			&[data-type="location"] {
-				padding-bottom: 7.5rem;
 				overflow: hidden;
 
 				[data-content="section-children"] {
@@ -660,9 +694,7 @@
 			&[data-type="hero"] {
 				aspect-ratio: 1340 / 674;
 				/*padding: 7.5rem 3rem 5rem;*/
-
 				hgroup {
-
 					position: relative;
 					z-index: 10;
 					display: grid;
@@ -675,7 +707,6 @@
                     padding: 0 !important;
                 }
 			}
-
 			&[data-type="oxygen"] {
 				aspect-ratio: 1160 / 560;
 				padding: 7.5rem 0;
@@ -684,7 +715,6 @@
 					grid-column: 3/-3;
 				}
 				hgroup {
-
 					h2 {
 						color: white;
 						font-size: 2.5rem;
@@ -764,6 +794,16 @@
 					}
 				}
 			}
+            @media screen and (max-width: 767px){
+                & > * {
+                    grid-column: 1/-1;
+                }
+            }
+            @media screen and (max-width: 1023px){
+                & > *, 		[data-content="section-cards"] {
+                    grid-column: 2/-2;
+                }
+            }
 		}
 	}
 	&[class*="page-insurance"] {
@@ -863,6 +903,11 @@
 						}
 					}
 				}
+                @media screen and (max-width: 1023px){
+                    [data-content="section-cards"] {
+                        grid-column: 2/-2;
+                    }
+                }
                 @media screen and (max-width: 767px){
                     [data-content="section-cards"] {
                         h4 {
@@ -881,12 +926,14 @@
                         }
                     }
                 }
+
 			}
 			&[data-type="insurance"] {
 				[data-content="section-cards"] {
 					flex-wrap: wrap;
-					display: flex;
-					justify-content: center;
+                    display: grid;
+                    justify-items: stretch;
+                    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
 					grid-column: 2/-2;
 					& > * {
 						display: flex;
@@ -901,6 +948,11 @@
 						}
 					}
 				}
+                @media screen and (max-width: 1023px){
+                    & > *, [data-content="section-cards"] {
+                        grid-column: 1/-1;
+                    }
+                }
 			}
 		}
 	}
@@ -1020,7 +1072,7 @@
 					justify-content: center;
 					justify-items: stretch;
 					grid-column: 1/-1;
-					grid-template-columns: repeat(auto-fill, minmax(22.5rem, 1fr));
+					grid-template-columns: repeat(auto-fit, minmax(18.5rem, 1fr));
 					gap: 2rem;
 
 					& > * {
@@ -1162,7 +1214,7 @@
 							width: 100%;
 						}
 					}
-                    @media screen and (max-width: 767px){
+                    @media screen and (max-width: 1023px){
                         grid-template-columns: 1fr;
                         & > * {
                             border-radius: 1rem;
@@ -1214,6 +1266,18 @@
 
 					}
 				}
+                @media screen and (max-width: 767px){
+                    & > * {
+                        grid-column: 1/-1;
+                    }
+                }
+                @media screen and (max-width: 1023px){
+                    & > *, 		[data-content="section-cards"] {
+                        grid-column: 2/-2;
+                    }
+                }
+
+
 			}
 			&[data-type="transparent-pricing-for-personalized-care"] {
 				grid-row-gap: 1.875rem;
@@ -1229,7 +1293,6 @@
 					}
 				}
                 @media screen and (max-width: 767px){
-                    grid-template-columns: 1fr;
                     hgroup {
                         margin-bottom: 0;
                         h2 {
@@ -1245,6 +1308,16 @@
                     /*    }*/
 
                     /*}*/
+                }
+                @media screen and (max-width: 767px){
+                    & > * {
+                        grid-column: 1/-1;
+                    }
+                }
+                @media screen and (max-width: 1023px){
+                    & > *, 		[data-content="section-cards"] {
+                        grid-column: 2/-2;
+                    }
                 }
 			}
 		}
@@ -1377,7 +1450,7 @@
 	}
 	&[class*="page-what-is-hbot"] {
 		section {
-            @media screen and (max-width: 767px){
+            @media screen and (max-width: 1023px){
                 grid-template-columns: 1fr;
             }
 			&[data-type="hero"] {
@@ -1404,9 +1477,15 @@
 						line-height: 1.4;
 					}
 				}
+                @media screen and (max-width: 1023px){
+                    margin-top: 7rem;
+                    aspect-ratio: 728/450;
+                }
                 @media screen and (max-width: 767px){
                     aspect-ratio: initial;
+                    min-height: 75dvh;
                     margin-top: 5rem;
+                    align-items: center;
                     padding: 1.5rem 1.25rem;
                     grid-template-columns: 1fr;
                     & * {
@@ -1420,6 +1499,9 @@
                         p {
                             font-size: .875rem;
                             line-height: 140%;
+                        }
+                        h1 {
+                            margin-bottom: 2rem;
                         }
                     }
                     img {
@@ -1478,7 +1560,6 @@
 						text-align: left;
 					}
 					ul {
-						padding-left: 1rem;
 						li {
 							list-style: initial;
 						}
@@ -1491,7 +1572,7 @@
                 @media screen and (max-width: 767px){
                     aspect-ratio: initial;
                     margin-top: 0;
-                    padding: 1.5rem 1.25rem 1.5rem;
+                    padding: 1.5rem 0 1.5rem;
                     grid-template-columns: 1fr;
                     & * {
                         grid-column: 1/-1 !important;
@@ -1566,6 +1647,25 @@
 						}
 					}
 				}
+                @media screen and (max-width: 1023px){
+                    grid-template-columns: repeat(1, 1fr);
+                    [data-content="section-cards"] {
+                        grid-column: 1/-1;
+                        display: grid;
+                        grid-template-columns: repeat(1, 1fr);
+                        justify-content: space-between;
+
+                        & > * {
+
+                        }
+                        h4, h6, p {
+                            margin: 0 0 1rem;
+                        }
+                        p {
+                            font-weight: 400;
+                        }
+                    }
+                }
                 @media screen and (max-width: 767px){
 
                     [data-content="section-cards"] {
@@ -1641,6 +1741,15 @@
 			}
 		}
 	}
+        &[class*="page-"] {
+            [data-type="hero"] {
+                hgroup {
+                    h1 {
+                        color: white;
+                    }
+                }
+            }
+        }
     @media screen and (max-width: 767px) {
         &[class] {
             grid-row-gap: 3.75rem;

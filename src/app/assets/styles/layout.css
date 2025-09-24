@@ -33,6 +33,7 @@
 
         & > * {
             grid-column: 2 / -2;
+            margin-bottom: 0;
         }
 
     }

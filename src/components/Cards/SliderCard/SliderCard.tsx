@@ -6,7 +6,7 @@ import { SliderCardProps } from "@/utils/types";
 
 const Stars = ({ stars }: { stars:number }) => {
 
-	const result = [];
+	const result:React.ReactNode[] = [];
 	const totalStars = 5;
 
 	for (let i = 0; i < totalStars; i++) {

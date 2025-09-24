@@ -219,9 +219,10 @@ const SectionDiagnosis = () => {
 	}, [id, state])
 	return (
 		<div className={styles.wrapper}>
+			<div className={styles.bgcircle}></div>
 			<div className={styles.diagnosis}>
 				{data.links?.map((l, index: number) => (
-					<Button component={"button"} key={l.href as string + index} variant={"icon"} size={l.size} onClick={() => setState(l.href)}>{l.children}</Button>
+					<Button className={styles.btn} component={"button"} key={l.href as string + index} variant={"icon"} size={l.size} onClick={() => setState(l.href)}>{l.children}</Button>
 				))}
 			</div>
 

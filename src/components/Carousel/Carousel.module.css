@@ -1,14 +1,20 @@
 .Carousel {
 	--mantine-scale: 1;
 	grid-column: 1/-1;
-
+    padding-bottom: 3rem;
 }
 
 /* Пример модификаторов */
 .Carousel--primary {
 	display: initial;
 }
-
+.controls {
+    margin: 0 -4rem;
+}
+.control {
+    width: 2rem;
+    height: 2rem;
+}
 .indicator {
 
 	width: .625rem;

@@ -2,6 +2,7 @@
 	display: grid;
 	h4 {
 		font-size: 1.5rem;
+        color: var(--mantine-color-text);
 		font-weight: normal;
 	}
 	[data-card='leading'] {

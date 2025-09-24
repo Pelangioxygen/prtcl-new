@@ -28,6 +28,7 @@ const formInputs = {
 			{
 				label: "First Name",
 				type: "text",
+				className: "max-lg:col-span-full",
 				name: "first_name_doctor",
 				required: true,
 				placeholder: "First Name",
@@ -35,6 +36,7 @@ const formInputs = {
 			{
 				label: "Last Name",
 				type: "text",
+				className: "max-lg:col-span-full",
 				name: "last_name_doctor",
 				required: true,
 				placeholder: "Last Name",
@@ -78,6 +80,7 @@ const formInputs = {
 			{
 				label: "First Name",
 				type: "text",
+				className: "max-lg:col-span-full",
 				name: "first_name_patient",
 				required: true,
 				placeholder: "First Name",
@@ -85,6 +88,7 @@ const formInputs = {
 			{
 				label: "Last Name",
 				type: "text",
+				className: "max-lg:col-span-full",
 				name: "last_name_patient",
 				required: true,
 				placeholder: "Last Name",
@@ -94,7 +98,7 @@ const formInputs = {
 				type: "number",
 				name: "license",
 				required: true,
-				className: "col-span-full",
+				className: "col-span-full ",
 				placeholder: "DD.MM.YYYY",
 			},
 			{
@@ -131,6 +135,7 @@ const formInputs = {
 				label: "I confirm that the above patient is medically cleared to undergo hyperbaric oxygen therapy (HBOT) in a pressurized chamber for sessions ranging from 60 to 120 minutes, as prescribed.",
 				name: "confirm_patient",
 				required: true,
+				className: "max-lg:col-span-full",
 				placeholder: "I confirm that the above patient is medically cleared to undergo hyperbaric oxygen therapy (HBOT) in a pressurized chamber for sessions ranging from 60 to 120 minutes, as prescribed."
 			},
 			{

@@ -255,7 +255,7 @@ export const pages:PageContent = {
 				cards: [
 					{
 						key: "Medicare-Medicaid",
-						heading: "Medicare / Medicaid",
+						description: "Medicare / Medicaid",
 						image: {
 							width: 300,
 							height: 100,
@@ -265,7 +265,7 @@ export const pages:PageContent = {
 					},
 					{
 						key: "Blue-Cross-Blue-Shield",
-						heading: "Blue Cross Blue Shield (BCBS)",
+						description: "Blue Cross Blue Shield (BCBS)",
 						image: {
 							width: 300,
 							height: 100,
@@ -275,7 +275,7 @@ export const pages:PageContent = {
 					},
 					{
 						key: "United-Healthcare",
-						heading: "United Healthcare",
+						description: "United Healthcare",
 						image: {
 							width: 300,
 							height: 100,
@@ -285,7 +285,7 @@ export const pages:PageContent = {
 					},
 					{
 						key: "Cigna",
-						heading: "Cigna",
+						description: "Cigna",
 						image: {
 							width: 300,
 							height: 100,
@@ -295,7 +295,7 @@ export const pages:PageContent = {
 					},
 					{
 						key: "Humana",
-						heading: "Humana",
+						description: "Humana",
 						image: {
 							width: 300,
 							height: 100,
@@ -305,7 +305,7 @@ export const pages:PageContent = {
 					},
 					{
 						key: "Aetna",
-						heading: "Aetna",
+						description: "Aetna",
 						image: {
 							width: 300,
 							height: 100,
@@ -315,7 +315,7 @@ export const pages:PageContent = {
 					},
 					{
 						key: "Tricare",
-						heading: "Tricare",
+						description: "Tricare",
 						image: {
 							width: 300,
 							height: 100,
@@ -347,8 +347,8 @@ export const pages:PageContent = {
 			{
 				type: "location",
 				heading: "Our Location",
-				children: <div className={"md:grid grid-cols-2 gap-14"}>
-					<div className={"md:pb-24"}>
+				children: <div className={"grid md:grid-cols-2 md:gap-x-14 gap-y-10"}>
+					<div className={"md:pb-24 max-md:order-1"}>
 						<h3>Culver City</h3>
 						<ul>
 							<li>
@@ -371,7 +371,7 @@ export const pages:PageContent = {
 							info@healthprtcl.com</li>
 						</ul>
 					</div>
-					<div className={'relative'}>
+					<div className={'relative aspect-square '}>
 						<RadarMap/>
 					</div>
 				</div>
