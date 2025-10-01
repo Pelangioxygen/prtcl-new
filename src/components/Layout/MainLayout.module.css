@@ -714,6 +714,9 @@
 						margin-bottom: 1.875rem;
 						/*font-size: 1.5rem;*/
 					}
+                    & > div {
+                        display: grid;
+                    }
 				}
 
 			}

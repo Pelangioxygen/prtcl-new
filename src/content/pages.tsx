@@ -347,7 +347,7 @@ export const pages:PageContent = {
 			{
 				type: "location",
 				heading: "Our Location",
-				children: <div className={"grid md:grid-cols-2 md:gap-x-14 gap-y-10"}>
+				children: <div className={"md:grid-cols-2 md:gap-x-14 gap-y-10"}>
 					<div className={"md:pb-24 max-md:order-1"}>
 						<h3>Culver City</h3>
 						<ul>
