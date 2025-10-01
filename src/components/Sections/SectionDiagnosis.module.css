@@ -1,4 +1,5 @@
 .diagnosis {
+    scroll-margin-top: 20vh;
     flex-wrap: wrap;
     justify-content: center;
 
@@ -11,6 +12,7 @@
     grid-column: 1/-1;
     display: block;
     gap: 3.75rem;
+    scroll-margin-top: 20vh;
     position: relative;
     & > * {
         margin: 4rem 0;
@@ -27,6 +29,7 @@
     grid-column: 2/-2;
     display: grid;
     gap: 2rem;
+    scroll-margin-top: 20vh;
     @media screen and (min-width: 1024px) {
         grid-template-columns: 1fr 1fr;
     }

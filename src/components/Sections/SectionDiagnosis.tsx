@@ -4,6 +4,7 @@ import React, { useMemo, useState } from "react";
 import styles from "./SectionDiagnosis.module.css";
 import Button from "@/components/Button/Button";
 import { useId } from "@mantine/hooks";
+import { useRouter } from "next/navigation";
 
 const data = {
 	descriptions: {
@@ -192,11 +193,12 @@ const data = {
 const SectionDiagnosis = () => {
 	const [state, setState] = useState<string>('');
 	const id = useId();
+	const router = useRouter()
 	const desc = useMemo(() => {
 		const result = data.descriptions[state];
 		if (!result) return
 
-		return <div className={styles.description}>
+		return <div className={styles.description} id={"desc"}>
 			<div className={styles.result}>
 
 				<h3>On-Label</h3>
@@ -218,11 +220,16 @@ const SectionDiagnosis = () => {
 		</div>
 	}, [id, state])
 	return (
-		<div className={styles.wrapper}>
+		<div className={styles.wrapper} id={"btns"}>
 			<div className={styles.bgcircle}></div>
 			<div className={styles.diagnosis}>
 				{data.links?.map((l, index: number) => (
-					<Button className={styles.btn} component={"button"} key={l.href as string + index} variant={"icon"} size={l.size} onClick={() => setState(l.href)}>{l.children}</Button>
+					<Button className={styles.btn} component={"button"} key={l.href as string + index} variant={"icon"} size={l.size} onClick={() => {
+						setState(l.href)
+						router.push("#desc", {
+							scroll: true
+						})
+					}}>{l.children}</Button>
 				))}
 			</div>
 
@@ -230,11 +237,16 @@ const SectionDiagnosis = () => {
 
 			<div className={styles.all}>
 				<a onClick={() => {
+					const scrollTarget = state === "" ? "#desc" : state === "all" ?  "#btns" : "#btns"
+					router.push(scrollTarget, {
+						scroll: true
+					})
 					if (state !== "") {
 						setState("")
 					} else {
 						setState("all")
 					}
+
 				}}>{(() => {
 					if (state !== "") {
 					return 'Hide Diagnoses'

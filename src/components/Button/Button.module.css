@@ -43,14 +43,14 @@
 		display: contents;
 	}
 	&[data-size="sm"] {
-		padding: 1.125rem 1.75rem;
+		padding: 1.125rem 1.5rem;
 	}
 	&[data-size="md"] {
 
-		padding: 1.25rem 1.75rem;
+		padding: 1.25rem 1.5rem;
 	}
 	&[data-size="lg"] {
-		padding: 1.25rem 1.75rem;
+		padding: 1.25rem 1.5rem;
 		gap: 1rem;
 		font-size: 1.75rem;
 		line-height: 1;
