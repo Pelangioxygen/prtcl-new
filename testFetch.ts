@@ -1,6 +1,6 @@
 // typescript
 
-
+'use client'
 import axios, {
 	AxiosRequestConfig,
 	AxiosResponse,
@@ -82,6 +82,30 @@ export const formFetch = async () => {
 
 	return data;
 }
+
+// Converted from test.http:
+// GET https://intakeq.com/api/v1/notes/689e5b444307223d37ecb324
+// Accept: application/json
+// X-Auth-Key: <use env or pass explicitly>
+export async function getNoteById(
+	id: string,
+	authKey: string
+): Promise<unknown> {
+	return await fetch(`https://intakeq.com/api/v1/questionnaires/689e5b444307223d37ecb324` , {
+		method: 'GET',
+		headers: {
+			Accept: 'application/json',
+			'X-Auth-Key': authKey,
+			'Content-Type': 'application/json'
+
+		}
+	});
+}
+
+// Example usage:
+// const note = await getNoteById('689e5b444307223d37ecb324');
+// Or explicitly provide a key:
+// const note = await getNoteById('689e5b444307223d37ecb324', '2f3ad06ec5edfe09a2f655c901c716c072e2c43b');
 
 
 /**
