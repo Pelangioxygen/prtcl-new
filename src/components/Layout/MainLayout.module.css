@@ -480,6 +480,11 @@
                 }
 			}
 			&[data-type="real-stories"] {
+                @media screen and (max-width: 1023px){
+                    [data-content="section-wrapper"] {
+                        grid-column: 2/-2;
+                    }
+                }
                 @media screen and (max-width: 767px){
                     grid-template-columns: 1fr;
                     [class*="mantine-Carousel-controls"] {
@@ -508,6 +513,7 @@
 						p:not([class]) {
 							order: 1;
 							font-size: .875rem;
+                            display: none;
                             @media screen and (min-width: 1025px){
                                 display: none;
                             }
@@ -1217,6 +1223,10 @@
 							color:  var(--color-primary);
 							order: -1;
 							font-size: 2.25rem;
+                            svg {
+                                width: 2rem;
+                                height: 2rem;
+                            }
 						}
 
 						h6 {
@@ -1576,12 +1586,12 @@
 							margin-right: .5rem;
 							border: .125rem solid var(--color-primary);
 							color: var(--color-primary);
-							font-weight: 500;
+							font-weight: 600;
 							margin-top: -.25rem;
 							font-size: 1rem;
 							display: inline-flex;
 							align-items: center;
-							padding: .875rem 1.25rem .625rem;
+							padding: .875rem 1.25rem .75rem;
 							line-height: .75;
 							border-radius: 3rem;
 						}
@@ -1598,6 +1608,9 @@
 						width: 5rem;
 						height: 5rem;
 					}
+                    @media screen and (max-width: 767px){
+                        margin-top: 2.5rem;
+                    }
 				}
                 @media screen and (max-width: 767px){
                     aspect-ratio: initial;
@@ -1615,6 +1628,9 @@
                         p {
                             font-size: .875rem;
                             line-height: 140%;
+                        }
+                        @media screen and (max-width: 1023px){
+                            margin-bottom: 2.5rem;
                         }
                     }
                     [data-content="section-cards"] {
