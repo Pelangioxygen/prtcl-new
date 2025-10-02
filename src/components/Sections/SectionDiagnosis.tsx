@@ -222,7 +222,7 @@ const SectionDiagnosis = () => {
 	}, [id, state])
 	return (
 		<div className={styles.wrapper} id={"btns"}>
-			<a onClick={() => getNoteById("689e5b444307223d37ecb324", "2f3ad06ec5edfe09a2f655c901c716c072e2c43b")}>asdsadasd</a>
+			{/*<a onClick={() => getNoteById("689e5b444307223d37ecb324", "2f3ad06ec5edfe09a2f655c901c716c072e2c43b")}>asdsadasd</a>*/}
 			<div className={styles.bgcircle}></div>
 			<div className={styles.diagnosis}>
 				{data.links?.map((l, index: number) => (
