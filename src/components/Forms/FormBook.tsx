@@ -207,7 +207,8 @@ const FormBook = () => {
 			throw error;
 		}
 	}, []);
-	const handleSubmitAppointMent = useCallback(async (data) => {
+
+	const handleSubmitAppointMent = useCallback(async (appointMentData) => {
 		try {
 			// Используем прокси роут вместо прямого вызова IntakeQ API
 			const result = await fetch('https://prtcl-six.vercel.app/api/create-appointment', {
@@ -215,7 +216,7 @@ const FormBook = () => {
 				headers: {
 					'Content-Type': 'application/json',
 				},
-				body: JSON.stringify(data)
+				body: JSON.stringify(appointMentData)
 			});
 
 			if (!result.ok) {
