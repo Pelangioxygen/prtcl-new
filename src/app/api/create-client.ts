@@ -7,6 +7,7 @@ export default async function handler(req, res) {
 		const response = await fetch('https://intakeq.com/api/v1/clients', {
 			method: 'POST',
 			headers: {
+				'Accept': 'application/json',
 				'Content-Type': 'application/json',
 				'X-Auth-Key': '2f3ad06ec5edfe09a2f655c901c716c072e2c43b'
 			},
