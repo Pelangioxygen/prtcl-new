@@ -176,17 +176,18 @@ const FormBook = () => {
 			store.setTime(values.date_time)
 		}
 	}, [store, values.date_day, values.date_time]);
+
 	const handleSubmitClient = useCallback(async (clientData) => {
 		try {
 			// Используем прокси роут вместо прямого вызова IntakeQ API
-			const result = await fetch('/api/create-client', {
+			const result = await fetch('https://prtcl-six.vercel.app/api/create-client', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
 				},
 				body: JSON.stringify(clientData || {
-					"FirstName": "Dmitriaaa",
-					"LastName": "Agapovaaa",
+					"FirstName": "Dmitribbbb",
+					"LastName": "Agapovbbbb",
 					"Email": "pr-web20206@yandex.ru",
 					"Phone": "89320141604",
 					"MobilePhone": "89320141604"
@@ -200,163 +201,185 @@ const FormBook = () => {
 
 			const data = await result.json();
 			console.log('Client created successfully:', data);
-			return data;
+			return result;
 
 		} catch (error) {
 			console.error('Error creating client:', error);
 			throw error;
 		}
 	}, []);
-	const handleSubmit = useCallback(async () => {
-		const clientData = requestsAxios.post('clients', {
-			FirstName: "Dmitriaaa",
-			LastName: "Agapovaaa",
-			Email: "pr-web20206@yandex.ru",
-			Phone: "89320141604",
-			MobilePhone: "89320141604"
-		});
-		console.log(clientData);
-		// if(clientData.response === 200) {
-		// 	const result = await requestsAxios.post(
-		// 		"appointments",
-		// 		{
-		// 			MemberId: "687ff7d1ed72f1123779b1b1",
-		// 			ClientName: values.first_name + " " + values.last_name,
-		// 			ClientEmail: values.email,
-		// 			ClientPhone: values.phone,
-		// 			// ClientNote: null,
-		// 			// // ClientId: "16979502-a54d-49e5-b58b-410aab246a85",
-		// 			// // TimeIndex: 168,
-		// 			// Date: "2025-10-21T21:00:00Z",
-		// 			// Duration: 60,
-		// 			ServiceId: store.getParams.serviceId,
-		// 			// Paid: false,
-		// 			// DateCreated: "2025-10-02T22:46:25.797Z",
-		// 			// BookedByClient: false,
-		// 			// FormSent: false,
-		// 			// FormCompleted: false,
-		// 			// ClientQuestionnaireId: null,
-		// 			// FormRecipientId: null,
-		// 			// FormDeliveryMethod: 0,
-		// 			Status: "AwaitingConfirmation",
-		// 			// PaymentInfo: null,
-		// 			// ServiceName: "Hyperbaric Oxygen Therapy Session - 60 minutes",
-		// 			// Price: 250,
-		// 			// QuestionnaireId: null,
-		// 			// RequestCode: null,
-		// 			// GoogleEventId: null,
-		// 			// OutlookEventId: null,
-		// 			LocationId: "1",
-		// 			// LocationName: "Health PRTCL - Culver City",
-		// 			// LocationUrl: "https://maps.google.com/?q=10375+Washington+Blvd,+Culver+City,+CA+90232,+USA&ftid=0x80c2ba2f9a3d9fa3:0xf7460b26f945e934",
-		// 			// LocationAddress: "10375 Washington Blvd, Culver City, CA 90232, USA",
-		// 			// StripeCustomerId: null,
-		// 			// CancellationFeePaid: 0,
-		// 			// RefundedAmount: 0,
-		// 			// ReminderDate: null,
-		// 			// ReminderSent: false,
-		// 			ReminderType: Number(values.ReminderType),
-		// 			// ClientAppointmentPackageId: null,
-		// 			// ApprovalNote: null,
-		// 			// CouponCode: null,
-		// 			// Discount: 0,
-		// 			// ClientTimezoneId: null,
-		// 			// RecurrenceId: null,
-		// 			ClinicId: "687ff7d1ed72f1123779b1b1",
-		// 			// PractitionerNote: null,
-		// 			// BlockDuration: null,
-		// 			// CreatedBy: "Alexey Savin",
-		// 			// ResourceId: null,
-		// 			CustomFields: [],
-		// 			// PaymentProvider: 0,
-		// 			// AutoChargeFailed: false,
-		// 			// AutoChargeFailedError: null,
-		// 			LocalTimezoneId: "Pacific Standard Time",
-		// 			// NoteIds: [],
-		// 			// InvoiceId: null,
-		// 			// InvoiceNumber: 0,
-		// 			// InvoiceStatus: 0,
-		// 			// AdditionalClients: [],
-		// 			// SameDayReminderSent: false,
-		// 			// DepositPaymentInfo: null,
-		// 			// AutoCharge: -1,
-		// 			// ServicePrice: 250,
-		// 			// Taxes: [],
-		// 			// TaxesIncludedInPrice: false,
-		// 			// AttendanceConfirmationResponse: 0,
-		// 			// PreventAutocharge: false,
-		// 			// Procedures: [],
-		// 			// IsClientLocation: false,
-		// 			// LocationUnitNumber: null,
-		// 			// ZoomMeeting: null,
-		// 			// ScheduledEmailsSent: [],
-		// 			// ZoomOccurrenceId: null,
-		// 			// GoogleMeetConference: null,
-		// 			// Notes: [],
-		// 			// RealDuration: 60,
-		// 			// Subtotal: 250,
-		// 			// TaxAmount: 0,
-		// 			// InvoiceNumberFormatted: "0000",
-		// 			// EndDate: "2025-10-21T22:00:00Z",
-		// 			// ConfirmationSent: false,
-		// 			// StripeCardId: null,
-		// 			// CancellationReason: null,
-		// 			// CancellationSubReason: null,
-		// 			// CancellationSubReasonOther: null,
-		// 			// CancellationDateUtc: null,
-		// 			// FullCancellationReason: "",
-		// 			// ClientGeo: null,
-		// 			// Ip: null,
-		// 			LocalDate: `${store.getParams.date_day}T${store.getParams.date_time}:00`,
-		// 			// AmountDue: 250,
-		// 			// TotalAmountPaid: 0,
-		// 			// DisplayMap: true,
-		// 			EmailOrPhone: values.email || values.phone,
-		// 			// IntergrationId: null,
-		// 			// ConfirmationEmailBounced: false,
-		// 			// ServiceCode: null,
-		// 			// PlaceOfService: null,
-		// 			// ClaimId: null,
-		// 			// ClaimNumber: 0,
-		// 			// ClaimStatus: 0,
-		// 			// Deleted: false,
-		// 			// DeletedDate: null,
-		// 			// PreviousClaimIds: [],
-		// 			// Version: 1,
-		// 			// LastModified: "2025-10-02T22:46:48.895Z",
-		// 			// BilledAmount: 0,
-		// 			// InsuranceAmount: 0,
-		// 			// InsurancePaymentId: null,
-		// 			// ClaimCompletedDate: null,
-		// 			// InsuranceSecondaryPaymentId: null,
-		// 			// Claims: [],
-		// 			// VideoCallSettings: null,
-		// 			// SessionStarted: null,
-		// 			// SessionEnded: null,
-		// 			// CheckInStatus: 0,
-		// 			// CheckInData: null,
-		// 			// UpdatedByEra: false,
-		// 			// ExternalId: null,
-		// 			// Id: "68df00c1ae17b2dda4ab4531",
-		// 			sendConfirmation: false,
-		// 			selectedRecipient: {
-		// 				name: values.first_name + " " + values.last_name,
-		// 				groupName: `${values.first_name} + " " + ${values.last_name} (Client)`,
-		// 				address: values.email,
-		// 				type: "Email",
-		// 				// id: "16979502-a54d-49e5-b58b-410aab246a85",
-		// 				isContact: false,
-		// 			},
-		// 			dob: null,
-		// 		},
-		// 		{
-		// 			sendConfirmation: false,
-		// 		}
-		// 	);
-		// 	console.log(result);
-		// }
+	const handleSubmitAppointMent = useCallback(async (data) => {
+		try {
+			// Используем прокси роут вместо прямого вызова IntakeQ API
+			const result = await fetch('https://prtcl-six.vercel.app/api/create-appointment', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(data)
+			});
 
-	}, [handleSubmitClient])
+			if (!result.ok) {
+				const errorData = await result.json();
+				throw new Error(errorData.message || 'Request failed');
+			}
+
+			const data = await result.json();
+			console.log('Client created successfully:', data);
+			return result;
+
+		} catch (error) {
+			console.error('Error creating client:', error);
+			throw error;
+		}
+	}, []);
+
+	const handleSubmit = useCallback(async () => {
+		const resClient = handleSubmitClient({
+			FirstName: values.first_name,
+			LastName:  values.last_name,
+			Email: values.email,
+			Phone: values.phone,
+			MobilePhone: values.phone,
+		});
+
+		if(resClient.status === 200) {
+			const result = handleSubmitAppointMent(
+				{
+					MemberId: "687ff7d1ed72f1123779b1b1",
+					ClientName: values.first_name + " " + values.last_name,
+					ClientEmail: values.email,
+					ClientPhone: values.phone,
+					// ClientNote: null,
+					// // ClientId: "16979502-a54d-49e5-b58b-410aab246a85",
+					// // TimeIndex: 168,
+					// Date: "2025-10-21T21:00:00Z",
+					// Duration: 60,
+					ServiceId: store.getParams.serviceId,
+					// Paid: false,
+					// DateCreated: "2025-10-02T22:46:25.797Z",
+					// BookedByClient: false,
+					// FormSent: false,
+					// FormCompleted: false,
+					// ClientQuestionnaireId: null,
+					// FormRecipientId: null,
+					// FormDeliveryMethod: 0,
+					Status: "AwaitingConfirmation",
+					// PaymentInfo: null,
+					// ServiceName: "Hyperbaric Oxygen Therapy Session - 60 minutes",
+					// Price: 250,
+					// QuestionnaireId: null,
+					// RequestCode: null,
+					// GoogleEventId: null,
+					// OutlookEventId: null,
+					LocationId: "1",
+					// LocationName: "Health PRTCL - Culver City",
+					// LocationUrl: "https://maps.google.com/?q=10375+Washington+Blvd,+Culver+City,+CA+90232,+USA&ftid=0x80c2ba2f9a3d9fa3:0xf7460b26f945e934",
+					// LocationAddress: "10375 Washington Blvd, Culver City, CA 90232, USA",
+					// StripeCustomerId: null,
+					// CancellationFeePaid: 0,
+					// RefundedAmount: 0,
+					// ReminderDate: null,
+					// ReminderSent: false,
+					ReminderType: Number(values.ReminderType),
+					// ClientAppointmentPackageId: null,
+					// ApprovalNote: null,
+					// CouponCode: null,
+					// Discount: 0,
+					// ClientTimezoneId: null,
+					// RecurrenceId: null,
+					ClinicId: "687ff7d1ed72f1123779b1b1",
+					// PractitionerNote: null,
+					// BlockDuration: null,
+					// CreatedBy: "Alexey Savin",
+					// ResourceId: null,
+					CustomFields: [],
+					// PaymentProvider: 0,
+					// AutoChargeFailed: false,
+					// AutoChargeFailedError: null,
+					LocalTimezoneId: "Pacific Standard Time",
+					// NoteIds: [],
+					// InvoiceId: null,
+					// InvoiceNumber: 0,
+					// InvoiceStatus: 0,
+					// AdditionalClients: [],
+					// SameDayReminderSent: false,
+					// DepositPaymentInfo: null,
+					// AutoCharge: -1,
+					// ServicePrice: 250,
+					// Taxes: [],
+					// TaxesIncludedInPrice: false,
+					// AttendanceConfirmationResponse: 0,
+					// PreventAutocharge: false,
+					// Procedures: [],
+					// IsClientLocation: false,
+					// LocationUnitNumber: null,
+					// ZoomMeeting: null,
+					// ScheduledEmailsSent: [],
+					// ZoomOccurrenceId: null,
+					// GoogleMeetConference: null,
+					// Notes: [],
+					// RealDuration: 60,
+					// Subtotal: 250,
+					// TaxAmount: 0,
+					// InvoiceNumberFormatted: "0000",
+					// EndDate: "2025-10-21T22:00:00Z",
+					// ConfirmationSent: false,
+					// StripeCardId: null,
+					// CancellationReason: null,
+					// CancellationSubReason: null,
+					// CancellationSubReasonOther: null,
+					// CancellationDateUtc: null,
+					// FullCancellationReason: "",
+					// ClientGeo: null,
+					// Ip: null,
+					LocalDate: `${store.getParams.date_day}T${store.getParams.date_time}:00`,
+					// AmountDue: 250,
+					// TotalAmountPaid: 0,
+					// DisplayMap: true,
+					EmailOrPhone: values.email || values.phone,
+					// IntergrationId: null,
+					// ConfirmationEmailBounced: false,
+					// ServiceCode: null,
+					// PlaceOfService: null,
+					// ClaimId: null,
+					// ClaimNumber: 0,
+					// ClaimStatus: 0,
+					// Deleted: false,
+					// DeletedDate: null,
+					// PreviousClaimIds: [],
+					// Version: 1,
+					// LastModified: "2025-10-02T22:46:48.895Z",
+					// BilledAmount: 0,
+					// InsuranceAmount: 0,
+					// InsurancePaymentId: null,
+					// ClaimCompletedDate: null,
+					// InsuranceSecondaryPaymentId: null,
+					// Claims: [],
+					// VideoCallSettings: null,
+					// SessionStarted: null,
+					// SessionEnded: null,
+					// CheckInStatus: 0,
+					// CheckInData: null,
+					// UpdatedByEra: false,
+					// ExternalId: null,
+					// Id: "68df00c1ae17b2dda4ab4531",
+					sendConfirmation: false,
+					selectedRecipient: {
+						name: values.first_name + " " + values.last_name,
+						groupName: `${values.first_name} + " " + ${values.last_name} (Client)`,
+						address: values.email,
+						type: "Email",
+						// id: "16979502-a54d-49e5-b58b-410aab246a85",
+						isContact: false,
+					},
+					dob: null,
+				}
+			);
+			console.log(result);
+		}
+
+	}, [handleSubmitClient, store.getParams.date_day, store.getParams.date_time, store.getParams.serviceId, values.ReminderType, values.email, values.first_name, values.last_name, values.phone])
 
 	const inputs = formInputs["book"];
 	const dateTime = dayjs(values.date_day + values.date_time, "YYYY-MM-DD HH:mm:ss");
