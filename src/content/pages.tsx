@@ -447,7 +447,7 @@ export const pages:PageContent = {
 						links: [
 							{
 								component: 'a',
-								href: '/book-now?type=renewal',
+								href: '/book-now?type=60',
 								children: 'Book Now →',
 								variant: "custom"
 							}
@@ -468,7 +468,7 @@ export const pages:PageContent = {
 						links: [
 							{
 								component: 'a',
-								href: '/book-now?type=renewal',
+								href: '/book-now?type=90',
 								children: 'Book Now →',
 								variant: "custom"
 							}
@@ -489,7 +489,7 @@ export const pages:PageContent = {
 						links: [
 							{
 								component: 'a',
-								href: '/book-now?type=renewal',
+								href: '/book-now?type=120',
 								children: 'Book Now →',
 								variant: "custom"
 							}

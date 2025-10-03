@@ -6,11 +6,10 @@ const keyFromEnv =
 		: process.env.NEXT_PUBLIC_API_AUTH_KEY;
 
 const axiosClient = axios.create({
-	withCredentials: false,
+	// withCredentials: false,
 	headers: {
-		'Content-Type': 'application/json',
-		'accept': 'application/json',
-		"X-Auth-Key": keyFromEnv
+		// 'accept': 'application/json',
+		"X-Auth-Key": '2f3ad06ec5edfe09a2f655c901c716c072e2c43b'
 		// 'Authorization': 'Bearer '
 	},
 	baseURL: `https://intakeq.com/api/v1/`,
@@ -44,6 +43,15 @@ export const requestsAxios = {
 			params: params
 		}).then(r => r)
 			.catch(e => e),
+	getWithOutRoot: (url: string, params?: unknown) =>
+		axiosClient({
+			url: `${url}`,
+			// headers: tokenPlugin(),
+			method: 'GET',
+			params: params
+		}).then(r => r)
+			.catch(e => e),
+
 	put: (url: string, body: unknown, params?: unknown) =>
 		axiosClient({
 			url: `${API_ROOT}${url}`,

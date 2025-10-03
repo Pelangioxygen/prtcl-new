@@ -159,6 +159,11 @@
                 color: white;
             }
         }
+        &[disabled] {
+            cursor: not-allowed;
+            font-weight: 400;
+            color: rgba(189, 189, 189, 1);
+        }
     }
     @media screen and (min-width: 1440px){
         height: 3.75rem;

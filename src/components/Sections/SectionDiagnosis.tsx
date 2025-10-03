@@ -5,7 +5,6 @@ import styles from "./SectionDiagnosis.module.css";
 import Button from "@/components/Button/Button";
 import { useId } from "@mantine/hooks";
 import { useRouter } from "next/navigation";
-import { getNoteById } from "../../../testFetch";
 
 const data = {
 	descriptions: {
