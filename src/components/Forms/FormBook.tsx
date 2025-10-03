@@ -14,7 +14,6 @@ import { ArrowLeftIcon, ArrowRightIcon, GreenBtnIcon } from "@/components/Icons/
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import advancedFormat from "dayjs/plugin/advancedFormat";
-import { requestsAxios } from "@/utils/fetch";
 import { useSearchParams } from "next/navigation";
 import { service_booking } from "@/utils/service_booking";
 import formCheckAvailibilityStore from "@/components/Forms/FormCheckAvailibilityStore";
