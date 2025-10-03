@@ -21,7 +21,6 @@ import formCheckAvailibilityStore from "@/components/Forms/FormCheckAvailibility
 import timezone from 'dayjs/plugin/timezone'
 import utc from 'dayjs/plugin/utc'
 import { observer } from "mobx-react-lite";
-import { handleSubmitClient } from "@/components/Forms/fetch";
 dayjs.extend(utc)
 dayjs.extend(timezone)
 // Подключаем необходимые плагины
@@ -177,7 +176,37 @@ const FormBook = () => {
 			store.setTime(values.date_time)
 		}
 	}, [store, values.date_day, values.date_time]);
+	const handleSubmitClient = useCallback(async (clientData) => {
+		try {
+			// Используем прокси роут вместо прямого вызова IntakeQ API
+			const result = await fetch('/api/create-client', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(clientData || {
+					"FirstName": "Dmitriaaa",
+					"LastName": "Agapovaaa",
+					"Email": "pr-web20206@yandex.ru",
+					"Phone": "89320141604",
+					"MobilePhone": "89320141604"
+				})
+			});
 
+			if (!result.ok) {
+				const errorData = await result.json();
+				throw new Error(errorData.message || 'Request failed');
+			}
+
+			const data = await result.json();
+			console.log('Client created successfully:', data);
+			return data;
+
+		} catch (error) {
+			console.error('Error creating client:', error);
+			throw error;
+		}
+	}, []);
 	const handleSubmit = useCallback(async () => {
 		const clientData = requestsAxios.post('clients', {
 			FirstName: "Dmitriaaa",
