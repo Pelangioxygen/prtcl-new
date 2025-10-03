@@ -8,9 +8,9 @@ const keyFromEnv =
 const axiosClient = axios.create({
 	// withCredentials: false,
 	headers: {
-		// 'accept': 'application/json',
-		"X-Auth-Key": '2f3ad06ec5edfe09a2f655c901c716c072e2c43b'
-		// 'Authorization': 'Bearer '
+		"Content-Type": "application/json",
+		"X-Auth-Key": '2f3ad06ec5edfe09a2f655c901c716c072e2c43b',
+		"Accept": "application/json"
 	},
 	baseURL: `https://intakeq.com/api/v1/`,
 });
