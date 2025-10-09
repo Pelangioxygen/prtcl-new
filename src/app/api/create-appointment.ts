@@ -9,7 +9,7 @@ export default async function handler(req, res) {
 			headers: {
 				'Accept': 'application/json',
 				'Content-Type': 'application/json',
-				'X-Auth-Key': '2f3ad06ec5edfe09a2f655c901c716c072e2c43b'
+				'X-Auth-Key': process.env.API_AUTH_KEY as string
 			},
 			body: JSON.stringify(req.body)
 		});
@@ -22,8 +22,10 @@ export default async function handler(req, res) {
 		res.status(200).json(data);
 	} catch (error) {
 		console.error('Proxy error:', error);
+		// @ts-ignore
 		res.status(500).json({
 			message: 'Internal server error',
+			// @ts-ignore
 			error: error.message
 		});
 	}

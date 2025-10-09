@@ -9,7 +9,7 @@ const axiosClient = axios.create({
 	// withCredentials: false,
 	headers: {
 		"Content-Type": "application/json",
-		"X-Auth-Key": '2f3ad06ec5edfe09a2f655c901c716c072e2c43b',
+		'X-Auth-Key': keyFromEnv,
 		"Accept": "application/json"
 	},
 	baseURL: `https://intakeq.com/api/v1/`,
@@ -19,7 +19,6 @@ const axiosClientAnon = axios.create({
 		'Content-Type': 'application/json',
 		'Accept': 'application/json',
 		"X-Auth-Key": keyFromEnv
-		// 'Authorization': 'Bearer '
 	},
 	baseURL: `https://intakeq.com/api/`,
 });
