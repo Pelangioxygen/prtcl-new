@@ -329,8 +329,8 @@ export const pages:PageContent = {
 		],
 	},
 	contacts: {
-		title: "Every breath, clinically supported",
-		description: "Every breath, clinically supported",
+		title: "Contact Us",
+		description: "Contact us for any questions or inquiries about our services.",
 		sections: [
 			{
 				type: "hero",
@@ -385,8 +385,8 @@ export const pages:PageContent = {
 		],
 	},
 	"refer-a-patient": {
-		title: "Every breath, clinically supported",
-		description: "Every breath, clinically supported",
+		title: "Refer a Patient",
+		description: "Refer a patient to PRTCL for a free consultation.",
 		sections: [
 			{
 				type: "hero",
@@ -512,7 +512,7 @@ export const pages:PageContent = {
 		],
 	},
 	"what-is-hbot": {
-		title: "Every breath, clinically supported",
+		title: "What is Hyperbaric Oxygen Therapy?",
 		description: "Hyperbaric oxygen therapy is a medical treatment that helps treat many different medical conditions. It involves breathing 100% oxygen while in a pressurized chamber.",
 		sections: [
 			{
@@ -811,8 +811,8 @@ export const pages:PageContent = {
 		],
 	},
 	privacy: {
-		title: "Pricing",
-		description: "For patients without insurance, we offer clear and flexible payment options — no hidden fees, just transparent care.",
+		title: "Privacy Policy",
+		description: "Privacy Policy",
 		sections: [
 			{
 				type: "hero",
@@ -860,8 +860,8 @@ export const pages:PageContent = {
 		]
 	},
 	terms: {
-		title: "Pricing",
-		description: "For patients without insurance, we offer clear and flexible payment options — no hidden fees, just transparent care.",
+		title: "Terms & Condition",
+		description: "Terms & Condition",
 		sections: [
 			{
 				type: "hero",

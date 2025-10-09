@@ -9,7 +9,9 @@ import customParseFormat from "dayjs/plugin/customParseFormat";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import  Button  from "@/components/Button/Button"
 import FieldComposer from "@/components/FieldComposer/FieldComposer";
-import { useState } from "react";
+import { useCallback, useState } from "react";
+import { zod4Resolver } from "mantine-form-zod-resolver";
+import { z } from "zod";
 
 // Подключаем необходимые плагины
 dayjs.extend(customParseFormat);
@@ -152,7 +154,21 @@ const formInputs = {
 		],
 	},
 };
-
+const validationSchema = z.object({
+	first_name_doctor: z.string().min(1, { message: "First name is required" }),
+	last_name_doctor: z.string().min(1, { message: "Last name is required" }),
+	license: z.string().min(1, {message: "License is required"}),
+	email_doctor: z.string().email({ message: "Invalid email" }),
+	phone_doctor: z.string().min(1, { message: "Phone is required" }),
+	first_name_patient: z.string().min(1, { message: "First name is required" }),
+	last_name_patient: z.string().min(1, { message: "Last name is required" }),
+	patient_dob: z.string().min(1, { message: "Date of birth is required" }),
+	insurance_plan: z.string().min(1, { message: "Insurance plan is required" }),
+	diagnosis: z.string().min(1, { message: "Diagnosis is required" }),
+	fda_approved: z.string().min(1, { message: "FDA approved condition is required" }),
+	confirm_patient: z.string().min(1, { message: "Confirm patient is required" }),
+	protocol: z.string().min(1, { message: "Protocol is required" }),
+})
 const FormReferPatient = () => {
 	const [isSent, setIsSent] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
@@ -160,6 +176,7 @@ const FormReferPatient = () => {
 		name: "FormReferPatient",
 		mode: "controlled",
 		validateInputOnBlur: true,
+		validate: zod4Resolver(validationSchema),
 		initialValues: {
 			first_name_doctor: "",
 			last_name_doctor: "",
@@ -181,7 +198,10 @@ const FormReferPatient = () => {
 	const inputs = formInputs["doctor_info"];
 	const inputs_patient = formInputs["patient_info"];
 	// const dateTime = dayjs(values.date_day + values.date_time, "YYYY-MM-DD HH:mm:ss");
-	const handleSubmit = () => {
+	const handleSubmit = useCallback(() => {
+		const result = form.validate();
+
+		if (!result.hasErrors) {
 		const scriptURL = 'https://script.google.com/macros/s/AKfycbzG9TqDkmfXt2fNixEOgw4lBPpKGayMhgt9jFepaArTUvuoV7nCW5OhNW0Br9u8yxbrhw/exec'
 		const form = document.forms['submit-to-google-refer-sheet']
 
@@ -191,12 +211,23 @@ const FormReferPatient = () => {
 		fetch(scriptURL, { method: 'POST', body: new FormData(form)})
 			.then(response => console.log('Success!', response))
 			.then(() => {
+				fetch('/api/send-email-refer', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify(form.getValues()),
+				})
+					.then(response => console.log('Success!', response));
+			})
+			.then(() => {
 				setIsLoading(false);
 				setIsSent(true);
 			})
 			.catch(error => console.error('Error!', error.message))
 		// })
 	}
+	}, [form]);
 	return (
 		<div className={styles.formWrapper}>
 			{!isSent ? <form style={{ display: "grid" }} className={inputs.className + " " + "gap-x-6 gap-y-2"}  id={"submit-to-google-refer-sheet"}>

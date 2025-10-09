@@ -1,6 +1,8 @@
 "use client";
 import { useForm } from "@mantine/form";
 import "@mantine/core/styles/Combobox.layer.css";
+import { zod4Resolver } from "mantine-form-zod-resolver";
+import { z } from "zod";
 import styles from "./FormBook.module.css";
 import "@mantine/dates/styles.css";
 import dayjs from "dayjs";
@@ -8,7 +10,8 @@ import customParseFormat from "dayjs/plugin/customParseFormat";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import  Button  from "@/components/Button/Button"
 import FieldComposer from "@/components/FieldComposer/FieldComposer";
-import { useState } from "react";
+import { useCallback, useState } from "react";
+
 
 // Подключаем необходимые плагины
 dayjs.extend(customParseFormat);
@@ -67,14 +70,21 @@ const formInputs = {
 		],
 	},
 };
-
+const validationSchema = z.object({
+	first_name: z.string().min(1, { message: "First name is required" }),
+	last_name: z.string().min(1, { message: "Last name is required" }),
+	phone: z.string().min(1, { message: "Phone is required" }),
+	email: z.string().email({ message: "Invalid email" }),
+	message: z.string().optional(),
+})
 const FormQuestions = () => {
 	const [isSent, setIsSent] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
 	const form = useForm({
-		name: "Questions",
+		name: "questions",
 		mode: "controlled",
 		validateInputOnBlur: true,
+		validate: zod4Resolver(validationSchema),
 		initialValues: {
 			first_name: "",
 			last_name: "",
@@ -87,22 +97,32 @@ const FormQuestions = () => {
 	// const values = form.getValues();
 	const inputs = formInputs["questions"];
 	// const dateTime = dayjs(values.date_day + values.date_time, "YYYY-MM-DD HH:mm:ss");
-	const handleSubmit = () => {
-		const scriptURL = 'https://script.google.com/macros/s/AKfycbwWGZYvVzXQtNla-3WqcStxermRQzOJnXK2b34xFua1KTH_Im5jUWCawjSZnt7xEWil/exec'
-		const form = document.forms['submit-to-google-sheet']
+	const handleSubmit = useCallback(() => {
+		const result = form.validate();
 
-		// form.addEventListener('submit', e => {
-		// 	e.preventDefault()
-			setIsLoading(true);
-			fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-				.then(response => console.log('Success!', response))
-				.then(() => {
-					setIsLoading(false);
-					setIsSent(true);
+		if (!result.hasErrors) {
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbwWGZYvVzXQtNla-3WqcStxermRQzOJnXK2b34xFua1KTH_Im5jUWCawjSZnt7xEWil/exec'
+		const _form = document.forms['submit-to-google-sheet']
+		setIsLoading(true);
+		fetch(scriptURL, { method: 'POST', body: new FormData(_form)})
+			.then(response => console.log('Success!', response))
+			.then(() => {
+				fetch('/api/send-email', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify(form.getValues()),
 				})
-				.catch(error => console.error('Error!', error.message))
-		// })
-	}
+					.then(response => console.log('Success!', response));
+			})
+			.then(() => {
+				setIsLoading(false);
+				setIsSent(true);
+			})
+			.catch(error => console.error('Error!', error.message))
+		}
+	}, [form]);
 	return (
 		<div className={styles.formWrapper}>
 			{!isSent ? <form style={{ display: "grid" }} className={inputs.className + " " + "gap-x-6 gap-y-2"} id={"submit-to-google-sheet"}>
@@ -117,7 +137,7 @@ const FormQuestions = () => {
 				})}
 
 				<div className={"lg:grid col-span-full gap-y-4 justify-between lg:mt-4"}>
-					<Button shadow={true} component={"button"} variant={"primary"} className={"w-full !max-w-full"} onClick={() => handleSubmit()}>
+					<Button  shadow={true} component={"button"} variant={"primary"} className={"w-full !max-w-full"} onClick={() => handleSubmit()}>
 						{!isLoading ? 'Submit' : "Sending..."}
 					</Button>
 				</div>

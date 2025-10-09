@@ -1,4 +1,5 @@
-import React from "react";
+'use client'
+import React, { forwardRef } from "react";
 import styles from "./FieldComposer.module.css";
 import { NumberInput, Radio, Select, Textarea, TextInput } from "@mantine/core";
 import DatePick from "@/components/DatePick/DatePick";
@@ -12,16 +13,17 @@ const baseStyles = {
 	label: styles.label,
 	root: styles.root,
 	input: styles.input,
-	controls: "absolute"
+	controls: "absolute",
+	error: 'absolute text-red-500 text-xs bottom-0 mt-0 -mb-5'
 };
-const FieldComposer = (props: FieldComposerProps) => {
-
+// eslint-disable-next-line react/display-name
+const FieldComposer = forwardRef<HTMLInputElement, FieldComposerProps>((props: FieldComposerProps, ref) => {
 
 	const element = {
-		text: <TextInput {...props} classNames={baseStyles} />,
+		text: <TextInput classNames={baseStyles} {...props} ref={ref}/>,
 		number: <NumberInput classNames={baseStyles} {...props} />,
 		email: <TextInput classNames={baseStyles} {...props} />,
-		date: <DatePick {...props} />,
+		date: <DatePick {...props} ref={ref}/>,
 
 		select: <Select unstyled  comboboxProps={{ shadow: 'md' }}  classNames={{
 			...baseStyles,
@@ -37,5 +39,5 @@ const FieldComposer = (props: FieldComposerProps) => {
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-expect-error
 	return element[props.type];
-};
+});
 export default FieldComposer;

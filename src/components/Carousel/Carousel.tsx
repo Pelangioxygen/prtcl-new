@@ -15,7 +15,7 @@ import { SliderCardProps } from "@/utils/types";
 			<div className={`${styles.Carousel} `} data-content={"section-carousel"}>
 					<Carousel
 						slideSize={{ base: '100%', sm: '50%', md: '33.333333%', xl: '25%' }}
-						slideGap={{ base: "md", sm: 'lg' }}
+						slideGap={{ base: "1rem", sm: '1rem', md: '1rem' }}
 						emblaOptions={{ dragFree: true, align: 'start' }}
 						controlsOffset="md"
 						controlSize={32}
