@@ -55,7 +55,7 @@ const HeaderMobile = () => {
 				<div className={styles.btns}   data-state={state}>
 					<div className={"flex items-center justify-center gap-x-4"}>
 						<Link href={"/refer-a-patient"}>Refer a Patient</Link>
-						<Link href={'/book-now'}>Book Now</Link>
+						<Link href={'/prices'}>Book Now</Link>
 					</div>
 				</div>
 				<div className={styles.bottombar}   data-state={state}>

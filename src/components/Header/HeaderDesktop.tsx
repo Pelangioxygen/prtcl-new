@@ -35,7 +35,7 @@ const HeaderDesktop = () => {
 					<Button component={"a"} href={"/refer-a-patient"}>
 						Refer a Patient
 					</Button>
-					<Button component={"a"} variant={"outline"} href={"/book-now"}>
+					<Button component={"a"} variant={"outline"} href={"/prices"}>
 						Book Now
 					</Button>
 				</div>

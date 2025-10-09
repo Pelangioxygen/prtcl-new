@@ -8,6 +8,8 @@ import customParseFormat from "dayjs/plugin/customParseFormat";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import  Button  from "@/components/Button/Button"
 import FieldComposer from "@/components/FieldComposer/FieldComposer";
+import { useState } from "react";
+import { GreenBtnIcon } from "@/components/Icons/Icons";
 
 // Подключаем необходимые плагины
 dayjs.extend(customParseFormat);
@@ -22,7 +24,7 @@ const formInputs = {
 		heading2: "Your Details",
 		heading3: "Review and Confirm Your Booking",
 		heading4: "Payment Confirmed",
-		className: "grid-cols-1 lg:grid-cols-3",
+		className: "grid-cols-1 lg:grid-cols-2",
 		inputs: [
 			{
 				label: "First Name",
@@ -30,6 +32,13 @@ const formInputs = {
 				name: "first_name",
 				required: true,
 				placeholder: "First Name",
+			},
+			{
+				label: "Last Name",
+				type: "text",
+				name: "last_name",
+				required: true,
+				placeholder: "Last Name",
 			},
 			{
 				label: "Email",
@@ -50,7 +59,7 @@ const formInputs = {
 				label: "Message / Referral Details",
 				type: "textarea",
 				className: "col-span-full",
-				name: "anything-we",
+				name: "message",
 				required: true,
 				autosize: true,
 				minRows: 6,
@@ -61,30 +70,43 @@ const formInputs = {
 };
 
 const FormQuestions = () => {
-
+	const [isSent, setIsSent] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
 	const form = useForm({
 		name: "Questions",
 		mode: "controlled",
 		validateInputOnBlur: true,
 		initialValues: {
-			date_time: "",
-			date_day: "",
 			first_name: "",
 			last_name: "",
 			phone: "",
 			email: "",
-			"anything-we": "",
-			appointment_reminder: "No",
+			message: "",
 		},
 	});
 
 	// const values = form.getValues();
 	const inputs = formInputs["questions"];
 	// const dateTime = dayjs(values.date_day + values.date_time, "YYYY-MM-DD HH:mm:ss");
+	const handleSubmit = (values: any) => {
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbwWGZYvVzXQtNla-3WqcStxermRQzOJnXK2b34xFua1KTH_Im5jUWCawjSZnt7xEWil/exec'
+		const form = document.forms['submit-to-google-sheet']
 
+		// form.addEventListener('submit', e => {
+		// 	e.preventDefault()
+			setIsLoading(true);
+			fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+				.then(response => console.log('Success!', response))
+				.then(() => {
+					setIsLoading(false);
+					setIsSent(true);
+				})
+				.catch(error => console.error('Error!', error.message))
+		// })
+	}
 	return (
 		<div className={styles.formWrapper}>
-			<form style={{ display: "grid" }} className={inputs.className + " " + "gap-x-6 gap-y-2"}>
+			{!isSent ? <form style={{ display: "grid" }} className={inputs.className + " " + "gap-x-6 gap-y-2"} id={"submit-to-google-sheet"}>
 				<hgroup className={'!block text-left mb-16 !col-span-full'}>
 					<h3 className={"justify-self-start col-span-2 mb-2 text-primary"}>{inputs.heading}</h3>
 					<p className={' text-left justify-self-start text-[1.125rem]'}>Our intake team is here to assist referring physicians directly.<br/>
@@ -96,11 +118,19 @@ const FormQuestions = () => {
 				})}
 
 				<div className={"lg:grid col-span-full gap-y-4 justify-between lg:mt-4"}>
-					<Button shadow={true} component={"button"} variant={"primary"} className={"w-full !max-w-full"}>
-						Submit
+					<Button shadow={true} component={"button"} variant={"primary"} className={"w-full !max-w-full"} onClick={() => handleSubmit(form.getValues())}>
+						{!isLoading ? 'Submit' : "Sending..."}
 					</Button>
 				</div>
-			</form>
+			</form> :
+				<div style={{ display: "grid" }} className={" " + "gap-x-6 gap-y-2"}>
+					{/*<GreenBtnIcon width={"9rem"} height={"9rem"} className={"mx-auto mb-10"} />*/}
+					<h3 className={"text-primary text-center"}>Message sent</h3>
+					<p className={" text-center text-main-gray"}>
+						Thank you — your journey to recovery starts now.
+						<br /> We’ve received your message and look forward to seeing you soon.
+					</p>
+			</div>}
 		</div>
 	);
 };

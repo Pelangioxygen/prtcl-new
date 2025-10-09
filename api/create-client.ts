@@ -34,7 +34,7 @@ module.exports = async (req, res) => {
 		}
 
 		res.status(200).json(data);
-	} catch (error) {
+	} catch (error: any) {
 		console.error('IntakeQ API error:', error);
 		res.status(500).json({
 			message: 'Internal server error',

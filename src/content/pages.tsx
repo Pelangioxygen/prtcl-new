@@ -10,6 +10,7 @@ import FormReferPatient from "@/components/Forms/FormReferPatient";
 import FormQuestions from "@/components/Forms/FormQuestions";
 import SectionDiagnosis from "@/components/Sections/SectionDiagnosis";
 import FormCheckAvailibility from "@/components/Forms/FormCheckAvailibility";
+import CardDoctor from "@/components/Cards/CardDoctor/CardDoctor";
 
 const priceLabels = ['Single', '3 pack','5 pack','10 pack','20 pack'];
 const priceCards =	{
@@ -585,60 +586,66 @@ export const pages:PageContent = {
 				type: "why",
 				heading: "Why Choose Health PRTCL?",
 				leading: "Hyperbaric oxygen therapy supports healing from a wide range of medical conditions by delivering pure oxygen in a pressurized chamber. At Health PRTCL, every session is guided by licensed medical professionals using trusted clinical protocols.",
-				cards: [
-					{
-						key: "fda",
-						heading: "Elena Torres, RN",
-						subtitle: "Registered Nurse",
-						leading: "Compassionate care meets clinical precision",
-						children: <><p>With over 12 years in patient-focused nursing, Elena brings warmth, structure,
-							and deep clinical expertise to every recovery journey. After working in surgical and wound
-							care units across California, she joined PRTCL to focus on long-term healing through
-							HBOT.</p>
-							<p><strong>Trust Note:</strong><br />
-								Board-certified RN with additional training in chronic wound management and
-								trauma-informed care.</p></>,
-						image: {
-							width: 300,
-							height: 300,
-							alt: "",
-							src: "/images/what-is-hbat/cards/1.png",
-						},
-					},
-					{
-						key: "accepted",
-						heading: "Dr. Marcus Levin, MD",
-						subtitle: "Medical Director",
-						leading: "Leading clinical strategy with a human-first mindset",
-						children: <>
-							<p>Dr. Levin is a board-certified internal medicine physician with 20+ years in hospital and outpatient care. He leads the medical team at PRTCL with a focus on safety, FDA-aligned protocols, and meaningful outcomes for every patient — from post-chemo to chronic wounds.</p>
-							<p><strong>Trust Note:</strong><br />
-								Fellow of the American College of Hyperbaric Medicine; Published in Journal of Wound Care and Recovery.</p></>,
-						image: {
-							width: 300,
-							height: 300,
-							alt: "",
-							src: "/images/what-is-hbat/cards/2.png",
-						},
-					},
-					{
-						key: "doctor-led-care",
-						heading: "Rachel Kim, CMA",
-						subtitle: "Certified Medical Assistant",
-						leading: "Small details. Big difference",
-						children: <><p>Rachel’s background in integrative care and administrative support makes her a crucial part of every patient’s first steps at PRTCL. From vitals to verifying paperwork, she ensures each visit starts with clarity and comfort.</p>
-							<p><strong>Trust Note:</strong><br />
-								AAMA-Certified CMA with HIPAA, CPR, and Patient Intake Specialist credentials.</p></>,
-						image: {
-							width: 300,
-							height: 300,
-							alt: "",
-							src: "/images/what-is-hbat/cards/3.png",
-						},
-					},
-
-
-				],
+				children: <CardDoctor/>,
+				// cards: [
+				// 	// {
+				// 	// 	key: "fda",
+				// 	// 	heading: "Elena Torres, RN",
+				// 	// 	subtitle: "Registered Nurse",
+				// 	// 	leading: "Compassionate care meets clinical precision",
+				// 	// 	children: <><p>With over 12 years in patient-focused nursing, Elena brings warmth, structure,
+				// 	// 		and deep clinical expertise to every recovery journey. After working in surgical and wound
+				// 	// 		care units across California, she joined PRTCL to focus on long-term healing through
+				// 	// 		HBOT.</p>
+				// 	// 		<p><strong>Trust Note:</strong><br />
+				// 	// 			Board-certified RN with additional training in chronic wound management and
+				// 	// 			trauma-informed care.</p></>,
+				// 	// 	image: {
+				// 	// 		width: 300,
+				// 	// 		height: 300,
+				// 	// 		alt: "",
+				// 	// 		src: "/images/what-is-hbat/cards/1.png",
+				// 	// 	},
+				// 	// },
+				// 	{
+				// 		key: "accepted",
+				// 		heading: "Dr. B. Monte Stewart, MD, FACS",
+				// 		subtitle: "Medical Director",
+				// 		leading: "Leading clinical strategy with a human-first mindset",
+				// 		children: <>
+				// 			<p>Dr. Stewart is a board-certified general surgeon with more than 25 years of experience in surgery, trauma, and hyperbaric medicine. He earned his medical degree and completed his general surgery residency at Loma Linda University Medical Center, followed by advanced training in trauma surgery and surgical critical care in Los Angeles.</p>
+				// 			<p>Before founding and directing multiple hyperbaric programs, Dr. Stewart served for five years as a U.S. Army surgeon, attaining the rank of Major. During his military service, he taught medical students and residents at William Beaumont Army Medical Center in El Paso, Texas, and held leadership roles in the ICU and cancer program oversight.</p>
+				// 			<p>As a practicing surgeon, Dr. Stewart has treated thousands of patients and integrated Hyperbaric Oxygen Therapy (HBOT) into surgical recovery to reduce swelling, scarring, and complications. He is widely respected for applying HBOT to complex cases such as failed grafts, non-healing wounds, and radiation injuries.</p>
+				//
+				// 			<p>At Health PRTCL, Dr. Stewart serves as Medical Director, guiding all clinical protocols and ensuring strict alignment with FDA-approved indications, patient safety standards, and evidence-based outcomes. His career combines surgical expertise, military discipline, and a commitment to expanding safe, accessible HBOT to communities where it is most needed.</p>
+				//
+				// 			<p>Dr. Stewart is a Fellow of the American College of Surgeons (FACS) and an active member of the Undersea & Hyperbaric Medical Society.</p>
+				// 		</>,
+				// 		image: {
+				// 			width: 300,
+				// 			height: 300,
+				// 			alt: "",
+				// 			src: "/images/what-is-hbat/cards/doctor.jpg",
+				// 		},
+				// 	},
+				// 	// {
+				// 	// 	key: "doctor-led-care",
+				// 	// 	heading: "Rachel Kim, CMA",
+				// 	// 	subtitle: "Certified Medical Assistant",
+				// 	// 	leading: "Small details. Big difference",
+				// 	// 	children: <><p>Rachel’s background in integrative care and administrative support makes her a crucial part of every patient’s first steps at PRTCL. From vitals to verifying paperwork, she ensures each visit starts with clarity and comfort.</p>
+				// 	// 		<p><strong>Trust Note:</strong><br />
+				// 	// 			AAMA-Certified CMA with HIPAA, CPR, and Patient Intake Specialist credentials.</p></>,
+				// 	// 	image: {
+				// 	// 		width: 300,
+				// 	// 		height: 300,
+				// 	// 		alt: "",
+				// 	// 		src: "/images/what-is-hbat/cards/3.png",
+				// 	// 	},
+				// 	// },
+				//
+				//
+				// ],
 			},
 			{
 				type: "form-questions",

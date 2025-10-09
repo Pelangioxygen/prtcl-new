@@ -9,6 +9,7 @@ import customParseFormat from "dayjs/plugin/customParseFormat";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import  Button  from "@/components/Button/Button"
 import FieldComposer from "@/components/FieldComposer/FieldComposer";
+import { useState } from "react";
 
 // Подключаем необходимые плагины
 dayjs.extend(customParseFormat);
@@ -95,8 +96,8 @@ const formInputs = {
 			},
 			{
 				label: "Patient's DOB",
-				type: "number",
-				name: "license",
+				type: "date",
+				name: "patient_dob",
 				required: true,
 				className: "col-span-full ",
 				placeholder: "DD.MM.YYYY",
@@ -153,20 +154,26 @@ const formInputs = {
 };
 
 const FormReferPatient = () => {
-
+	const [isSent, setIsSent] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
 	const form = useForm({
-		name: "BookNow",
+		name: "FormReferPatient",
 		mode: "controlled",
 		validateInputOnBlur: true,
 		initialValues: {
-			date_time: "",
-			date_day: "",
-			first_name: "",
-			last_name: "",
-			phone: "",
-			email: "",
-			"anything-we": "",
-			appointment_reminder: "No",
+			first_name_doctor: "",
+			last_name_doctor: "",
+			license: "",
+			email_doctor: "",
+			phone_doctor: "",
+			first_name_patient: "",
+			"last_name_patient": "",
+			patient_dob: "",
+			insurance_plan: "",
+			diagnosis: "",
+			fda_approved: "",
+			confirm_patient: "",
+			protocol: "",
 		},
 	});
 
@@ -174,10 +181,25 @@ const FormReferPatient = () => {
 	const inputs = formInputs["doctor_info"];
 	const inputs_patient = formInputs["patient_info"];
 	// const dateTime = dayjs(values.date_day + values.date_time, "YYYY-MM-DD HH:mm:ss");
+	const handleSubmit = (values: any) => {
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbzG9TqDkmfXt2fNixEOgw4lBPpKGayMhgt9jFepaArTUvuoV7nCW5OhNW0Br9u8yxbrhw/exec'
+		const form = document.forms['submit-to-google-refer-sheet']
 
+		// form.addEventListener('submit', e => {
+		// 	e.preventDefault()
+		setIsLoading(true);
+		fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+			.then(response => console.log('Success!', response))
+			.then(() => {
+				setIsLoading(false);
+				setIsSent(true);
+			})
+			.catch(error => console.error('Error!', error.message))
+		// })
+	}
 	return (
 		<div className={styles.formWrapper}>
-			<form style={{ display: "grid" }} className={inputs.className + " " + "gap-x-6 gap-y-2"}>
+			{!isSent ? <form style={{ display: "grid" }} className={inputs.className + " " + "gap-x-6 gap-y-2"}  id={"submit-to-google-refer-sheet"}>
 				<hgroup className={'!block text-left  lg:mb-16 mb-8'}>
 					<h3 className={"justify-self-start col-span-2 mb-2 text-primary"}>{inputs.heading}</h3>
 					<p className={'justify-self-start text-[.825rem] lg:text-[1.125rem] text-left'}>Please enter referring physician details</p>
@@ -197,12 +219,19 @@ const FormReferPatient = () => {
 				})}
 
 				<div className={"grid col-span-full gap-y-12 justify-between mt-4"}>
-					<Button shadow={true} component={"button"} variant={"primary"} className={" max-sm:w-full max-sm:!max-w-full"}>
-						Submit
+					<Button shadow={true} component={"button"} variant={"primary"} className={" max-sm:w-full max-sm:!max-w-full"} onClick={() => handleSubmit(form.getValues())}>
+						{!isLoading ? 'Submit' : "Sending..."}
 					</Button>
 					<p>Fax additional clinical notes to: 302-333-4778</p>
 				</div>
-			</form>
+			</form> : <div style={{ display: "grid" }} className={" " + "gap-x-6 gap-y-2"}>
+				{/*<GreenBtnIcon width={"9rem"} height={"9rem"} className={"mx-auto mb-10"} />*/}
+				<h3 className={"text-primary text-center"}>Message sent</h3>
+				<p className={" text-center text-main-gray"}>
+					Thank you — your journey to recovery starts now.
+					<br /> We’ve received your message and look forward to seeing you soon.
+				</p>
+			</div>}
 		</div>
 	);
 };

@@ -36,8 +36,10 @@ module.exports = async (req, res) => {
 		res.status(200).json(data);
 	} catch (error) {
 		console.error('IntakeQ API error:', error);
+		// @ts-ignore
 		res.status(500).json({
 			message: 'Internal server error',
+			// @ts-ignore
 			error: error.message
 		});
 	}

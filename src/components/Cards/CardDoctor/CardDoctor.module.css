@@ -1,0 +1,19 @@
+.root {
+    display: grid;
+
+    gap: 4rem;
+    @media screen and (min-width: 1024px){
+        grid-template-columns: 29vw 1fr;
+    }
+}
+.image {
+    border-radius: 2rem;
+    overflow: hidden;
+    align-self: start;
+    img {
+        width: 100% !important;
+    }
+}
+.content {
+    font-size: .875rem;
+}

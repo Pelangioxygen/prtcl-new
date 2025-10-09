@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./FieldComposer.module.css";
 import { NumberInput, Radio, Select, Textarea, TextInput } from "@mantine/core";
-import "@mantine/core/styles.layer.css";
+import DatePick from "@/components/DatePick/DatePick";
 
 
 interface FieldComposerProps {
@@ -21,6 +21,8 @@ const FieldComposer = (props: FieldComposerProps) => {
 		text: <TextInput {...props} classNames={baseStyles} />,
 		number: <NumberInput classNames={baseStyles} {...props} />,
 		email: <TextInput classNames={baseStyles} {...props} />,
+		date: <DatePick {...props} />,
+
 		select: <Select unstyled  comboboxProps={{ shadow: 'md' }}  classNames={{
 			...baseStyles,
 			wrapper: styles.wrapper,
