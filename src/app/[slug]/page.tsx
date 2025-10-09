@@ -1,13 +1,12 @@
 import { pages } from "@/content/pages";
 import Section from "@/components/Section/Section";
 import Layout from "@/components/Layout/Layout";
-import type { Metadata, ResolvingMetadata } from 'next'
+import type { Metadata } from 'next'
 type Props = {
 	params: Promise<{ slug: string }>
 }
 export async function generateMetadata(
-	{ params }: Props,
-	parent: ResolvingMetadata
+	{ params }: Props
 ): Promise<Metadata> {
 	const slug = (await params).slug;
 
