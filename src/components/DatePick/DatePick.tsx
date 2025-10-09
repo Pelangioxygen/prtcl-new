@@ -9,8 +9,9 @@ const baseStyles = {
 	controls: "absolute"
 };
 // eslint-disable-next-line react/display-name
-const DatePick = forwardRef<unknown, unknown>((props: any, ref) => {
-  return <DateInput ref={ref} classNames={baseStyles} {...props} valueFormat="YYYY-MM-DD"/>
+const DatePick = forwardRef<unknown, unknown>((props: unknown, ref) => {
+  // @ts-ignore
+	return <DateInput ref={ref} classNames={baseStyles} {...props} valueFormat="YYYY-MM-DD"/>
 	}
 );
 
