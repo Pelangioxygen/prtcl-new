@@ -5,6 +5,8 @@ import dayjs from "dayjs";
 
 class formCheckAvailibilityStore {
 	locationId: string | number =  1;
+	loadingDays: boolean = false;
+	loadingTimes: boolean = false;
 	serviceId: string | null = null;
 	clientId: string | null = null;
 	date_day: string = "";
@@ -22,25 +24,35 @@ class formCheckAvailibilityStore {
 		reaction(() => this.date_day,
 			() => {
 			if (this.serviceId &&  this.date_day) {
+				this.loadingTimes = true;
 				requestsAxios.getWithOutRoot(service_booking.fetchString.getHours(this.date_day, this.serviceId)).then((r) => {
 					this.setHours(r.data);
+					this.loadingTimes = false;
 				});
 			}
 		})
 		reaction(() => this.serviceId,
 			() => {
 			if (this.serviceId) {
-
+				this.loadingDays = true;
 				requestsAxios.getWithOutRoot(service_booking.fetchString.disabledDays(this.serviceId))
 					.then(r => {
 						if (r.status === 200) {
 							this.setDisabledDays(r.data.dates);
+							this.loadingDays = false;
 						}
 					})
 					.finally(() => this.disabledDaysLoaded = true);
 			}
 		})
 	}
+	get getLoadingDays() {
+		return this.loadingDays;
+	}
+	get getLoadingTimes() {
+		return this.loadingTimes;
+	}
+
 	setLocation(id: string) {
 		this.locationId = id;
 	}

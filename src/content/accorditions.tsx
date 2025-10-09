@@ -4,24 +4,25 @@ export const insuranceDataAccordition:AccorditionCustomItemProps[] = [
 	{
 		key: '01',
 		heading: 'Air or Gas Embolism',
-		description: <p>Air bubbles in the bloodstream, often after trauma or procedures. Specialists: Emergency Medicine, Diving Medicine, Interventional Radiology</p>
+		description: <>
+			<p>Air bubbles in the bloodstream, often after trauma or procedures.</p><p><strong> Specialists:</strong> Emergency Medicine, Diving Medicine, Interventional Radiology</p></>
 	},
 	{
 		key: '02',
 		heading: 'Carbon Monoxide Poisoning (with or without cyanide)',
-		description: <p>Air bubbles in the bloodstream, often after trauma or procedures. Specialists: Emergency Medicine, Diving Medicine, Interventional Radiology</p>
+		description: <><p>Air bubbles in the bloodstream, often after trauma or procedures.</p><p> <strong>Specialists:</strong> Emergency Medicine, Diving Medicine, Interventional Radiology</p></>
 	},
 	{
 		key: '03',
 		heading: 'Clostridial Myositis & Myonecrosis (Gas Gangrene)',
-		description: <p>Damage from severe compression or trauma causing tissue hypoxia.
-			<strong>Specialists:</strong> Orthopedic Surgery, Trauma Surgery, Vascular Surgery</p>
+		description: <><p>Damage from severe compression or trauma causing tissue hypoxia.
+		</p><p><strong>Specialists:</strong> Orthopedic Surgery, Trauma Surgery, Vascular Surgery</p></>
 	},
 	{
 		key: '04',
 		heading: 'Crush Injury / Compartment Syndrome / Acute Traumatic Ischemias',
-		description: <p>Damage from severe compression or trauma causing tissue hypoxia.
-			<strong>Specialists:</strong>  Orthopedic Surgery, Trauma Surgery, Vascular Surgery</p>
+		description: <><p>Damage from severe compression or trauma causing tissue hypoxia.
+		</p><p><strong>Specialists:</strong>  Orthopedic Surgery, Trauma Surgery, Vascular Surgery</p></>
 	}
 ]
 export const faqDataAccordition:AccorditionCustomItemProps[] = [
