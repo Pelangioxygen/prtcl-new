@@ -181,7 +181,7 @@ const FormReferPatient = () => {
 	const inputs = formInputs["doctor_info"];
 	const inputs_patient = formInputs["patient_info"];
 	// const dateTime = dayjs(values.date_day + values.date_time, "YYYY-MM-DD HH:mm:ss");
-	const handleSubmit = (values: any) => {
+	const handleSubmit = () => {
 		const scriptURL = 'https://script.google.com/macros/s/AKfycbzG9TqDkmfXt2fNixEOgw4lBPpKGayMhgt9jFepaArTUvuoV7nCW5OhNW0Br9u8yxbrhw/exec'
 		const form = document.forms['submit-to-google-refer-sheet']
 
@@ -219,7 +219,7 @@ const FormReferPatient = () => {
 				})}
 
 				<div className={"grid col-span-full gap-y-12 justify-between mt-4"}>
-					<Button shadow={true} component={"button"} variant={"primary"} className={" max-sm:w-full max-sm:!max-w-full"} onClick={() => handleSubmit(form.getValues())}>
+					<Button shadow={true} component={"button"} variant={"primary"} className={" max-sm:w-full max-sm:!max-w-full"} onClick={() => handleSubmit()}>
 						{!isLoading ? 'Submit' : "Sending..."}
 					</Button>
 					<p>Fax additional clinical notes to: 302-333-4778</p>

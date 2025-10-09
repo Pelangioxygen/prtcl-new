@@ -9,7 +9,6 @@ import advancedFormat from "dayjs/plugin/advancedFormat";
 import  Button  from "@/components/Button/Button"
 import FieldComposer from "@/components/FieldComposer/FieldComposer";
 import { useState } from "react";
-import { GreenBtnIcon } from "@/components/Icons/Icons";
 
 // Подключаем необходимые плагины
 dayjs.extend(customParseFormat);
@@ -88,7 +87,7 @@ const FormQuestions = () => {
 	// const values = form.getValues();
 	const inputs = formInputs["questions"];
 	// const dateTime = dayjs(values.date_day + values.date_time, "YYYY-MM-DD HH:mm:ss");
-	const handleSubmit = (values: any) => {
+	const handleSubmit = () => {
 		const scriptURL = 'https://script.google.com/macros/s/AKfycbwWGZYvVzXQtNla-3WqcStxermRQzOJnXK2b34xFua1KTH_Im5jUWCawjSZnt7xEWil/exec'
 		const form = document.forms['submit-to-google-sheet']
 
@@ -118,7 +117,7 @@ const FormQuestions = () => {
 				})}
 
 				<div className={"lg:grid col-span-full gap-y-4 justify-between lg:mt-4"}>
-					<Button shadow={true} component={"button"} variant={"primary"} className={"w-full !max-w-full"} onClick={() => handleSubmit(form.getValues())}>
+					<Button shadow={true} component={"button"} variant={"primary"} className={"w-full !max-w-full"} onClick={() => handleSubmit()}>
 						{!isLoading ? 'Submit' : "Sending..."}
 					</Button>
 				</div>
