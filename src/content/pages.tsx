@@ -506,7 +506,7 @@ export const pages:PageContent = {
 					<p>At PRTCL, we believe advanced care should be accessible, straightforward, and free of hidden fees. While many of our treatments are covered by insurance, we also offer membership plans designed for those seeking proactive wellness, recovery support, or long-term performance optimization — even without a medical diagnosis.</p>
 					<p>Note: Our <strong>membership</strong> plans are not covered by insurance. These self-pay programs are ideal for individuals looking to incorporate Hyperbaric Oxygen Therapy (HBOT) into their wellness strategy. Each plan includes a set number of sessions, flexible scheduling, and access to our experienced care team.</p>
 					<p>Whether you’re recovering from surgery, managing chronic fatigue, or proactively investing in your long-term health, our three flexible membership options — Restore, Recovery, and Renewal — are tailored to meet your goals.</p>
-					<p>Not sure which option is best for you? Contact our team for personalized guidance, or book a <Link href={'book-now'}>consultation.</Link></p>
+					<p>Not sure which option is best for you? <Link href={'/contacts#submit-to-google-sheet'}>Contact our team</Link> for personalized guidance, or book a <Link href={'/contacts#submit-to-google-sheet'}>consultation.</Link></p>
 				</div>
 			}
 		],
