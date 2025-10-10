@@ -358,7 +358,7 @@ export const pages:PageContent = {
 							10375 Washington Blvd, Culver City, CA 90232</li>
 
 							<li><strong>Parking:</strong><br/>
-							Validated parking in underground garage (entrance on 13th Street)</li>
+							Validated parking in garage (entrance on Motor Street)</li>
 
 							<li><strong>Transit:</strong><br/>
 							Accessible via Metro Bus Line 2 & 18</li>
