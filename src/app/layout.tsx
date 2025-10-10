@@ -28,7 +28,7 @@ export default function RootLayout({
 	return (
 		<html lang="ru" className={circular_prtcl.className }>
 			<head>
-				<meta name="apple-mobile-web-app-title" content="prtcl" />
+				<meta name="apple-mobile-web-app-title" content="Prtcl" />
 			</head>
 			<body className={inter.className + " " + "antialiased"}>
 				<HeadlessMantineProvider>
