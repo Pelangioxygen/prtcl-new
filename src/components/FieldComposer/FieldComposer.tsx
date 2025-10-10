@@ -32,7 +32,8 @@ const FieldComposer = forwardRef<HTMLInputElement, FieldComposerProps>((props: F
 			options: styles.options,
 			option: styles.option,
 			dropdown: styles.dropdown
-		}}   withCheckIcon={false}     withScrollArea={false} variant={"filled"}  {...props} />,
+		}}   withCheckIcon={false}
+							styles={{ dropdown: { maxHeight: '50vh', overflowY: 'auto' } }}    withScrollArea={false} variant={"filled"}  {...props} />,
 		radio: <Radio classNames={baseStyles} {...props} />,
 		textarea: <Textarea classNames={baseStyles} {...props} />,
 	};

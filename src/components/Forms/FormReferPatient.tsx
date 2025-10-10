@@ -16,7 +16,22 @@ import { z } from "zod";
 // Подключаем необходимые плагины
 dayjs.extend(customParseFormat);
 dayjs.extend(advancedFormat);
-
+export const conditions = [
+	'Air or Gas Embolism',
+	'Carbon Monoxide Poisoning (with or without cyanide)',
+	'Clostridial Myositis & Myonecrosis (Gas Gangrene)',
+	'Crush Injury / Compartment Syndrome / Acute Traumatic Ischemias',
+	'Decompression Sickness',
+	'Problem Wound Healing (e.g., Diabetic Foot Ulcers)',
+	'Exceptional Blood Loss Anemia',
+	'Intracranial Abscess',
+	'Necrotizing Soft Tissue Infections',
+	'Osteomyelitis (Refractory)',
+	'Delayed Radiation Injury (Soft Tissue / Bone Necrosis)',
+	'Compromised Skin Grafts and Flaps',
+	'Thermal Burns',
+	'Actinomycosis (Refractory)',
+]
 const formInputs = {
 	doctor_info: {
 		heading: "Doctor's Info (required)",
@@ -129,8 +144,9 @@ const formInputs = {
 				label: "FDA Approved Condition",
 				name: "fda_approved",
 				required: true,
+				maxDropdownHeight:200,
 				className: "col-span-full",
-				data: ["Crush Injury and Compartment Syndrome", "Crush Injury and Compartment Syndrome1"],
+				data: conditions,
 				placeholder: "FDA Approved Condition"
 			},
 			{
