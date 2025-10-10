@@ -40,9 +40,11 @@
     }
     ul {
         @media screen and (min-width: 1024px) {
-            column-count: 2;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+            gap: 1rem;
             li {
-                margin-right: 2rem;
+                /*margin-right: 2rem;*/
             }
         }
     }

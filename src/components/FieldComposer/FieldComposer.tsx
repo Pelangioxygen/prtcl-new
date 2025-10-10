@@ -26,8 +26,6 @@ const FieldComposer = forwardRef<HTMLInputElement, FieldComposerProps>((_props: 
 		placeholder: error ? error : placeholder,
 		'data-error': !!error
 	}
-	console.log(error);
-	console.log(props);
 	const element = {
 		text: <TextInput classNames={baseStyles} {...props} ref={ref}/>,
 		number: <NumberInput classNames={baseStyles} {...props} />,
