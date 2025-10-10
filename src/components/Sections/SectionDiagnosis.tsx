@@ -53,74 +53,70 @@ const data = {
 		},
 		"neurology": {
 			on: [
-				'Intracranial Abscess'
+				'Air or Gas Embolism',
+				'Carbon Monoxide Poisoning (with or without cyanide)',
+				'Intracranial Abscess',
+				'Decompression Sickness'
 			],
 			off: [
-				'Anoxic Brain Injury',
-				'Cerebral Palsy',
-				'Concussion & Traumatic Brain Injury',
-				'Migraine / Headache',
+					'Stroke (acute and recovery phase)',
+					'Traumatic Brain Injury (TBI)',
+					'Post-Concussion Syndrome',
+					'Migraine and Cluster Headaches',
+					'Cerebral Palsy',
+					'Multiple Sclerosis (MS)',
+					'Parkinson’s Disease',
+					'ALS (supportive)',
 			]
 		},
 		"infection": {
 			on: [
-				'Actinomycosis (Refractory)',
-				'Clostridial Myositis & Myonecrosis (Gas Gangrene)',
-				'Necrotizing Soft Tissue Infections',
-				'Osteomyelitis (Refractory)',
+'Clostridial Myositis & Myonecrosis (Gas Gangrene)',
+'Necrotizing Soft Tissue Infections',
+ 'Actinomycosis (refractory)',
+ 'Chronic Refractory Osteomyelitis',
+ 'Intracranial Abscess (also neurological overlap)',
 			],
 			off: [
-				'Lyme Disease'
+'Lyme Disease (chronic)',
+'Long COVID / Post-viral syndromes',
+'Chronic fatigue & immune dysregulation',
+'Systemic inflammatory infections',
+
 			]
 		},
 		"trauma": {
 			on: [
-				'Compartment Syndrome / Crush Injury / Acute Traumatic Ischemias'
+ 'Crush Injury / Compartment Syndrome / Acute Traumatic Ischemias',
+ 'Acute Peripheral Arterial Insufficiency',
+ 'Compromised Skin Grafts & Flaps',
 			],
 			off: [
-				'Complex Regional Pain Syndrome (CRPS / RSD)',
-				'Sports Injuries',
+'Sports injuries (ligaments, tendons, recovery acceleration)',
+'Post-surgical wound healing optimization',
+'Fracture healing enhancement',
+'Joint and muscle recovery',
 			]
 		},
 		"rehabilitation": {
-			on: [
-
-			],
-			off: [
-				'Chronic Fatigue Syndrome',
-				'Chronic Pain',
-				'Surgery Preparation & Accelerated Recovery',
-			]
+			"on": ["Exceptional Blood Loss Anemia", "Problem Wound Healing (e.g., Diabetic Foot Ulcers)"],
+			"off": ["Post-surgical healing & recovery optimization", "Chronic fatigue syndrome", "Fibromyalgia", "Post-chemo & post-radiation recovery (supportive)", "Wellness protocols (adjunctive recovery, energy optimization)"]
 		},
 		"emergency-conditions": {
-			on: [
-				'Air or Gas Embolism',
-				'Carbon Monoxide Poisoning (with or without cyanide)',
-				'Decompression Sickness',
-				'Thermal Burns',
-			],
-			off: []
+			"on": ["Thermal Burns"],
+			"off": ["Acute smoke inhalation injury", "Critical illness recovery protocols", "Emergency ischemic events (supportive)"]
 		},
 		"vision": {
-			on: [],
-			off: ['Retinitis Pigmentosa']
+			"on": ["Central Retinal Artery Occlusion (CRAO) (CMS recognizes as indication)"],
+			"off": ["Macular Degeneration (early intervention)", "Glaucoma (adjunctive)", "Retinopathy (supportive therapy)"]
 		},
 		"chronic-inflammatory-conditions": {
-			on: [],
-			off: [
-				'Arthritis',
-				'Crohn’s Disease',
-				'Fibromyalgia',
-				'Inflammatory Bowel Disease',
-				'Interstitial Cystitis',
-				'Pancreatitis',
-				'Ulcerative Colitis',
-				'Complications of Scleroderma',
-			]
+			"on": ["Delayed Radiation Injury (Soft Tissue / Bone Necrosis)"],
+			"off": ["Autoimmune disorders (RA, lupus, Crohn's)", "Chronic pain syndromes", "Fibromyalgia (overlap)", "Long-COVID inflammatory syndromes"]
 		},
 		"oncology": {
-			on: ['Delayed Radiation Injury (Soft Tissue / Bone Necrosis)'],
-			off: ['Cancer (Treatment Synergy)']
+			"on": ['Delayed Radiation Injury (osteoradionecrosis, soft tissue radionecrosis)'],
+			"off": ["Cancer treatment synergy (adjunct to radiation, chemo, immunotherapy)", "Radiation cystitis / proctitis", "Post-oncology wound healing and fatigue recovery"]
 		}
 	},
 	links: [
