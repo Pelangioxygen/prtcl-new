@@ -11,8 +11,8 @@ export async function generateMetadata(
 	const slug = (await params).slug;
 
 	return {
-		title: 'Prtcl - ' + pages[slug].title,
-		description: 'Prtcl - ' + pages[slug].description,
+		title: 'Health Protocol - Hyperbaric Medical Group ||' + pages[slug].title,
+		description: 'Health Protocol - Hyperbaric Medical Group ||' + pages[slug].description,
 	}
 }
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
