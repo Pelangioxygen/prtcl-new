@@ -4,6 +4,8 @@
 	padding:  3rem 1.875rem;
 	position: relative;
 	cursor: grab;
+    height: 100%;
+    align-content: start;
 	border-radius: 1.25rem;
 	* > {
 		user-select: none;
