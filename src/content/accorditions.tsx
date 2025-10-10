@@ -23,6 +23,66 @@ export const insuranceDataAccordition:AccorditionCustomItemProps[] = [
 		heading: 'Crush Injury / Compartment Syndrome / Acute Traumatic Ischemias',
 		description: <><p>Damage from severe compression or trauma causing tissue hypoxia.
 		</p><p><strong>Specialists:</strong>  Orthopedic Surgery, Trauma Surgery, Vascular Surgery</p></>
+	},
+	{
+		key: '05',
+		heading: 'Decompression Sickness',
+		description: <><p>Damage from severe compression or trauma causing tissue hypoxia.
+		</p><p><strong>Specialists:</strong>  Orthopedic Surgery, Trauma Surgery, Vascular Surgery</p></>
+	},
+	{
+		key: '06',
+		heading: 'Problem Wound Healing (e.g., Diabetic Foot Ulcers)',
+		description: <><p>Damage from severe compression or trauma causing tissue hypoxia.
+		</p><p><strong>Specialists:</strong>  Orthopedic Surgery, Trauma Surgery, Vascular Surgery</p></>
+	},
+	{
+		key: '07',
+		heading: ' Exceptional Blood Loss Anemia',
+		description: <><p>Damage from severe compression or trauma causing tissue hypoxia.
+		</p><p><strong>Specialists:</strong>  Orthopedic Surgery, Trauma Surgery, Vascular Surgery</p></>
+	},
+	{
+		key: '08',
+		heading: 'Intracranial Abscess',
+		description: <><p>Serious infection in the brain; HBOT enhances antibiotic effectiveness.
+		</p><p><strong>Specialists:</strong>  Neurosurgery, Neurology, Infectious Disease</p></>
+	},
+	{
+		key: '09',
+		heading: 'Necrotizing Soft Tissue Infections',
+		description: <><p>Damage from severe compression or trauma causing tissue hypoxia.
+		</p><p><strong>Specialists:</strong>  Orthopedic Surgery, Trauma Surgery, Vascular Surgery</p></>
+	},
+	{
+		key: '10',
+		heading: 'Osteomyelitis (Refractory)',
+		description: <><p>Damage from severe compression or trauma causing tissue hypoxia.
+		</p><p><strong>Specialists:</strong>  Orthopedic Surgery, Trauma Surgery, Vascular Surgery</p></>
+	},
+	{
+		key: '11',
+		heading: 'Delayed Radiation Injury (Soft Tissue / Bone Necrosis)',
+		description: <><p>Damage from severe compression or trauma causing tissue hypoxia.
+		</p><p><strong>Specialists:</strong>  Orthopedic Surgery, Trauma Surgery, Vascular Surgery</p></>
+	},
+	{
+		key: '12',
+		heading: 'Compromised Skin Grafts and Flaps',
+		description: <><p>Damage from severe compression or trauma causing tissue hypoxia.
+		</p><p><strong>Specialists:</strong>  Orthopedic Surgery, Trauma Surgery, Vascular Surgery</p></>
+	},
+	{
+		key: '13',
+		heading: 'Thermal Burns',
+		description: <><p>Damage from severe compression or trauma causing tissue hypoxia.
+		</p><p><strong>Specialists:</strong>  Orthopedic Surgery, Trauma Surgery, Vascular Surgery</p></>
+	},
+	{
+		key: '14',
+		heading: 'Actinomycosis (Refractory)',
+		description: <><p>Damage from severe compression or trauma causing tissue hypoxia.
+		</p><p><strong>Specialists:</strong>  Orthopedic Surgery, Trauma Surgery, Vascular Surgery</p></>
 	}
 ]
 export const faqDataAccordition:AccorditionCustomItemProps[] = [

@@ -8,6 +8,7 @@ import DatePick from "@/components/DatePick/DatePick";
 interface FieldComposerProps {
 	children?: React.ReactNode;
 	className?: string;
+	[key:string]: unknown
 }
 const baseStyles = {
 	label: styles.label,
@@ -17,8 +18,16 @@ const baseStyles = {
 	error: 'absolute text-red-500 text-xs bottom-0 mt-0 -mb-5'
 };
 // eslint-disable-next-line react/display-name
-const FieldComposer = forwardRef<HTMLInputElement, FieldComposerProps>((props: FieldComposerProps, ref) => {
-
+const FieldComposer = forwardRef<HTMLInputElement, FieldComposerProps>((_props: FieldComposerProps, ref) => {
+	const {error, placeholder,  ...rest} = _props;
+	let props:Record<string, unknown> = {};
+	props = {
+		...rest,
+		placeholder: error ? error : placeholder,
+		'data-error': !!error
+	}
+	console.log(error);
+	console.log(props);
 	const element = {
 		text: <TextInput classNames={baseStyles} {...props} ref={ref}/>,
 		number: <NumberInput classNames={baseStyles} {...props} />,

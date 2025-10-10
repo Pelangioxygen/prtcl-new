@@ -12,26 +12,12 @@ import FieldComposer from "@/components/FieldComposer/FieldComposer";
 import { useCallback, useState } from "react";
 import { zod4Resolver } from "mantine-form-zod-resolver";
 import { z } from "zod";
+import { insuranceDataAccordition } from "@/content/accorditions";
 
 // Подключаем необходимые плагины
 dayjs.extend(customParseFormat);
 dayjs.extend(advancedFormat);
-export const conditions = [
-	'Air or Gas Embolism',
-	'Carbon Monoxide Poisoning (with or without cyanide)',
-	'Clostridial Myositis & Myonecrosis (Gas Gangrene)',
-	'Crush Injury / Compartment Syndrome / Acute Traumatic Ischemias',
-	'Decompression Sickness',
-	'Problem Wound Healing (e.g., Diabetic Foot Ulcers)',
-	'Exceptional Blood Loss Anemia',
-	'Intracranial Abscess',
-	'Necrotizing Soft Tissue Infections',
-	'Osteomyelitis (Refractory)',
-	'Delayed Radiation Injury (Soft Tissue / Bone Necrosis)',
-	'Compromised Skin Grafts and Flaps',
-	'Thermal Burns',
-	'Actinomycosis (Refractory)',
-]
+
 const formInputs = {
 	doctor_info: {
 		heading: "Doctor's Info (required)",
@@ -146,7 +132,7 @@ const formInputs = {
 				required: true,
 				maxDropdownHeight:200,
 				className: "col-span-full",
-				data: conditions,
+				data: insuranceDataAccordition.map(el => el.heading),
 				placeholder: "FDA Approved Condition"
 			},
 			{

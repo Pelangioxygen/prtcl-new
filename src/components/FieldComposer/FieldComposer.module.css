@@ -117,7 +117,7 @@
     flex: 1;
     font-family: var(--font-sans);
     align-items: center;
-    padding: .875rem;
+    padding: .625rem .875rem;
     /*height: 2.5rem;*/
 
     background: #FFFFFF;
@@ -132,5 +132,11 @@
         font-size: .875rem;
         font-weight: 400;
         color: var(--color-gray-400);
+    }
+    &[data-error="true"] {
+        outline: .125rem solid red;
+        &::placeholder {
+            color: red;
+        }
     }
 }
