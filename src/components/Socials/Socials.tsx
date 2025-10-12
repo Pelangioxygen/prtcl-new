@@ -20,7 +20,7 @@ interface SocialsProps {
 		},
 		{
 			icon: <InstIcon />,
-			href: 'inst'
+			href: 'https://www.instagram.com/healthprtcl'
 		},
 		{
 			icon: <LnkDldIcon />,
