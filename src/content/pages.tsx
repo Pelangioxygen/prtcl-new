@@ -11,6 +11,7 @@ import FormQuestions from "@/components/Forms/FormQuestions";
 import SectionDiagnosis from "@/components/Sections/SectionDiagnosis";
 import FormCheckAvailibility from "@/components/Forms/FormCheckAvailibility";
 import CardDoctor from "@/components/Cards/CardDoctor/CardDoctor";
+import YouTubePlayer from "@/components/YouTubePlayer/YouTubePlayer";
 
 const priceLabels = ['Single', '3 pack','5 pack','10 pack','20 pack'];
 const priceCards =	{
@@ -576,12 +577,13 @@ export const pages:PageContent = {
 				type: "case-study",
 				heading: "Oxygen That Heals: A Real-World Case Study",
 				leading: "See how tech entrepreneur Bryan Johnson used hyperbaric oxygen therapy for 90 days to enhance recovery, energy, and biological resilience.",
-				image: {
-					width: 1116,
-					height: 627,
-					src: "/images/what-is-hbat/oxygen2.png",
-					alt: "",
-				},
+				children: <YouTubePlayer thumbnailUrl={"/images/what-is-hbat/oxygen2.png"} videoUrl={'https://www.youtube.com/embed/pfSFnFWb8X4?si=JlvVdQfy_iPzf5OD'}/>
+				// image: {
+				// 	width: 1116,
+				// 	height: 627,
+				// 	src: "/images/what-is-hbat/oxygen2.png",
+				// 	alt: "",
+				// },
 			},
 			{
 				type: "why",
